@@ -1512,3 +1512,266 @@ End Class
 
 
 'GAME DATA YEAHH
+Public Class MncrftInfo
+    Public PlayerIsDead As Boolean = False
+    Public NightScore As Integer = 0
+    Public LastZombieCount As Integer = 0
+    Public Offense As Integer = 0
+    Public PersonalDefense As Integer = 0
+    Public Defense As Integer
+
+    Public Class ActionCosts
+        Public Shared AxeCost As Integer = 15
+        Public Shared PickaxeCost As Integer = 0
+    End Class
+
+    Public Class Materials
+        Public Class Energy
+            Public Shared Amount As Integer = 60 '99999999
+            Public Shared NightlyAmount As Integer = 10
+        End Class
+
+        Public Shared WoodAmount As Integer
+        Public Shared SticksAmount As Integer
+        Public Shared WoolAmount As Integer
+        Public Shared StoneAmount As Integer
+        Public Shared CoalAmount As Integer
+        Public Shared IronOreAmount As Integer
+        Public Shared GoldOreAmount As Integer
+        Public Shared IronIngotAmount As Integer
+        Public Shared GoldIngotAmount As Integer
+        Public Shared DiamondsAmount As Integer
+    End Class
+
+    Public Class Buildings
+        Public Class Bed
+            Public Shared Amount As Integer
+            Public Shared ReadOnly DailyEnergyAddition As Integer = 5
+        End Class
+
+        Public Class House
+            Public Shared Amount As Integer
+            Public Shared ReadOnly Defense As Integer = 4
+            Public Shared ReadOnly DailyEnergyAddition As Integer = 2
+        End Class
+
+        Public Class Tower
+            Public Shared Amount As Integer
+            Public Shared ReadOnly Defense As Integer = 6
+        End Class
+
+        Public Class GuardTower
+            Public Shared Amount As Integer
+            Public Shared ReadOnly Offense As Integer = 6
+            Public Shared ReadOnly Defense As Integer = 10
+        End Class
+    End Class
+
+    Public Class Items
+        Public Class WoodenSword
+            Public Shared Amount As Integer
+            Public Shared ReadOnly PerDef As Integer = 5
+        End Class
+
+        Public Class WoodenPickaxe
+            Public Shared Amount As Integer
+            Public Shared ReadOnly EnergyCost As Integer = 20
+            Public Shared ReadOnly IronMinable As Boolean = False
+            Public Shared ReadOnly GoldMinable As Boolean = False
+            Public Shared ReadOnly DiamMinable As Boolean = False
+        End Class
+
+        Public Class WoodenAxe
+            Public Shared Amount As Integer
+            Public Shared ReadOnly EnergyCost As Integer = 10
+        End Class
+
+        Public Class StoneSword
+            Public Shared Amount As Integer = 0
+            Public Shared ReadOnly PerDef As Integer = 8
+        End Class
+
+        Public Class StonePickaxe
+            Public Shared Amount As Integer
+            Public Shared ReadOnly EnergyCost As Integer = 18
+            Public Shared ReadOnly IronMinable As Boolean = True
+            Public Shared ReadOnly GoldMinable As Boolean = False
+            Public Shared ReadOnly DiamMinable As Boolean = False
+        End Class
+
+        Public Class StoneAxe
+            Public Shared Amount As Integer
+            Public Shared ReadOnly EnergyCost As Integer = 8
+        End Class
+
+        Public Class GoldSword
+            Public Shared Amount As Integer
+            Public Shared ReadOnly PerDef As Integer = 10
+        End Class
+
+        Public Class GoldPickaxe
+            Public Shared Amount As Integer
+            Public Shared ReadOnly EnergyCost As Integer = 16
+            Public Shared ReadOnly IronMinable As Boolean = True
+            Public Shared ReadOnly GoldMinable As Boolean = False
+            Public Shared ReadOnly DiamMinable As Boolean = False
+        End Class
+
+        Public Class GoldAxe
+            Public Shared Amount As Integer
+            Public Shared ReadOnly EnergyCost As Integer = 6
+        End Class
+
+        Public Class IronSword
+            Public Shared Amount As Integer = 0
+            Public Shared ReadOnly PerDef As Integer = 12
+        End Class
+
+        Public Class IronPickaxe
+            Public Shared Amount As Integer
+            Public Shared ReadOnly EnergyCost As Integer = 14
+            Public Shared ReadOnly IronMinable As Boolean = True
+            Public Shared ReadOnly GoldMinable As Boolean = True
+            Public Shared ReadOnly DiamMinable As Boolean = True
+        End Class
+
+        Public Class IronAxe
+            Public Shared Amount As Integer
+            Public Shared ReadOnly EnergyCost As Integer = 4
+        End Class
+
+        Public Class DiamondSword
+            Public Shared Amount As Integer
+            Public Shared ReadOnly PerDef As Integer = 15
+        End Class
+        Public Class DiamondPickaxe
+            Public Shared Amount As Integer
+            Public Shared ReadOnly EnergyCost As Integer = 10
+            Public Shared ReadOnly IronMinable As Boolean = True
+            Public Shared ReadOnly GoldMinable As Boolean = True
+            Public Shared ReadOnly DiamMinable As Boolean = True
+        End Class
+
+        Public Class DiamondAxe
+            Public Shared Amount As Integer
+            Public Shared ReadOnly EnergyCost As Integer = 2
+        End Class
+
+        Public Shared FurnaceAmount As Integer
+        Public Shared TorchAmount As Integer
+    End Class
+
+    Public Class Villagers
+        Public Shared TotalVillagerAmount As Integer
+        Public Shared GreenCoatAmount As Integer
+        Public Shared IronSmelterAmount As Integer
+        Public Shared GoldSmelterAmount As Integer
+        Public Shared ShepherdAmount As Integer
+
+        Public Class Guard
+            Public Class Wood
+                Public Shared Amount As Integer
+                Public Shared ReadOnly Offense As Integer = 1
+                Public Shared ReadOnly Defense As Integer = 2
+            End Class
+
+            Public Class Stone
+                Public Shared Amount As Integer
+                Public Shared ReadOnly Offense As Integer = 2
+                Public Shared ReadOnly Defense As Integer = 4
+            End Class
+
+            Public Class Gold
+                Public Shared Amount As Integer
+                Public Shared ReadOnly Offense As Integer = 4
+                Public Shared ReadOnly Defense As Integer = 6
+            End Class
+
+            Public Class Iron
+                Public Shared Amount As Integer
+                Public Shared ReadOnly Offense As Integer = 6
+                Public Shared ReadOnly Defense As Integer = 10
+            End Class
+
+            Public Class Diamond
+                Public Shared Amount As Integer
+                Public Shared ReadOnly Offense As Integer = 10
+                Public Shared ReadOnly Defense As Integer = 20
+            End Class
+        End Class
+
+        Public Class Lumberjack
+            Public Class Wood
+                Public Shared Amount As Integer
+                Public Shared ReadOnly WoodPerDay As Integer = 2
+            End Class
+
+            Public Class Stone
+                Public Shared Amount As Integer
+                Public Shared ReadOnly WoodPerDay As Integer = 4
+            End Class
+
+            Public Class Gold
+                Public Shared Amount As Integer
+                Public Shared ReadOnly WoodPerDay As Integer = 6
+            End Class
+
+            Public Class Iron
+                Public Shared Amount As Integer
+                Public Shared ReadOnly WoodPerDay As Integer = 8
+            End Class
+
+            Public Class Diamond
+                Public Shared Amount As Integer
+                Public Shared ReadOnly WoodPerDay As Integer = 16
+            End Class
+        End Class
+
+        Public Class Miner
+            Public Class Wood
+                Public Shared Amount As Integer
+                Public Shared ReadOnly StonePerDay As Integer = 8
+                Public Shared ReadOnly CoalPerDay As Integer = 2
+                Public Shared ReadOnly IronPerDay As Integer = 0
+                Public Shared ReadOnly GoldPerDay As Integer = 0
+                Public Shared ReadOnly DiamondPerDay As Integer = 0
+            End Class
+
+            Public Class Stone
+                Public Shared Amount As Integer
+                Public Shared ReadOnly StonePerDay As Integer = 12
+                Public Shared ReadOnly CoalPerDay As Integer = 6
+                Public Shared ReadOnly IronPerDay As Integer = 2
+                Public Shared ReadOnly GoldPerDay As Integer = 0
+                Public Shared ReadOnly DiamondPerDay As Integer = 0
+            End Class
+
+            Public Class Gold
+                Public Shared Amount As Integer
+                Public Shared ReadOnly StonePerDay As Integer = 14
+                Public Shared ReadOnly CoalPerDay As Integer = 8
+                Public Shared ReadOnly IronPerDay As Integer = 2
+                Public Shared ReadOnly GoldPerDay As Integer = 6
+                Public Shared ReadOnly DiamondPerDay As Integer = 0
+            End Class
+
+            Public Class Iron
+                Public Shared Amount As Integer
+                Public Shared ReadOnly StonePerDay As Integer = 16
+                Public Shared ReadOnly CoalPerDay As Integer = 10
+                Public Shared ReadOnly IronPerDay As Integer = 4
+                Public Shared ReadOnly GoldPerDay As Integer = 2
+                Public Shared ReadOnly DiamondPerDay As Integer = 0
+            End Class
+
+            Public Class Diamond
+                Public Shared Amount As Integer
+                Public Shared ReadOnly StonePerDay As Integer = 20
+                Public Shared ReadOnly CoalPerDay As Integer = 14
+                Public Shared ReadOnly IronPerDay As Integer = 6
+                Public Shared ReadOnly GoldPerDay As Integer = 2
+                Public Shared ReadOnly DiamondPerDay As Integer = 1
+            End Class
+        End Class
+    End Class
+End Class
