@@ -1,5 +1,5 @@
 # Mncrft
-slightly Minecraft-themed turn-based strategy game about gathering materials, making houses and defending said houses from zombies.
+slightly Minecraft-themed turn-based strategy game-thing about gathering materials, making houses and defending said houses from zombies.
 
 **This readme is subject to change or being incorrect, this is what I used to think up the game before putting it to code.
 Once I finish the actual game part of Mncrft, I'll probably come back to this and remake it from the ground up, or turn on a wiki.**
