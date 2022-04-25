@@ -62,11 +62,17 @@ Partial Class MncrftGame
         Me.Builddismantlebutton = New System.Windows.Forms.Button()
         Me.ComboBox4 = New System.Windows.Forms.ComboBox()
         Me.BuildBuildbutton = New System.Windows.Forms.Button()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.WikiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GithubToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'RichTextBox1
@@ -76,7 +82,7 @@ Partial Class MncrftGame
         Me.RichTextBox1.DetectUrls = False
         Me.RichTextBox1.HideSelection = False
         Me.RichTextBox1.ImeMode = System.Windows.Forms.ImeMode.Off
-        Me.RichTextBox1.Location = New System.Drawing.Point(12, 12)
+        Me.RichTextBox1.Location = New System.Drawing.Point(12, 27)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.ReadOnly = True
         Me.RichTextBox1.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -98,7 +104,7 @@ Partial Class MncrftGame
         'RichTextBox2
         '
         Me.RichTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.RichTextBox2.Location = New System.Drawing.Point(641, 25)
+        Me.RichTextBox2.Location = New System.Drawing.Point(641, 40)
         Me.RichTextBox2.Name = "RichTextBox2"
         Me.RichTextBox2.ReadOnly = True
         Me.RichTextBox2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None
@@ -111,7 +117,7 @@ Partial Class MncrftGame
         'MaterialNumbers
         '
         Me.MaterialNumbers.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.MaterialNumbers.Location = New System.Drawing.Point(759, 25)
+        Me.MaterialNumbers.Location = New System.Drawing.Point(759, 40)
         Me.MaterialNumbers.Name = "MaterialNumbers"
         Me.MaterialNumbers.ReadOnly = True
         Me.MaterialNumbers.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None
@@ -123,7 +129,7 @@ Partial Class MncrftGame
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(645, 9)
+        Me.Label1.Location = New System.Drawing.Point(645, 24)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(49, 13)
         Me.Label1.TabIndex = 4
@@ -132,7 +138,7 @@ Partial Class MncrftGame
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(645, 174)
+        Me.Label2.Location = New System.Drawing.Point(645, 189)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(46, 13)
         Me.Label2.TabIndex = 7
@@ -141,7 +147,7 @@ Partial Class MncrftGame
         'VillagerNumbers
         '
         Me.VillagerNumbers.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.VillagerNumbers.Location = New System.Drawing.Point(759, 190)
+        Me.VillagerNumbers.Location = New System.Drawing.Point(759, 205)
         Me.VillagerNumbers.Name = "VillagerNumbers"
         Me.VillagerNumbers.ReadOnly = True
         Me.VillagerNumbers.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None
@@ -153,7 +159,7 @@ Partial Class MncrftGame
         'RichTextBox5
         '
         Me.RichTextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.RichTextBox5.Location = New System.Drawing.Point(641, 190)
+        Me.RichTextBox5.Location = New System.Drawing.Point(641, 205)
         Me.RichTextBox5.Name = "RichTextBox5"
         Me.RichTextBox5.ReadOnly = True
         Me.RichTextBox5.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None
@@ -165,7 +171,7 @@ Partial Class MncrftGame
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(432, 9)
+        Me.Label3.Location = New System.Drawing.Point(432, 24)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(49, 13)
         Me.Label3.TabIndex = 10
@@ -174,7 +180,7 @@ Partial Class MncrftGame
         'BuildingNumbers
         '
         Me.BuildingNumbers.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.BuildingNumbers.Location = New System.Drawing.Point(546, 25)
+        Me.BuildingNumbers.Location = New System.Drawing.Point(546, 40)
         Me.BuildingNumbers.Name = "BuildingNumbers"
         Me.BuildingNumbers.ReadOnly = True
         Me.BuildingNumbers.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None
@@ -186,7 +192,7 @@ Partial Class MncrftGame
         'RichTextBox7
         '
         Me.RichTextBox7.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.RichTextBox7.Location = New System.Drawing.Point(428, 25)
+        Me.RichTextBox7.Location = New System.Drawing.Point(428, 40)
         Me.RichTextBox7.Name = "RichTextBox7"
         Me.RichTextBox7.ReadOnly = True
         Me.RichTextBox7.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None
@@ -207,7 +213,7 @@ Partial Class MncrftGame
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(432, 85)
+        Me.Label4.Location = New System.Drawing.Point(432, 100)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(49, 13)
         Me.Label4.TabIndex = 14
@@ -216,7 +222,7 @@ Partial Class MncrftGame
         'StatNumbers
         '
         Me.StatNumbers.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.StatNumbers.Location = New System.Drawing.Point(546, 101)
+        Me.StatNumbers.Location = New System.Drawing.Point(546, 116)
         Me.StatNumbers.Name = "StatNumbers"
         Me.StatNumbers.ReadOnly = True
         Me.StatNumbers.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None
@@ -228,7 +234,7 @@ Partial Class MncrftGame
         'RichTextBox9
         '
         Me.RichTextBox9.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.RichTextBox9.Location = New System.Drawing.Point(428, 101)
+        Me.RichTextBox9.Location = New System.Drawing.Point(428, 116)
         Me.RichTextBox9.Name = "RichTextBox9"
         Me.RichTextBox9.ReadOnly = True
         Me.RichTextBox9.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None
@@ -263,7 +269,7 @@ Partial Class MncrftGame
         Me.GroupBox1.Controls.Add(Me.Gatherwoodbutton)
         Me.GroupBox1.Controls.Add(Me.gominingbutton)
         Me.GroupBox1.Controls.Add(Me.EndDayButton)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 436)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 451)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(251, 142)
         Me.GroupBox1.TabIndex = 24
@@ -302,7 +308,7 @@ Partial Class MncrftGame
         Me.GroupBox2.Controls.Add(Me.ComboBox1)
         Me.GroupBox2.Controls.Add(Me.smeltbutton)
         Me.GroupBox2.Enabled = False
-        Me.GroupBox2.Location = New System.Drawing.Point(546, 510)
+        Me.GroupBox2.Location = New System.Drawing.Point(546, 525)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(275, 68)
         Me.GroupBox2.TabIndex = 25
@@ -324,7 +330,7 @@ Partial Class MncrftGame
         Me.GroupBox3.Controls.Add(Me.hirefirebutton)
         Me.GroupBox3.Controls.Add(Me.ComboBox2)
         Me.GroupBox3.Controls.Add(Me.Hirehirebutton)
-        Me.GroupBox3.Location = New System.Drawing.Point(546, 436)
+        Me.GroupBox3.Location = New System.Drawing.Point(546, 451)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(275, 68)
         Me.GroupBox3.TabIndex = 26
@@ -346,7 +352,7 @@ Partial Class MncrftGame
         Me.ComboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"Wood Guard (1 Villager, 1 Wooden Sword)", "Wood Miner (1 Villager, 1 Wooden Pickaxe", "Wood Lumberjack (1 Villager, 1 Wooden Axe)", "Stone Guard (1 Villager, 1 Stone Sword)", "Stone Miner (1 Villager, 1 Stone Pickaxe)", "Stone Lumberjack (1 Villager, 1 Stone Axe)", "Iron Guard (1 Villager, 1 Iron Sword)", "Iron Miner (1 Villager, 1 Iron Pickaxe)", "Iron Lumberjack (1 Villager, 1 Iron Axe)", "Gold Guard (1 Villager, 1 Golden Sword)", "Gold Miner (1 Villager, 1 Golden Pickaxe)", "Gold Lumberjack (1 Villager, 1 Golden Axe)", "Diamond Guard (1 Villager, 1 Diamond Sword)", "Diamond Miner (1 Villager, 1 Diamond Pickaxe)", "Diamond Lumberjack (1 Villager, 1 Diamond Axe)", "Iron Smelter (1 Villager, 1 Furnace)", "Gold Smelter (1 Villager, 1 Furnace)", "Shepherd (1 Villager, 1 Stick)"})
+        Me.ComboBox2.Items.AddRange(New Object() {"Wood Guard (1 Villager, 1 Wooden Sword)", "Wood Miner (1 Villager, 1 Wooden Pickaxe", "Wood Lumberjack (1 Villager, 1 Wooden Axe)", "Stone Guard (1 Villager, 1 Stone Sword)", "Stone Miner (1 Villager, 1 Stone Pickaxe)", "Stone Lumberjack (1 Villager, 1 Stone Axe)", "Iron Guard (1 Villager, 1 Iron Sword)", "Iron Miner (1 Villager, 1 Iron Pickaxe)", "Iron Lumberjack (1 Villager, 1 Iron Axe)", "Gold Guard (1 Villager, 1 Golden Sword)", "Gold Miner (1 Villager, 1 Golden Pickaxe)", "Gold Lumberjack (1 Villager, 1 Golden Axe)", "Diamond Guard (1 Villager, 1 Diamond Sword)", "Diamond Miner (1 Villager, 1 Diamond Pickaxe)", "Diamond Lumberjack (1 Villager, 1 Diamond Axe)", "Iron Smelter (1 Villager, 1 Furnace)", "Gold Smelter (1 Villager, 1 Furnace)", "Shepherd (1 Villager, 2 Stick)"})
         Me.ComboBox2.Location = New System.Drawing.Point(6, 19)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(265, 21)
@@ -364,7 +370,7 @@ Partial Class MncrftGame
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(432, 174)
+        Me.Label5.Location = New System.Drawing.Point(432, 189)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(32, 13)
         Me.Label5.TabIndex = 29
@@ -373,7 +379,7 @@ Partial Class MncrftGame
         'ItemNumbers
         '
         Me.ItemNumbers.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.ItemNumbers.Location = New System.Drawing.Point(546, 190)
+        Me.ItemNumbers.Location = New System.Drawing.Point(546, 205)
         Me.ItemNumbers.Name = "ItemNumbers"
         Me.ItemNumbers.ReadOnly = True
         Me.ItemNumbers.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None
@@ -385,7 +391,7 @@ Partial Class MncrftGame
         'RichTextBox11
         '
         Me.RichTextBox11.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.RichTextBox11.Location = New System.Drawing.Point(428, 190)
+        Me.RichTextBox11.Location = New System.Drawing.Point(428, 205)
         Me.RichTextBox11.Name = "RichTextBox11"
         Me.RichTextBox11.ReadOnly = True
         Me.RichTextBox11.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None
@@ -399,7 +405,7 @@ Partial Class MncrftGame
         Me.GroupBox4.Controls.Add(Me.craftdisassemblebutton)
         Me.GroupBox4.Controls.Add(Me.ComboBox3)
         Me.GroupBox4.Controls.Add(Me.Craftcraftbutton)
-        Me.GroupBox4.Location = New System.Drawing.Point(269, 510)
+        Me.GroupBox4.Location = New System.Drawing.Point(269, 525)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(274, 68)
         Me.GroupBox4.TabIndex = 30
@@ -439,7 +445,7 @@ Partial Class MncrftGame
         Me.GroupBox5.Controls.Add(Me.Builddismantlebutton)
         Me.GroupBox5.Controls.Add(Me.ComboBox4)
         Me.GroupBox5.Controls.Add(Me.BuildBuildbutton)
-        Me.GroupBox5.Location = New System.Drawing.Point(269, 436)
+        Me.GroupBox5.Location = New System.Drawing.Point(269, 451)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(274, 68)
         Me.GroupBox5.TabIndex = 31
@@ -452,14 +458,14 @@ Partial Class MncrftGame
         Me.Builddismantlebutton.Name = "Builddismantlebutton"
         Me.Builddismantlebutton.Size = New System.Drawing.Size(130, 23)
         Me.Builddismantlebutton.TabIndex = 24
-        Me.Builddismantlebutton.Text = "Dismantle"
+        Me.Builddismantlebutton.Text = "Deconstructed"
         Me.Builddismantlebutton.UseVisualStyleBackColor = True
         '
         'ComboBox4
         '
         Me.ComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Items.AddRange(New Object() {"Bed (3 Wool, 3 Wood)", "House (10 Wood, 10 Stone)", "Tower (30 Stone)", "Guard Tower (80 Stone, 1 Jobless villager, 1 Iron sword)"})
+        Me.ComboBox4.Items.AddRange(New Object() {"Bed (3 Wool, 3 Wood)", "House (10 Wood, 10 Stone)", "Tower (30 Stone)", "Guard Tower (80 Stone, 1 Villager, 1 Iron sword)"})
         Me.ComboBox4.Location = New System.Drawing.Point(6, 19)
         Me.ComboBox4.Name = "ComboBox4"
         Me.ComboBox4.Size = New System.Drawing.Size(262, 21)
@@ -474,12 +480,47 @@ Partial Class MncrftGame
         Me.BuildBuildbutton.Text = "Build"
         Me.BuildBuildbutton.UseVisualStyleBackColor = True
         '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HelpToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(829, 24)
+        Me.MenuStrip1.TabIndex = 32
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'HelpToolStripMenuItem
+        '
+        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.WikiToolStripMenuItem, Me.GithubToolStripMenuItem, Me.AboutToolStripMenuItem})
+        Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
+        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
+        Me.HelpToolStripMenuItem.Text = "Help"
+        '
+        'AboutToolStripMenuItem
+        '
+        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AboutToolStripMenuItem.Text = "About"
+        '
+        'WikiToolStripMenuItem
+        '
+        Me.WikiToolStripMenuItem.Name = "WikiToolStripMenuItem"
+        Me.WikiToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.WikiToolStripMenuItem.Text = "Wiki"
+        '
+        'GithubToolStripMenuItem
+        '
+        Me.GithubToolStripMenuItem.Name = "GithubToolStripMenuItem"
+        Me.GithubToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.GithubToolStripMenuItem.Text = "Github"
+        '
         'MncrftGame
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(829, 590)
+        Me.ClientSize = New System.Drawing.Size(829, 601)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.Label5)
@@ -501,6 +542,9 @@ Partial Class MncrftGame
         Me.Controls.Add(Me.MaterialNumbers)
         Me.Controls.Add(Me.RichTextBox2)
         Me.Controls.Add(Me.RichTextBox1)
+        Me.Controls.Add(Me.MenuStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "MncrftGame"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Mncrft"
@@ -509,6 +553,8 @@ Partial Class MncrftGame
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox5.ResumeLayout(False)
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -636,7 +682,7 @@ Partial Class MncrftGame
             tempiterations = tempiterations + 1
         End While
 
-        RichTextBox1.AppendText(vbNewLine & "You used" & ThisGamesStats.ActionCosts.AxeCost & "Energy gathering" & Str(temptargetamount) & " Wood from" & Str(targetiterations) & " Trees.") 'and tell the user/player about it
+        RichTextBox1.AppendText(vbNewLine & "You used " & ThisGamesStats.ActionCosts.AxeCost & " energy gathering" & Str(temptargetamount) & " Wood from" & Str(targetiterations) & " Trees.") 'and tell the user/player about it
 
         Call UpdateStatDisplay() 'toss the logs to the little number people, they'll figure it out.
     End Sub
@@ -650,7 +696,7 @@ Partial Class MncrftGame
         If ThisGamesStats.PlayerIsDead Then 'press F to pay respects
             ThisGamesStats = New MncrftInfo
             Call UpdateStatDisplay()
-            RichTextBox1.Text = "Welcome to Mncrft!" & vbNewLine & "WARNING:"
+            RichTextBox1.Text = "Welcome to Mncrft!"
             Call DeadNotify()
             Exit Sub
         End If
@@ -695,11 +741,92 @@ Partial Class MncrftGame
 
     Private Sub CalculateDayStart() 'Loopin' through all your villagers (if you have any) oh also energy right forgot about that
         ThisGamesStats.NightScore = ThisGamesStats.NightScore + 1
+
         ThisGamesStats.Materials.Energy.Amount = ThisGamesStats.Materials.Energy.Amount + ThisGamesStats.Materials.Energy.NightlyAmount
         RichTextBox1.AppendText(vbNewLine & "Sleeping through the night gave you" & Str(ThisGamesStats.Materials.Energy.NightlyAmount) & " energy.")
 
+        RichTextBox1.AppendText(vbNewLine & vbNewLine & "It's a new day!")
 
-        Call UpdateStatDisplay() 'you probably shouldn't throw people, just count them yourself and tell the number people.
+        Dim tempWood As Integer
+        Dim tempStone As Integer
+        Dim tempCoal As Integer
+        Dim tempIronOre As Integer
+        Dim tempGoldOre As Integer
+        Dim tempDiamond As Integer
+
+        tempWood = ThisGamesStats.Villagers.Lumberjack.Wood.Amount * ThisGamesStats.Villagers.Lumberjack.Wood.WoodPerDay ' calculate the amount of wood you get from each type of villager
+        tempWood = tempWood + ThisGamesStats.Villagers.Lumberjack.Stone.Amount * ThisGamesStats.Villagers.Lumberjack.Stone.WoodPerDay
+        tempWood = tempWood + ThisGamesStats.Villagers.Lumberjack.Iron.Amount * ThisGamesStats.Villagers.Lumberjack.Iron.WoodPerDay
+        tempWood = tempWood + ThisGamesStats.Villagers.Lumberjack.Gold.Amount * ThisGamesStats.Villagers.Lumberjack.Gold.WoodPerDay
+        tempWood = tempWood + ThisGamesStats.Villagers.Lumberjack.Diamond.Amount * ThisGamesStats.Villagers.Lumberjack.Diamond.WoodPerDay
+
+        tempStone = ThisGamesStats.Villagers.Miner.Wood.Amount * ThisGamesStats.Villagers.Miner.Wood.StonePerDay ' calculate the amount of stone you get from each type of villager
+        tempStone = tempStone + ThisGamesStats.Villagers.Miner.Stone.Amount * ThisGamesStats.Villagers.Miner.Stone.StonePerDay
+        tempStone = tempStone + ThisGamesStats.Villagers.Miner.Iron.Amount * ThisGamesStats.Villagers.Miner.Iron.StonePerDay
+        tempStone = tempStone + ThisGamesStats.Villagers.Miner.Gold.Amount * ThisGamesStats.Villagers.Miner.Gold.StonePerDay
+        tempStone = tempStone + ThisGamesStats.Villagers.Miner.Diamond.Amount * ThisGamesStats.Villagers.Miner.Diamond.StonePerDay
+
+        tempCoal = ThisGamesStats.Villagers.Miner.Wood.Amount * ThisGamesStats.Villagers.Miner.Wood.CoalPerDay ' calculate the amount of coal you get from each type of villager
+        tempCoal = tempCoal + ThisGamesStats.Villagers.Miner.Stone.Amount * ThisGamesStats.Villagers.Miner.Stone.CoalPerDay
+        tempCoal = tempCoal + ThisGamesStats.Villagers.Miner.Iron.Amount * ThisGamesStats.Villagers.Miner.Iron.CoalPerDay
+        tempCoal = tempCoal + ThisGamesStats.Villagers.Miner.Gold.Amount * ThisGamesStats.Villagers.Miner.Gold.CoalPerDay
+        tempCoal = tempCoal + ThisGamesStats.Villagers.Miner.Diamond.Amount * ThisGamesStats.Villagers.Miner.Diamond.CoalPerDay
+
+        tempIronOre = ThisGamesStats.Villagers.Miner.Wood.Amount * ThisGamesStats.Villagers.Miner.Wood.IronPerDay ' calculate the amount of iron ore you get from each type of villager
+        tempIronOre = tempIronOre + ThisGamesStats.Villagers.Miner.Stone.Amount * ThisGamesStats.Villagers.Miner.Stone.IronPerDay
+        tempIronOre = tempIronOre + ThisGamesStats.Villagers.Miner.Iron.Amount * ThisGamesStats.Villagers.Miner.Iron.IronPerDay
+        tempIronOre = tempIronOre + ThisGamesStats.Villagers.Miner.Gold.Amount * ThisGamesStats.Villagers.Miner.Gold.IronPerDay
+        tempIronOre = tempIronOre + ThisGamesStats.Villagers.Miner.Diamond.Amount * ThisGamesStats.Villagers.Miner.Diamond.IronPerDay
+
+        tempGoldOre = ThisGamesStats.Villagers.Miner.Wood.Amount * ThisGamesStats.Villagers.Miner.Wood.GoldPerDay ' calculate the amount of gold ore you get from each type of villager
+        tempGoldOre = tempGoldOre + ThisGamesStats.Villagers.Miner.Stone.Amount * ThisGamesStats.Villagers.Miner.Stone.GoldPerDay
+        tempGoldOre = tempGoldOre + ThisGamesStats.Villagers.Miner.Iron.Amount * ThisGamesStats.Villagers.Miner.Iron.GoldPerDay
+        tempGoldOre = tempGoldOre + ThisGamesStats.Villagers.Miner.Gold.Amount * ThisGamesStats.Villagers.Miner.Gold.GoldPerDay
+        tempGoldOre = tempGoldOre + ThisGamesStats.Villagers.Miner.Diamond.Amount * ThisGamesStats.Villagers.Miner.Diamond.GoldPerDay
+
+        tempDiamond = ThisGamesStats.Villagers.Miner.Wood.Amount * ThisGamesStats.Villagers.Miner.Wood.DiamondPerDay ' calculate the amount of diamond you get from each type of villager
+        tempDiamond = tempDiamond + ThisGamesStats.Villagers.Miner.Stone.Amount * ThisGamesStats.Villagers.Miner.Stone.DiamondPerDay
+        tempDiamond = tempDiamond + ThisGamesStats.Villagers.Miner.Iron.Amount * ThisGamesStats.Villagers.Miner.Iron.DiamondPerDay
+        tempDiamond = tempDiamond + ThisGamesStats.Villagers.Miner.Gold.Amount * ThisGamesStats.Villagers.Miner.Gold.DiamondPerDay
+        tempDiamond = tempDiamond + ThisGamesStats.Villagers.Miner.Diamond.Amount * ThisGamesStats.Villagers.Miner.Diamond.DiamondPerDay
+
+
+        ThisGamesStats.Materials.WoodAmount = ThisGamesStats.Materials.WoodAmount + tempWood ' and add them all to your totals!
+        ThisGamesStats.Materials.StoneAmount = ThisGamesStats.Materials.StoneAmount + tempStone
+        ThisGamesStats.Materials.CoalAmount = ThisGamesStats.Materials.CoalAmount + tempCoal
+        ThisGamesStats.Materials.IronOreAmount = ThisGamesStats.Materials.IronOreAmount + tempIronOre
+        ThisGamesStats.Materials.GoldOreAmount = ThisGamesStats.Materials.GoldOreAmount + tempGoldOre
+        ThisGamesStats.Materials.DiamondsAmount = ThisGamesStats.Materials.DiamondsAmount + tempDiamond
+        ThisGamesStats.Materials.WoolAmount = ThisGamesStats.Materials.WoolAmount + ThisGamesStats.Villagers.ShepherdAmount
+
+
+        If tempWood > 0 Or tempStone > 0 Or tempCoal > 0 Or tempIronOre > 0 Or tempGoldOre > 0 Or tempDiamond > 0 Or ThisGamesStats.Villagers.ShepherdAmount > 0 Then ' then report it all to the player!
+            RichTextBox1.AppendText(vbNewLine & "Your villagers gathered:")
+            If tempWood > 0 Then
+                RichTextBox1.AppendText(vbNewLine & tempWood & " Wood")
+            End If
+            If tempStone > 0 Then
+                RichTextBox1.AppendText(vbNewLine & tempStone & " Stone")
+            End If
+            If tempCoal > 0 Then
+                RichTextBox1.AppendText(vbNewLine & tempCoal & " Coal")
+            End If
+            If tempIronOre > 0 Then
+                RichTextBox1.AppendText(vbNewLine & tempIronOre & " Iron Ore")
+            End If
+            If tempGoldOre > 0 Then
+                RichTextBox1.AppendText(vbNewLine & tempGoldOre & " Gold Ore")
+            End If
+            If tempDiamond > 0 Then
+                RichTextBox1.AppendText(vbNewLine & tempDiamond & " Diamond")
+            End If
+            If ThisGamesStats.Villagers.ShepherdAmount > 0 Then
+                RichTextBox1.AppendText(vbNewLine & ThisGamesStats.Villagers.ShepherdAmount & " Wool")
+            End If
+        End If
+
+
+        Call UpdateStatDisplay() ' that's a lot to toss at one time...you should probably just count it yourself...
     End Sub
 
 
@@ -1037,7 +1164,7 @@ Partial Class MncrftGame
         ElseIf ThisGamesStats.Items.StoneSword.Amount > 0 Then ' rockWeapon
             calculatedPerDef = ThisGamesStats.Items.StoneSword.PerDef
 
-        ElseIf ThisGamesStats.Items.WoodenSword.Amount > 0 Then ' "...PICKS UP A YARD STICK, AND HOLDS IT LIKE A SAMURAI WARRIOR"
+        ElseIf ThisGamesStats.Items.WoodenSword.Amount > 0 Then ' "...PICKS UP A YARD STICK AND HOLDS IT LIKE A SAMURAI WARRIOR"
             calculatedPerDef = ThisGamesStats.Items.WoodenSword.PerDef
         Else
             calculatedPerDef = 0
@@ -1100,6 +1227,12 @@ Partial Class MncrftGame
 
         ThisGamesStats.Defense = calculatedDefense ' and here we see off tweedle dee
         ThisGamesStats.Offense = calculatedOffense ' and tweedle dum
+
+        If ThisGamesStats.Villagers.GreenCoatAmount > ThisGamesStats.Buildings.Bed.Amount Then
+            ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Buildings.Bed.Amount
+            RichTextBox1.AppendText(vbNewLine & vbNewLine & "   --- ! POSSIBLE BUG ! ---   Somehow, you managed to get more jobless villagers than you could fit in your beds. This was probably caused by a bug. Please open a bug report on the github along with what you were doing when this appeared. You can continue playing, but it is HIGHLY recommended to report this. To make sure you can continue playing, your jobless villager count has been lowered to your bed count.   ---   .")
+        End If
+
     End Sub
 
 
@@ -1123,7 +1256,7 @@ Partial Class MncrftGame
         Dim targetiterations As Integer = Int(6 * Rnd()) 'generate a number from 0 to 6
         Dim temptargetamount As Integer = 0
         While tempiterations < targetiterations
-            Dim temprandom As Integer = Int(2 * Rnd()) + 1 'generate a number from 0 to 2
+            Dim temprandom As Integer = Int(2 * Rnd()) + 1 'generate a number from 1 to 3
             temptargetamount = temptargetamount + temprandom
             tempiterations = tempiterations + 1
         End While
@@ -1175,14 +1308,15 @@ Partial Class MncrftGame
                     ThisGamesStats.Buildings.Tower.Amount = ThisGamesStats.Buildings.Tower.Amount + 1
                     RichTextBox1.AppendText(vbNewLine & "Successfully built a tower!")
                 End If
-            Case 3 ' guard tower TODO: add jobless villager to requirements
-                If ThisGamesStats.Materials.StoneAmount < 80 Or ThisGamesStats.Items.IronSword.Amount < 1 Then
+            Case 3 ' guard tower
+                If ThisGamesStats.Materials.StoneAmount < 80 Or ThisGamesStats.Items.IronSword.Amount < 1 Or ThisGamesStats.Villagers.GreenCoatAmount < 1 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have enough materials for that.")
                 Else
                     ThisGamesStats.Items.IronSword.Amount = ThisGamesStats.Items.IronSword.Amount - 1
                     ThisGamesStats.Materials.StoneAmount = ThisGamesStats.Materials.StoneAmount - 80
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount - 1
                     ThisGamesStats.Buildings.GuardTower.Amount = ThisGamesStats.Buildings.GuardTower.Amount + 1
-                    RichTextBox1.AppendText(vbNewLine & "Successfully built a tower!")
+                    RichTextBox1.AppendText(vbNewLine & "Successfully built a guard tower!")
                 End If
             Case Else
                 RichTextBox1.AppendText(vbNewLine & "Please select a building recipe!")
@@ -1208,7 +1342,7 @@ Partial Class MncrftGame
                 Else
                     ThisGamesStats.Materials.WoodAmount = ThisGamesStats.Materials.WoodAmount + 2
                     ThisGamesStats.Materials.SticksAmount = ThisGamesStats.Materials.SticksAmount - 4
-                    RichTextBox1.AppendText(vbNewLine & "Successfully disassembled 4 sticks!")
+                    RichTextBox1.AppendText(vbNewLine & "Somehow, you successfully used 4 sticks to reassemble a wooden plank.")
                 End If
             Case 1 ' F U R N A C E
                 If ThisGamesStats.Materials.StoneAmount < 1 Then
@@ -1216,7 +1350,7 @@ Partial Class MncrftGame
                 Else
                     ThisGamesStats.Materials.StoneAmount = ThisGamesStats.Materials.StoneAmount + 8
                     ThisGamesStats.Items.FurnaceAmount = ThisGamesStats.Items.FurnaceAmount - 1
-                    RichTextBox1.AppendText(vbNewLine & "Successfully disassembled a furnace!")
+                    RichTextBox1.AppendText(vbNewLine & "You looked at the furnace, picked it up, and smashed it into 8 separate pieces.")
                 End If
             Case 2 ' W O O D E N   S W O R D
                 If ThisGamesStats.Items.WoodenSword.Amount < 1 Then
@@ -1225,7 +1359,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Materials.WoodAmount = ThisGamesStats.Materials.WoodAmount + 2
                     ThisGamesStats.Materials.SticksAmount = ThisGamesStats.Materials.SticksAmount + 1
                     ThisGamesStats.Items.WoodenSword.Amount = ThisGamesStats.Items.WoodenSword.Amount - 1
-                    RichTextBox1.AppendText(vbNewLine & "Successfully disassembled a wooden sword!")
+                    RichTextBox1.AppendText(vbNewLine & "You snapped the wooden sword over your knee like the twig it is, somehow, you managed to get two pieces of wood and a stick out of it.")
                 End If
             Case 3 ' W O O D E N   P I C K A X E
                 If ThisGamesStats.Items.WoodenPickaxe.Amount < 1 Then
@@ -1306,7 +1440,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Materials.GoldIngotAmount = ThisGamesStats.Materials.GoldIngotAmount + 2
                     ThisGamesStats.Materials.SticksAmount = ThisGamesStats.Materials.SticksAmount + 1
                     ThisGamesStats.Items.GoldSword.Amount = ThisGamesStats.Items.GoldSword.Amount - 1
-                    RichTextBox1.AppendText(vbNewLine & "Successfully disassembled a gold sword!")
+                    RichTextBox1.AppendText(vbNewLine & "You barely breath on the gold sword, it crumbles to dust in your hands.")
                 End If
             Case 12 ' gold pickaxe
                 If ThisGamesStats.Items.GoldPickaxe.Amount < 1 Then
@@ -1315,7 +1449,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Materials.GoldIngotAmount = ThisGamesStats.Materials.GoldIngotAmount + 3
                     ThisGamesStats.Materials.SticksAmount = ThisGamesStats.Materials.SticksAmount + 2
                     ThisGamesStats.Items.GoldPickaxe.Amount = ThisGamesStats.Items.GoldPickaxe.Amount - 1
-                    RichTextBox1.AppendText(vbNewLine & "Successfully disassembled a gold pickaxe!")
+                    RichTextBox1.AppendText(vbNewLine & "You hadn't even thought to use the gold pickaxe, but it's already broken in half.")
                 End If
             Case 13 ' gold axe
                 If ThisGamesStats.Items.GoldAxe.Amount < 1 Then
@@ -1324,7 +1458,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Materials.GoldIngotAmount = ThisGamesStats.Materials.GoldIngotAmount + 3
                     ThisGamesStats.Materials.SticksAmount = ThisGamesStats.Materials.SticksAmount + 2
                     ThisGamesStats.Items.GoldAxe.Amount = ThisGamesStats.Items.GoldAxe.Amount - 1
-                    RichTextBox1.AppendText(vbNewLine & "Successfully disassembled a gold axe!")
+                    RichTextBox1.AppendText(vbNewLine & "You swing the gold axe at a tree, unfortunately the axe head bends and breaks instead.")
                 End If
             Case 14 ' diamond sword
                 If ThisGamesStats.Items.DiamondSword.Amount < 1 Then
@@ -1333,7 +1467,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Materials.DiamondsAmount = ThisGamesStats.Materials.DiamondsAmount + 2
                     ThisGamesStats.Materials.SticksAmount = ThisGamesStats.Materials.SticksAmount + 1
                     ThisGamesStats.Items.DiamondSword.Amount = ThisGamesStats.Items.DiamondSword.Amount - 1
-                    RichTextBox1.AppendText(vbNewLine & "Successfully disassembled a diamond sword!")
+                    RichTextBox1.AppendText(vbNewLine & "You successfully disassembled a diamond sword, but at what cost?")
                 End If
             Case 15 ' diamond pickaxe
                 If ThisGamesStats.Items.DiamondPickaxe.Amount < 1 Then
@@ -1342,7 +1476,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Materials.DiamondsAmount = ThisGamesStats.Materials.DiamondsAmount + 3
                     ThisGamesStats.Materials.SticksAmount = ThisGamesStats.Materials.SticksAmount + 2
                     ThisGamesStats.Items.DiamondPickaxe.Amount = ThisGamesStats.Items.DiamondPickaxe.Amount - 1
-                    RichTextBox1.AppendText(vbNewLine & "Successfully disassembled a diamond pickaxe!")
+                    RichTextBox1.AppendText(vbNewLine & "You sigh as you disassemble the diamond pickaxe, this hurts your soul.")
                 End If
             Case 16 ' diamond axe
                 If ThisGamesStats.Items.DiamondAxe.Amount < 1 Then
@@ -1351,7 +1485,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Materials.DiamondsAmount = ThisGamesStats.Materials.DiamondsAmount + 3
                     ThisGamesStats.Materials.SticksAmount = ThisGamesStats.Materials.SticksAmount + 2
                     ThisGamesStats.Items.DiamondAxe.Amount = ThisGamesStats.Items.DiamondAxe.Amount - 1
-                    RichTextBox1.AppendText(vbNewLine & "Successfully disassembled a diamond axe!")
+                    RichTextBox1.AppendText(vbNewLine & "You look at the diamond axe, and it's so beautiful, you can't help but feel sorry for it.")
                 End If
             Case 17 ' torches
                 If ThisGamesStats.Items.TorchAmount < 4 Then
@@ -1360,7 +1494,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Materials.CoalAmount = ThisGamesStats.Materials.CoalAmount + 1
                     ThisGamesStats.Materials.SticksAmount = ThisGamesStats.Materials.SticksAmount + 1
                     ThisGamesStats.Items.TorchAmount = ThisGamesStats.Items.TorchAmount - 4
-                    RichTextBox1.AppendText(vbNewLine & "Successfully disassembled 4 torches!")
+                    RichTextBox1.AppendText(vbNewLine & "You put out the four torches, and disassemble them into a piece of coal and a stick.")
                 End If
             Case Else
                 RichTextBox1.AppendText(vbNewLine & "Please select a disassembly recipe!")
@@ -1413,7 +1547,6 @@ Partial Class MncrftGame
 
 
     Private Sub Builddismantlebutton_Click(sender As Object, e As EventArgs) Handles Builddismantlebutton.Click
-
         RichTextBox1.AppendText(vbNewLine)
 
         If ThisGamesStats.PlayerIsDead Then 'F
@@ -1429,7 +1562,11 @@ Partial Class MncrftGame
                     ThisGamesStats.Materials.WoodAmount = ThisGamesStats.Materials.WoodAmount + 3
                     ThisGamesStats.Materials.WoolAmount = ThisGamesStats.Materials.WoolAmount + 3
                     ThisGamesStats.Buildings.Bed.Amount = ThisGamesStats.Buildings.Bed.Amount - 1
-                    RichTextBox1.AppendText(vbNewLine & "Successfully dismantled a bed!")
+                    RichTextBox1.AppendText(vbNewLine & "Successfully deconstructed a bed!")
+                    If ThisGamesStats.Villagers.GreenCoatAmount > ThisGamesStats.Buildings.Bed.Amount Then
+                        ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount - 1
+                        RichTextBox1.AppendText(vbNewLine & "You've deconstructed a villager's bed, they take this as an insult and leave you.")
+                    End If
                 End If
             Case 1 ' house
                 If ThisGamesStats.Buildings.House.Amount < 1 Then
@@ -1438,7 +1575,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Materials.WoodAmount = ThisGamesStats.Materials.WoodAmount + 10
                     ThisGamesStats.Materials.StoneAmount = ThisGamesStats.Materials.StoneAmount + 10
                     ThisGamesStats.Buildings.House.Amount = ThisGamesStats.Buildings.House.Amount - 1
-                    RichTextBox1.AppendText(vbNewLine & "Successfully dismantled a house!")
+                    RichTextBox1.AppendText(vbNewLine & "Successfully deconstructed a house!")
                 End If
             Case 2 ' tower
                 If ThisGamesStats.Buildings.Tower.Amount < 1 Then
@@ -1446,36 +1583,43 @@ Partial Class MncrftGame
                 Else
                     ThisGamesStats.Materials.StoneAmount = ThisGamesStats.Materials.StoneAmount + 30
                     ThisGamesStats.Buildings.Tower.Amount = ThisGamesStats.Buildings.Tower.Amount - 1
-                    RichTextBox1.AppendText(vbNewLine & "Successfully dismantled a tower!")
+                    RichTextBox1.AppendText(vbNewLine & "Successfully deconstructed a tower!")
                 End If
-            Case 3 ' guard tower TODO: add jobless villager to requirements
+            Case 3 ' guard tower
                 If ThisGamesStats.Buildings.GuardTower.Amount < 1 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have that.")
                 Else
                     ThisGamesStats.Items.IronSword.Amount = ThisGamesStats.Items.IronSword.Amount + 1
                     ThisGamesStats.Materials.StoneAmount = ThisGamesStats.Materials.StoneAmount + 80
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount + 1
                     ThisGamesStats.Buildings.GuardTower.Amount = ThisGamesStats.Buildings.GuardTower.Amount - 1
-                    RichTextBox1.AppendText(vbNewLine & "Successfully dismantled a tower!")
+                    RichTextBox1.AppendText(vbNewLine & "Successfully deconstructed a guard tower!")
                 End If
             Case Else
-                RichTextBox1.AppendText(vbNewLine & "Please select a dismantling recipe!")
+                RichTextBox1.AppendText(vbNewLine & "Please select a deconstructing recipe!")
         End Select
+
+        If ThisGamesStats.Villagers.GreenCoatAmount > ThisGamesStats.Buildings.Bed.Amount Then ' if you have more villagers than beds, they wander off.
+            ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount - 1
+            RichTextBox1.AppendText(vbNewLine & "The villager you just fired wandered off as there were no more beds free.")
+        End If
+
         Call UpdateStatDisplay() 'BRING OUT YOUR RUBBLE
     End Sub
 
 
 
     Private Sub DeadNotify()
-        If ThisGamesStats.PlayerIsDead Then 'F
-            RichTextBox1.AppendText(vbNewLine & "You are dead, there is nothing you can do now.
+        RichTextBox1.AppendText(vbNewLine & vbNewLine & "   --- ! WARNING ! ---   You are dead, there is nothing you can do now.
 
 Due to a bug related to having classes within classes in VB.NET, please restart the program to restart. pressing 'End Day' may make it seem that the game has restarted, but you will quickly find that the game gets thrown into an unplayable state.
 
 I have tried several times to make the contents of ThisGamesStats not shared, but it always throws the error ''Reference to a non-shared member requires an object reference'' or some other error.
 
-Thanks for playing.")
-        End If
+Thanks for playing.   --- ! WARNING ! ---   ")
     End Sub
+
+
 
     Private Sub findvillagersbutton_Click(sender As Object, e As EventArgs) Handles findvillagersbutton.Click
 
@@ -1486,7 +1630,38 @@ Thanks for playing.")
             Exit Sub
         End If
 
+        If ThisGamesStats.Buildings.Bed.Amount - ThisGamesStats.Villagers.GreenCoatAmount < 1 Then ' player has either no beds or not enough beds
+            RichTextBox1.AppendText(vbNewLine & "You don't have enough beds to house any villagers you'd find.")
+            Exit Sub
+        End If
+
+        If ThisGamesStats.Materials.Energy.Amount < 40 Then ' not enough energy to look for villagers
+            RichTextBox1.AppendText(vbNewLine & "Nobody'll blame you for not having enough energy to look for villagers.")
+            Exit Sub
+        End If
+
+        ThisGamesStats.Materials.Energy.Amount = ThisGamesStats.Materials.Energy.Amount - 40
+
+        Dim tempFoundVillagers As Integer = Int(4 * Rnd())
+
+        If tempFoundVillagers < 1 Then ' no villagers found, rip
+            RichTextBox1.AppendText(vbNewLine & "You spent the 40 energy, but, unfortunately, you found no villagers.")
+
+        ElseIf tempFoundVillagers > ThisGamesStats.Buildings.Bed.Amount - ThisGamesStats.Villagers.GreenCoatAmount Then ' too many villagers found, again, rip
+            Dim tempTempFoundVillagers As Integer = tempFoundVillagers
+            tempFoundVillagers = ThisGamesStats.Buildings.Bed.Amount - ThisGamesStats.Villagers.GreenCoatAmount ' apologies for the giant line here, it was co-pilot's fault!
+            RichTextBox1.AppendText(vbNewLine & "You spent 40 energy finding " & tempTempFoundVillagers & " villagers, but you only had " & ThisGamesStats.Buildings.Bed.Amount - ThisGamesStats.Villagers.GreenCoatAmount & " free beds, so you could only bring home " & tempFoundVillagers & " villagers.")
+
+        Else ' all's good, found villagers and had beds for them!
+            RichTextBox1.AppendText(vbNewLine & "You spent 40 energy finding " & tempFoundVillagers & " villagers.")
+        End If
+
+        ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount + tempFoundVillagers ' add found villagers to greencoat
+
+        Call UpdateStatDisplay() ' Seriously, don't toss people.
     End Sub
+
+
 
     Private Sub Hirehirebutton_Click(sender As Object, e As EventArgs) Handles Hirehirebutton.Click
 
@@ -1497,7 +1672,235 @@ Thanks for playing.")
             Exit Sub
         End If
 
+        Select Case ComboBox2.SelectedIndex 'check case of hiring combobox
+            Case 0 ' hire a wooden guard
+                If ThisGamesStats.Villagers.GreenCoatAmount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but there's nobody to hire.")
+
+                ElseIf ThisGamesStats.Items.WoodenSword.Amount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but you don't have the supplies to hire someone for this job.")
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount - 1
+                    ThisGamesStats.Items.WoodenSword.Amount = ThisGamesStats.Items.WoodenSword.Amount - 1
+                    ThisGamesStats.Villagers.Guard.Wood.Amount = ThisGamesStats.Villagers.Guard.Wood.Amount + 1
+                    RichTextBox1.AppendText(vbNewLine & "You hired a villager as a wooden guard!")
+                End If
+            Case 1 ' hire a wooden miner
+                If ThisGamesStats.Villagers.GreenCoatAmount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but there's nobody to hire.")
+
+                ElseIf ThisGamesStats.Items.WoodenPickaxe.Amount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but you don't have the supplies to hire someone for this job.")
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount - 1
+                    ThisGamesStats.Items.WoodenPickaxe.Amount = ThisGamesStats.Items.WoodenPickaxe.Amount - 1
+                    ThisGamesStats.Villagers.Miner.Wood.Amount = ThisGamesStats.Villagers.Miner.Wood.Amount + 1
+                    RichTextBox1.AppendText(vbNewLine & "You hired a villager as a wooden miner!")
+                End If
+            Case 2 ' hire a wooden lumberjack
+                If ThisGamesStats.Villagers.GreenCoatAmount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but there's nobody to hire.")
+
+                ElseIf ThisGamesStats.Items.WoodenAxe.Amount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but you don't have the supplies to hire someone for this job.")
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount - 1
+                    ThisGamesStats.Items.WoodenAxe.Amount = ThisGamesStats.Items.WoodenAxe.Amount - 1
+                    ThisGamesStats.Villagers.Lumberjack.Wood.Amount = ThisGamesStats.Villagers.Lumberjack.Wood.Amount + 1
+                    RichTextBox1.AppendText(vbNewLine & "You hired a villager as a wooden lumberjack!")
+                End If
+
+            Case 3 ' hire a stone guard
+                If ThisGamesStats.Villagers.GreenCoatAmount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but there's nobody to hire.")
+
+                ElseIf ThisGamesStats.Items.StoneSword.Amount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but you don't have the supplies to hire someone for this job.")
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount - 1
+                    ThisGamesStats.Items.StoneSword.Amount = ThisGamesStats.Items.StoneSword.Amount - 1
+                    ThisGamesStats.Villagers.Guard.Stone.Amount = ThisGamesStats.Villagers.Guard.Stone.Amount + 1
+                    RichTextBox1.AppendText(vbNewLine & "You hired a villager as a stone guard!")
+                End If
+            Case 4 ' hire a stone miner
+                If ThisGamesStats.Villagers.GreenCoatAmount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but there's nobody to hire.")
+
+                ElseIf ThisGamesStats.Items.StonePickaxe.Amount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but you don't have the supplies to hire someone for this job.")
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount - 1
+                    ThisGamesStats.Items.StonePickaxe.Amount = ThisGamesStats.Items.StonePickaxe.Amount - 1
+                    ThisGamesStats.Villagers.Miner.Stone.Amount = ThisGamesStats.Villagers.Miner.Stone.Amount + 1
+                    RichTextBox1.AppendText(vbNewLine & "You hired a villager as a stone miner!")
+                End If
+            Case 5 ' hire a stone lumberjack
+                If ThisGamesStats.Villagers.GreenCoatAmount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but there's nobody to hire.")
+
+                ElseIf ThisGamesStats.Items.StoneAxe.Amount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but you don't have the supplies to hire someone for this job.")
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount - 1
+                    ThisGamesStats.Items.StoneAxe.Amount = ThisGamesStats.Items.StoneAxe.Amount - 1
+                    ThisGamesStats.Villagers.Lumberjack.Stone.Amount = ThisGamesStats.Villagers.Lumberjack.Stone.Amount + 1
+                    RichTextBox1.AppendText(vbNewLine & "You hired a villager as a stone lumberjack!")
+                End If
+
+            Case 6 ' hire a iron guard
+                If ThisGamesStats.Villagers.GreenCoatAmount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but there's nobody to hire.")
+
+                ElseIf ThisGamesStats.Items.IronSword.Amount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but you don't have the supplies to hire someone for this job.")
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount - 1
+                    ThisGamesStats.Items.IronSword.Amount = ThisGamesStats.Items.IronSword.Amount - 1
+                    ThisGamesStats.Villagers.Guard.Iron.Amount = ThisGamesStats.Villagers.Guard.Iron.Amount + 1
+                    RichTextBox1.AppendText(vbNewLine & "You hired a villager as an iron guard!")
+                End If
+            Case 7 ' hire a iron miner
+                If ThisGamesStats.Villagers.GreenCoatAmount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but there's nobody to hire.")
+
+                ElseIf ThisGamesStats.Items.IronPickaxe.Amount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but you don't have the supplies to hire someone for this job.")
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount - 1
+                    ThisGamesStats.Items.IronPickaxe.Amount = ThisGamesStats.Items.IronPickaxe.Amount - 1
+                    ThisGamesStats.Villagers.Miner.Iron.Amount = ThisGamesStats.Villagers.Miner.Iron.Amount + 1
+                    RichTextBox1.AppendText(vbNewLine & "You hired a villager as an iron miner!")
+                End If
+            Case 8 ' hire a iron lumberjack
+                If ThisGamesStats.Villagers.GreenCoatAmount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but there's nobody to hire.")
+
+                ElseIf ThisGamesStats.Items.IronAxe.Amount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but you don't have the supplies to hire someone for this job.")
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount - 1
+                    ThisGamesStats.Items.IronAxe.Amount = ThisGamesStats.Items.IronAxe.Amount - 1
+                    ThisGamesStats.Villagers.Lumberjack.Iron.Amount = ThisGamesStats.Villagers.Lumberjack.Iron.Amount + 1
+                    RichTextBox1.AppendText(vbNewLine & "You hired a villager as an iron lumberjack!")
+                End If
+
+            Case 9 ' hire a golden guard
+                If ThisGamesStats.Villagers.GreenCoatAmount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but there's nobody to hire.")
+
+                ElseIf ThisGamesStats.Items.GoldSword.Amount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but you don't have the supplies to hire someone for this job.")
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount - 1
+                    ThisGamesStats.Items.GoldSword.Amount = ThisGamesStats.Items.GoldSword.Amount - 1
+                    ThisGamesStats.Villagers.Guard.Gold.Amount = ThisGamesStats.Villagers.Guard.Gold.Amount + 1
+                    RichTextBox1.AppendText(vbNewLine & "You hired a villager as a golden guard!")
+                End If
+            Case 10 ' hire a golden miner
+                If ThisGamesStats.Villagers.GreenCoatAmount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but there's nobody to hire.")
+
+                ElseIf ThisGamesStats.Items.GoldPickaxe.Amount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but you don't have the supplies to hire someone for this job.")
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount - 1
+                    ThisGamesStats.Items.GoldPickaxe.Amount = ThisGamesStats.Items.GoldPickaxe.Amount - 1
+                    ThisGamesStats.Villagers.Miner.Gold.Amount = ThisGamesStats.Villagers.Miner.Gold.Amount + 1
+                    RichTextBox1.AppendText(vbNewLine & "You hired a villager as a golden miner!")
+                End If
+            Case 11 ' hire a golden lumberjack
+                If ThisGamesStats.Villagers.GreenCoatAmount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but there's nobody to hire.")
+
+                ElseIf ThisGamesStats.Items.GoldAxe.Amount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but you don't have the supplies to hire someone for this job.")
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount - 1
+                    ThisGamesStats.Items.GoldAxe.Amount = ThisGamesStats.Items.GoldAxe.Amount - 1
+                    ThisGamesStats.Villagers.Lumberjack.Gold.Amount = ThisGamesStats.Villagers.Lumberjack.Gold.Amount + 1
+                    RichTextBox1.AppendText(vbNewLine & "You hired a villager as a golden lumberjack!")
+                End If
+
+            Case 12 ' hire a diamond guard
+                If ThisGamesStats.Villagers.GreenCoatAmount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but there's nobody to hire.")
+
+                ElseIf ThisGamesStats.Items.DiamondSword.Amount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but you don't have the supplies to hire someone for this job.")
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount - 1
+                    ThisGamesStats.Items.DiamondSword.Amount = ThisGamesStats.Items.DiamondSword.Amount - 1
+                    ThisGamesStats.Villagers.Guard.Diamond.Amount = ThisGamesStats.Villagers.Guard.Diamond.Amount + 1
+                    RichTextBox1.AppendText(vbNewLine & "You hired a villager as a diamond guard!")
+                End If
+            Case 13 ' hire a diamond miner
+                If ThisGamesStats.Villagers.GreenCoatAmount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but there's nobody to hire.")
+
+                ElseIf ThisGamesStats.Items.DiamondPickaxe.Amount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but you don't have the supplies to hire someone for this job.")
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount - 1
+                    ThisGamesStats.Items.DiamondPickaxe.Amount = ThisGamesStats.Items.DiamondPickaxe.Amount - 1
+                    ThisGamesStats.Villagers.Miner.Diamond.Amount = ThisGamesStats.Villagers.Miner.Diamond.Amount + 1
+                    RichTextBox1.AppendText(vbNewLine & "You hired a villager as a diamond miner!")
+                End If
+            Case 14 ' hire a diamond lumberjack
+                If ThisGamesStats.Villagers.GreenCoatAmount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but there's nobody to hire.")
+
+                ElseIf ThisGamesStats.Items.DiamondAxe.Amount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but you don't have the supplies to hire someone for this job.")
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount - 1
+                    ThisGamesStats.Items.DiamondAxe.Amount = ThisGamesStats.Items.DiamondAxe.Amount - 1
+                    ThisGamesStats.Villagers.Lumberjack.Diamond.Amount = ThisGamesStats.Villagers.Lumberjack.Diamond.Amount + 1
+                    RichTextBox1.AppendText(vbNewLine & "You hired a villager as a diamond lumberjack!")
+                End If
+
+            Case 15 ' hire a iron smelter
+                If ThisGamesStats.Villagers.GreenCoatAmount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but there's nobody to hire.")
+
+                ElseIf ThisGamesStats.Items.FurnaceAmount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but you don't have the supplies to hire someone for this job.")
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount - 1
+                    ThisGamesStats.Items.FurnaceAmount = ThisGamesStats.Items.FurnaceAmount - 1
+                    ThisGamesStats.Villagers.IronSmelterAmount = ThisGamesStats.Villagers.IronSmelterAmount + 1
+                    RichTextBox1.AppendText(vbNewLine & "You hired a villager as an iron smelter!")
+                End If
+            Case 16 ' hire a gold smelter
+                If ThisGamesStats.Villagers.GreenCoatAmount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but there's nobody to hire.")
+
+                ElseIf ThisGamesStats.Items.FurnaceAmount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but you don't have the supplies to hire someone for this job.")
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount - 1
+                    ThisGamesStats.Items.FurnaceAmount = ThisGamesStats.Items.FurnaceAmount - 1
+                    ThisGamesStats.Villagers.GoldSmelterAmount = ThisGamesStats.Villagers.GoldSmelterAmount + 1
+                    RichTextBox1.AppendText(vbNewLine & "You hired a villager as an gold smelter!")
+                End If
+            Case 17 ' hire a shepherd
+                If ThisGamesStats.Villagers.GreenCoatAmount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but there's nobody to hire.")
+
+                ElseIf ThisGamesStats.Materials.SticksAmount < 2 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, but you don't have the supplies to hire someone for this job.")
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount - 1
+                    ThisGamesStats.Materials.SticksAmount = ThisGamesStats.Materials.SticksAmount - 2
+                    ThisGamesStats.Villagers.ShepherdAmount = ThisGamesStats.Villagers.ShepherdAmount + 1
+                    RichTextBox1.AppendText(vbNewLine & "You hired a villager as a shepherd!")
+                End If
+            Case Else ' hey. don't have the combobox blank. that's not a job. you cannot hire nothing.
+                RichTextBox1.AppendText(vbNewLine & "Please select a job, first!")
+        End Select
+        Call UpdateStatDisplay() ' update the stats display (Really bland, co-pilot! Spice it up a little from time to time!)
     End Sub
+
+
 
     Private Sub hirefirebutton_Click(sender As Object, e As EventArgs) Handles hirefirebutton.Click
 
@@ -1508,7 +1911,214 @@ Thanks for playing.")
             Exit Sub
         End If
 
+        Select Case ComboBox2.SelectedIndex 'check case of hiring combobox
+            Case 0 ' fire a wooden guard
+                If ThisGamesStats.Villagers.Guard.Wood.Amount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "There's nobody to fire...")
+
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount + 1
+                    ThisGamesStats.Items.WoodenSword.Amount = ThisGamesStats.Items.WoodenSword.Amount + 1
+                    ThisGamesStats.Villagers.Guard.Wood.Amount = ThisGamesStats.Villagers.Guard.Wood.Amount - 1
+                    RichTextBox1.AppendText(vbNewLine & "You fired a wooden guard.")
+                End If
+            Case 1 ' fire a wooden miner
+                If ThisGamesStats.Villagers.Miner.Wood.Amount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "there's nobody to fire...")
+
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount + 1
+                    ThisGamesStats.Items.WoodenPickaxe.Amount = ThisGamesStats.Items.WoodenPickaxe.Amount + 1
+                    ThisGamesStats.Villagers.Miner.Wood.Amount = ThisGamesStats.Villagers.Miner.Wood.Amount - 1
+                    RichTextBox1.AppendText(vbNewLine & "You fired a wooden miner.")
+                End If
+            Case 2 ' fire a wooden lumberjack
+                If ThisGamesStats.Villagers.Lumberjack.Wood.Amount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "there's nobody to fire...")
+
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount + 1
+                    ThisGamesStats.Items.WoodenAxe.Amount = ThisGamesStats.Items.WoodenAxe.Amount + 1
+                    ThisGamesStats.Villagers.Lumberjack.Wood.Amount = ThisGamesStats.Villagers.Lumberjack.Wood.Amount - 1
+                    RichTextBox1.AppendText(vbNewLine & "You fired a wooden lumberjack.")
+                End If
+
+            Case 3 ' fire a stone guard
+                If ThisGamesStats.Villagers.Guard.Stone.Amount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "there's nobody to fire...")
+
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount + 1
+                    ThisGamesStats.Items.StoneSword.Amount = ThisGamesStats.Items.StoneSword.Amount + 1
+                    ThisGamesStats.Villagers.Guard.Stone.Amount = ThisGamesStats.Villagers.Guard.Stone.Amount - 1
+                    RichTextBox1.AppendText(vbNewLine & "You fired a stone guard.")
+                End If
+            Case 4 ' fire a stone miner
+                If ThisGamesStats.Villagers.Miner.Stone.Amount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "there's nobody to fire...")
+
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount + 1
+                    ThisGamesStats.Items.StonePickaxe.Amount = ThisGamesStats.Items.StonePickaxe.Amount + 1
+                    ThisGamesStats.Villagers.Miner.Stone.Amount = ThisGamesStats.Villagers.Miner.Stone.Amount - 1
+                    RichTextBox1.AppendText(vbNewLine & "You fired a stone miner.")
+                End If
+            Case 5 ' fire a stone lumberjack
+                If ThisGamesStats.Villagers.Lumberjack.Stone.Amount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "there's nobody to fire...")
+
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount + 1
+                    ThisGamesStats.Items.StoneAxe.Amount = ThisGamesStats.Items.StoneAxe.Amount + 1
+                    ThisGamesStats.Villagers.Lumberjack.Stone.Amount = ThisGamesStats.Villagers.Lumberjack.Stone.Amount - 1
+                    RichTextBox1.AppendText(vbNewLine & "You fired a stone lumberjack.")
+                End If
+
+            Case 6 ' fire a iron guard
+                If ThisGamesStats.Villagers.Guard.Iron.Amount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "there's nobody to fire...")
+
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount + 1
+                    ThisGamesStats.Items.IronSword.Amount = ThisGamesStats.Items.IronSword.Amount + 1
+                    ThisGamesStats.Villagers.Guard.Iron.Amount = ThisGamesStats.Villagers.Guard.Iron.Amount - 1
+                    RichTextBox1.AppendText(vbNewLine & "You fired an iron guard.")
+                End If
+            Case 7 ' fire a iron miner
+                If ThisGamesStats.Villagers.Miner.Iron.Amount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "there's nobody to fire...")
+
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount + 1
+                    ThisGamesStats.Items.IronPickaxe.Amount = ThisGamesStats.Items.IronPickaxe.Amount + 1
+                    ThisGamesStats.Villagers.Miner.Iron.Amount = ThisGamesStats.Villagers.Miner.Iron.Amount - 1
+                    RichTextBox1.AppendText(vbNewLine & "You fired an iron miner.")
+                End If
+            Case 8 ' fire a iron lumberjack
+                If ThisGamesStats.Villagers.Lumberjack.Iron.Amount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "there's nobody to fire...")
+
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount + 1
+                    ThisGamesStats.Items.IronAxe.Amount = ThisGamesStats.Items.IronAxe.Amount + 1
+                    ThisGamesStats.Villagers.Lumberjack.Iron.Amount = ThisGamesStats.Villagers.Lumberjack.Iron.Amount - 1
+                    RichTextBox1.AppendText(vbNewLine & "You fired an iron lumberjack.")
+                End If
+
+            Case 9 ' fire a golden guard
+                If ThisGamesStats.Villagers.Guard.Gold.Amount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "there's nobody to fire...")
+
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount + 1
+                    ThisGamesStats.Items.GoldSword.Amount = ThisGamesStats.Items.GoldSword.Amount + 1
+                    ThisGamesStats.Villagers.Guard.Gold.Amount = ThisGamesStats.Villagers.Guard.Gold.Amount - 1
+                    RichTextBox1.AppendText(vbNewLine & "You fired a golden guard.")
+                End If
+            Case 10 ' fire a golden miner
+                If ThisGamesStats.Villagers.Miner.Gold.Amount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "there's nobody to fire...")
+
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount + 1
+                    ThisGamesStats.Items.GoldPickaxe.Amount = ThisGamesStats.Items.GoldPickaxe.Amount + 1
+                    ThisGamesStats.Villagers.Miner.Gold.Amount = ThisGamesStats.Villagers.Miner.Gold.Amount - 1
+                    RichTextBox1.AppendText(vbNewLine & "You fired a golden miner.")
+                End If
+            Case 11 ' fire a golden lumberjack
+                If ThisGamesStats.Villagers.Lumberjack.Gold.Amount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "there's nobody to fire...")
+
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount + 1
+                    ThisGamesStats.Items.GoldAxe.Amount = ThisGamesStats.Items.GoldAxe.Amount + 1
+                    ThisGamesStats.Villagers.Lumberjack.Gold.Amount = ThisGamesStats.Villagers.Lumberjack.Gold.Amount - 1
+                    RichTextBox1.AppendText(vbNewLine & "You fired a golden lumberjack.")
+                End If
+
+            Case 12 ' fire a diamond guard
+                If ThisGamesStats.Villagers.Guard.Diamond.Amount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "there's nobody to fire...")
+
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount + 1
+                    ThisGamesStats.Items.DiamondSword.Amount = ThisGamesStats.Items.DiamondSword.Amount + 1
+                    ThisGamesStats.Villagers.Guard.Diamond.Amount = ThisGamesStats.Villagers.Guard.Diamond.Amount - 1
+                    RichTextBox1.AppendText(vbNewLine & "You fired a diamond guard.")
+                End If
+            Case 13 ' fire a diamond miner
+                If ThisGamesStats.Villagers.Miner.Diamond.Amount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "there's nobody to fire...")
+
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount + 1
+                    ThisGamesStats.Items.DiamondPickaxe.Amount = ThisGamesStats.Items.DiamondPickaxe.Amount + 1
+                    ThisGamesStats.Villagers.Miner.Diamond.Amount = ThisGamesStats.Villagers.Miner.Diamond.Amount - 1
+                    RichTextBox1.AppendText(vbNewLine & "You fired a diamond miner.")
+                End If
+            Case 14 ' fire a diamond lumberjack
+                If ThisGamesStats.Villagers.Lumberjack.Diamond.Amount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "there's nobody to fire...")
+
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount + 1
+                    ThisGamesStats.Items.DiamondAxe.Amount = ThisGamesStats.Items.DiamondAxe.Amount + 1
+                    ThisGamesStats.Villagers.Lumberjack.Diamond.Amount = ThisGamesStats.Villagers.Lumberjack.Diamond.Amount - 1
+                    RichTextBox1.AppendText(vbNewLine & "You fired a diamond lumberjack.")
+                End If
+
+            Case 15 ' fire a iron smelter
+                If ThisGamesStats.Villagers.IronSmelterAmount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "there's nobody to fire...")
+
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount + 1
+                    ThisGamesStats.Items.FurnaceAmount = ThisGamesStats.Items.FurnaceAmount + 1
+                    ThisGamesStats.Villagers.IronSmelterAmount = ThisGamesStats.Villagers.IronSmelterAmount - 1
+                    RichTextBox1.AppendText(vbNewLine & "You fired an iron smelter.")
+                End If
+            Case 16 ' fire a gold smelter
+                If ThisGamesStats.Villagers.GoldSmelterAmount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "there's nobody to fire...")
+
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount + 1
+                    ThisGamesStats.Items.FurnaceAmount = ThisGamesStats.Items.FurnaceAmount + 1
+                    ThisGamesStats.Villagers.GoldSmelterAmount = ThisGamesStats.Villagers.GoldSmelterAmount - 1
+                    RichTextBox1.AppendText(vbNewLine & "You fired a gold smelter.")
+                End If
+            Case 17 ' fire a shepherd
+                If ThisGamesStats.Villagers.ShepherdAmount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "there's nobody to fire...")
+
+                Else
+                    ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount + 1
+                    ThisGamesStats.Materials.SticksAmount = ThisGamesStats.Materials.SticksAmount + 2
+                    ThisGamesStats.Villagers.ShepherdAmount = ThisGamesStats.Villagers.ShepherdAmount - 1
+                    RichTextBox1.AppendText(vbNewLine & "You fired a shepherd.")
+                End If
+            Case Else ' hey. don't have the combobox blank. that's not a job. you cannot fire nothing.
+                RichTextBox1.AppendText(vbNewLine & "Please select a job, first.")
+        End Select
+
+        If ThisGamesStats.Villagers.GreenCoatAmount > ThisGamesStats.Buildings.Bed.Amount Then ' if you have more villagers than beds, they wander off.
+            ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount - 1
+            RichTextBox1.AppendText(vbNewLine & "The villager you just fired wandered off as there were no more beds free.")
+        End If
+
+        Call UpdateStatDisplay() ' Yes. You. Box. Your stuff. Out the front door. Parking lot. Car. Goodbye.
     End Sub
+
+    Friend WithEvents MenuStrip1 As MenuStrip
+
+    Private Sub AbourToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
+
+    End Sub
+
+    Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents WikiToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GithubToolStripMenuItem As ToolStripMenuItem
 End Class
 #Enable Warning BC42025
 
@@ -1530,7 +2140,7 @@ Public Class MncrftInfo
 
     Public Class Materials
         Public Class Energy
-            Public Shared Amount As Integer = 60 '99999999
+            Public Shared Amount As Integer = 60 '9999999
             Public Shared NightlyAmount As Integer = 10
         End Class
 
@@ -1548,7 +2158,7 @@ Public Class MncrftInfo
 
     Public Class Buildings
         Public Class Bed
-            Public Shared Amount As Integer
+            Public Shared Amount As Integer ' = 10
             Public Shared ReadOnly DailyEnergyAddition As Integer = 5
         End Class
 
@@ -1564,7 +2174,7 @@ Public Class MncrftInfo
         End Class
 
         Public Class GuardTower
-            Public Shared Amount As Integer
+            Public Shared Amount As Integer = 1
             Public Shared ReadOnly Offense As Integer = 6
             Public Shared ReadOnly Defense As Integer = 10
         End Class
@@ -1665,7 +2275,7 @@ Public Class MncrftInfo
     End Class
 
     Public Class Villagers
-        Public Shared GreenCoatAmount As Integer
+        Public Shared GreenCoatAmount As Integer ' = 10
         Public Shared IronSmelterAmount As Integer
         Public Shared GoldSmelterAmount As Integer
         Public Shared ShepherdAmount As Integer

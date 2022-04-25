@@ -10,8 +10,8 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("Mncrft")>
-<Assembly: AssemblyDescription("Slightly Minecraft-themed strategy game")>
-<Assembly: AssemblyCompany("")>
+<Assembly: AssemblyDescription("A slightly Minecraft-themed strategy game about chopping trees, creating houses, recruiting villagers, defeating zombies, and hiding in prior mentioned houses from prior mentioned zombies.")>
+<Assembly: AssemblyCompany("EliMCGamerGuy (EliMCGamerGuy#4097 on Discord)")>
 <Assembly: AssemblyProduct("Mncrft")>
 <Assembly: AssemblyCopyright("Copyright ©  2022")>
 <Assembly: AssemblyTrademark("")>
@@ -32,6 +32,6 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("0.1.0.0")>
-<Assembly: AssemblyFileVersion("0.1.0.0")>
+<Assembly: AssemblyVersion("1.0.0.0")>
+<Assembly: AssemblyFileVersion("1.0.0.0")>
 <Assembly: NeutralResourcesLanguage("en")>
