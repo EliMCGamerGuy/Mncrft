@@ -1,5 +1,5 @@
 # Mncrft
-slightly Minecraft-themed turn-based strategy game-thing about gathering materials, making houses and defending said houses from zombies.
+A slightly Minecraft-themed strategy game about chopping trees, creating houses, recruiting villagers, defeating zombies, and hiding in prior mentioned houses from prior mentioned zombies.
 
 Trello board: https://trello.com/b/GHlVDoEE/mncrft
 
