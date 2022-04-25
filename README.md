@@ -1,6 +1,8 @@
 # Mncrft
 slightly Minecraft-themed turn-based strategy game-thing about gathering materials, making houses and defending said houses from zombies.
 
+Trello board: https://trello.com/b/GHlVDoEE/mncrft
+
 **This readme is subject to change, being incorrect, or containing unimplemented features. this is what I used to think up the game before putting it to code.
 Once I finish the actual game part of Mncrft, I'll probably come back to this and remake it from the ground up, or turn on a wiki.**
 
