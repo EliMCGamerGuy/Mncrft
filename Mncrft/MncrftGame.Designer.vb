@@ -1,6 +1,7 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class MncrftGame
     Inherits System.Windows.Forms.Form
+#Disable Warning BC42025
 
     'Form overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()>
@@ -570,7 +571,7 @@ Partial Class MncrftGame
 
 
 
-    Dim ThisGamesStats As New MncrftInfo
+    Dim ThisGamesStats As New MncrftInfo()
 
 
     Private Sub UpdateStatDisplay() 'IT'S THE LITTLE NUMBER PEOPLE!!!
@@ -635,7 +636,7 @@ Partial Class MncrftGame
             tempiterations = tempiterations + 1
         End While
 
-        RichTextBox1.AppendText(vbNewLine & "You used 10 Energy gathering" & Str(temptargetamount) & " Wood from" & Str(targetiterations) & " Trees.") 'and tell the user/player about it
+        RichTextBox1.AppendText(vbNewLine & "You used" & ThisGamesStats.ActionCosts.AxeCost & "Energy gathering" & Str(temptargetamount) & " Wood from" & Str(targetiterations) & " Trees.") 'and tell the user/player about it
 
         Call UpdateStatDisplay() 'toss the logs to the little number people, they'll figure it out.
     End Sub
@@ -649,7 +650,8 @@ Partial Class MncrftGame
         If ThisGamesStats.PlayerIsDead Then 'press F to pay respects
             ThisGamesStats = New MncrftInfo
             Call UpdateStatDisplay()
-            RichTextBox1.Text = "Welcome to Mncrft!"
+            RichTextBox1.Text = "Welcome to Mncrft!" & vbNewLine & "WARNING:"
+            Call DeadNotify()
             Exit Sub
         End If
 
@@ -675,8 +677,9 @@ Partial Class MncrftGame
             Else 'low defense check
                 ThisGamesStats.Materials.Energy.Amount = ThisGamesStats.Materials.Energy.Amount - zombieamount
                 If ThisGamesStats.Materials.Energy.Amount < 1 Then 'death.png
-                    RichTextBox1.AppendText(vbNewLine & "The remaining zombies overwhelm your defenses and start to attack you, unfortunately you do not have enough energy to fend them off, and also get overwhelmed." & vbNewLine & vbNewLine & "GAME OVER" & vbNewLine & "Days survived: " & Str(ThisGamesStats.NightScore))
+                    RichTextBox1.AppendText(vbNewLine & "The remaining zombies overwhelm your defenses and start to attack you, unfortunately you do not have enough energy to fend them off, and also get overwhelmed." & vbNewLine & vbNewLine & "GAME OVER" & vbNewLine & "Total Ending Score: " & Str(ThisGamesStats.NightScore))
                     ThisGamesStats.PlayerIsDead = True
+                    Call DeadNotify()
                     Call UpdateStatDisplay()
                 Else 'A MIRACLE HAPPENED! I'M WELL!
                     RichTextBox1.AppendText(vbNewLine & "The remaining zombies overwhelm your defenses and start to attack you, you expend " & Str(zombieamount) & " energy fending them off. That was close!")
@@ -696,7 +699,7 @@ Partial Class MncrftGame
         RichTextBox1.AppendText(vbNewLine & "Sleeping through the night gave you" & Str(ThisGamesStats.Materials.Energy.NightlyAmount) & " energy.")
 
 
-        Call UpdateStatDisplay() 'you probably shouldn't throw people. just count them yourself and tell the number people.
+        Call UpdateStatDisplay() 'you probably shouldn't throw people, just count them yourself and tell the number people.
     End Sub
 
 
@@ -1507,11 +1510,11 @@ Thanks for playing.")
 
     End Sub
 End Class
-'#Enable Warning BC42025
+#Enable Warning BC42025
 
 
 
-'GAME DATA YEAHH
+'GAME DATA YEAHHd
 Public Class MncrftInfo
     Public PlayerIsDead As Boolean = False
     Public NightScore As Integer = 0
@@ -1662,7 +1665,6 @@ Public Class MncrftInfo
     End Class
 
     Public Class Villagers
-        Public Shared TotalVillagerAmount As Integer
         Public Shared GreenCoatAmount As Integer
         Public Shared IronSmelterAmount As Integer
         Public Shared GoldSmelterAmount As Integer
