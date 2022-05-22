@@ -23,6 +23,7 @@ Partial Class MncrftGame
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MncrftGame))
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.gominingbutton = New System.Windows.Forms.Button()
@@ -64,9 +65,10 @@ Partial Class MncrftGame
         Me.BuildBuildbutton = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.WikiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GithubToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -497,23 +499,26 @@ Partial Class MncrftGame
         Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
         Me.HelpToolStripMenuItem.Text = "Help"
         '
-        'AboutToolStripMenuItem
-        '
-        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.AboutToolStripMenuItem.Text = "About"
-        '
         'WikiToolStripMenuItem
         '
         Me.WikiToolStripMenuItem.Name = "WikiToolStripMenuItem"
-        Me.WikiToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.WikiToolStripMenuItem.Size = New System.Drawing.Size(110, 22)
         Me.WikiToolStripMenuItem.Text = "Wiki"
         '
         'GithubToolStripMenuItem
         '
         Me.GithubToolStripMenuItem.Name = "GithubToolStripMenuItem"
-        Me.GithubToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.GithubToolStripMenuItem.Size = New System.Drawing.Size(110, 22)
         Me.GithubToolStripMenuItem.Text = "Github"
+        '
+        'AboutToolStripMenuItem
+        '
+        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(110, 22)
+        Me.AboutToolStripMenuItem.Text = "About"
+        '
+        'Timer1
+        '
         '
         'MncrftGame
         '
@@ -598,6 +603,46 @@ Partial Class MncrftGame
     Friend WithEvents Builddismantlebutton As Button
     Friend WithEvents ComboBox4 As ComboBox
     Friend WithEvents BuildBuildbutton As Button
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents WikiToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GithubToolStripMenuItem As ToolStripMenuItem
+
+
+
+    Public Sub AppendTextFGColor(TheRichTextBox, text, Color)
+        TheRichTextBox.SelectionStart = TheRichTextBox.TextLength
+        TheRichTextBox.SelectionLength = 0
+
+        TheRichTextBox.SelectionColor = Color
+        TheRichTextBox.AppendText(text)
+        TheRichTextBox.SelectionColor = TheRichTextBox.ForeColor
+    End Sub
+
+
+
+    Public Sub AppendTextBGColor(TheRichTextBox, text, Color)
+        TheRichTextBox.SelectionStart = TheRichTextBox.TextLength
+        TheRichTextBox.SelectionLength = 0
+
+        TheRichTextBox.SelectionBackColor = Color
+        TheRichTextBox.AppendText(text)
+        TheRichTextBox.SelectionBackColor = TheRichTextBox.BackColor
+    End Sub
+
+
+
+    Public Sub AppendTextBGFGColor(TheRichTextBox, text, BGColor, FGColor)
+        TheRichTextBox.SelectionStart = TheRichTextBox.TextLength
+        TheRichTextBox.SelectionLength = 0
+
+        TheRichTextBox.SelectionColor = FGColor
+        TheRichTextBox.SelectionBackColor = BGColor
+        TheRichTextBox.AppendText(text)
+        TheRichTextBox.SelectionColor = TheRichTextBox.ForeColor
+        TheRichTextBox.SelectionBackColor = TheRichTextBox.BackColor
+    End Sub
 
 
 
@@ -695,9 +740,9 @@ Partial Class MncrftGame
 
         If ThisGamesStats.PlayerIsDead Then 'press F to pay respects
             ThisGamesStats = New MncrftInfo
+            Call resetThisGameStatsBackToDefaults()
             Call UpdateStatDisplay()
             RichTextBox1.Text = "Welcome to Mncrft!"
-            Call DeadNotify()
             Exit Sub
         End If
 
@@ -723,9 +768,9 @@ Partial Class MncrftGame
             Else 'low defense check
                 ThisGamesStats.Materials.Energy.Amount = ThisGamesStats.Materials.Energy.Amount - zombieamount
                 If ThisGamesStats.Materials.Energy.Amount < 1 Then 'death.png
-                    RichTextBox1.AppendText(vbNewLine & "The remaining zombies overwhelm your defenses and start to attack you, unfortunately you do not have enough energy to fend them off, and also get overwhelmed." & vbNewLine & vbNewLine & "GAME OVER" & vbNewLine & "Total Ending Score: " & Str(ThisGamesStats.NightScore))
+                    RichTextBox1.AppendText(vbNewLine & "The remaining zombies overwhelm your defenses and start to attack you, unfortunately you do not have enough energy to fend them off, and also get overwhelmed.")
                     ThisGamesStats.PlayerIsDead = True
-                    Call DeadNotify()
+                    Call DeathReport()
                     Call UpdateStatDisplay()
                 Else 'A MIRACLE HAPPENED! I'M WELL!
                     RichTextBox1.AppendText(vbNewLine & "The remaining zombies overwhelm your defenses and start to attack you, you expend " & Str(zombieamount) & " energy fending them off. That was close!")
@@ -1609,14 +1654,17 @@ Partial Class MncrftGame
 
 
 
+    Private Sub DeathReport()
+        Call AppendTextBGFGColor(RichTextBox1, vbNewLine & vbNewLine & "GAME OVER" & vbNewLine & "Total Ending Score: " & Str(ThisGamesStats.NightScore) & vbNewLine & vbNewLine & "Hit end day to reset.", Color.Black, Color.White)
+        EndDayButton.Enabled = False
+        Timer1.Interval = 1000
+        Timer1.Start()
+    End Sub
+
+
+
     Private Sub DeadNotify()
-        RichTextBox1.AppendText(vbNewLine & vbNewLine & "   --- ! WARNING ! ---   You are dead, there is nothing you can do now.
-
-Due to a bug related to having classes within classes in VB.NET, please restart the program to restart. pressing 'End Day' may make it seem that the game has restarted, but you will quickly find that the game gets thrown into an unplayable state.
-
-I have tried several times to make the contents of ThisGamesStats not shared, but it always throws the error ''Reference to a non-shared member requires an object reference'' or some other error.
-
-Thanks for playing.   --- ! WARNING ! ---   ")
+        Call AppendTextBGFGColor(RichTextBox1, "You are dead.", Color.Red, Color.White)
     End Sub
 
 
@@ -2109,16 +2157,82 @@ Thanks for playing.   --- ! WARNING ! ---   ")
         Call UpdateStatDisplay() ' Yes. You. Box. Your stuff. Out the front door. Parking lot. Car. Goodbye.
     End Sub
 
-    Friend WithEvents MenuStrip1 As MenuStrip
 
-    Private Sub AbourToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
+    Private Sub resetThisGameStatsBackToDefaults()
+        'First, reset ActionCosts.
+        ThisGamesStats.ActionCosts.AxeCost = Int(MncrftInfoDefaults.ActionCosts.AxeCost)
+        ThisGamesStats.ActionCosts.PickaxeCost = Int(MncrftInfoDefaults.ActionCosts.PickaxeCost)
+        'With ActionCosts done, let's reset Materials.
 
+        'Energy.
+        ThisGamesStats.Materials.Energy.Amount = Int(MncrftInfoDefaults.Materials.Energy.Amount)
+        ThisGamesStats.Materials.Energy.NightlyAmount = Int(MncrftInfoDefaults.Materials.Energy.NightlyAmount)
+        'Energy done.
+
+        ThisGamesStats.Materials.WoodAmount = Int(MncrftInfoDefaults.Materials.WoodAmount)
+        ThisGamesStats.Materials.SticksAmount = Int(MncrftInfoDefaults.Materials.SticksAmount)
+        ThisGamesStats.Materials.WoolAmount = Int(MncrftInfoDefaults.Materials.WoolAmount)
+        ThisGamesStats.Materials.StoneAmount = Int(MncrftInfoDefaults.Materials.StoneAmount)
+        ThisGamesStats.Materials.CoalAmount = Int(MncrftInfoDefaults.Materials.CoalAmount)
+        ThisGamesStats.Materials.IronOreAmount = Int(MncrftInfoDefaults.Materials.IronOreAmount)
+        ThisGamesStats.Materials.GoldOreAmount = Int(MncrftInfoDefaults.Materials.GoldOreAmount)
+        ThisGamesStats.Materials.IronIngotAmount = Int(MncrftInfoDefaults.Materials.IronIngotAmount)
+        ThisGamesStats.Materials.GoldIngotAmount = Int(MncrftInfoDefaults.Materials.GoldIngotAmount)
+        ThisGamesStats.Materials.DiamondsAmount = Int(MncrftInfoDefaults.Materials.DiamondsAmount)
+        'With Materials done, let's reset buildings.
+
+        ThisGamesStats.Buildings.Bed.Amount = Int(MncrftInfoDefaults.Buildings.Bed.Amount)
+        ThisGamesStats.Buildings.House.Amount = Int(MncrftInfoDefaults.Buildings.House.Amount)
+        ThisGamesStats.Buildings.Tower.Amount = Int(MncrftInfoDefaults.Buildings.Tower.Amount)
+        ThisGamesStats.Buildings.GuardTower.Amount = Int(MncrftInfoDefaults.Buildings.GuardTower.Amount)
+        'With Buildings done, let's do items.
+
+        ThisGamesStats.Items.WoodenSword.Amount = Int(MncrftInfoDefaults.Items.WoodenSword.Amount)
+        ThisGamesStats.Items.WoodenPickaxe.Amount = Int(MncrftInfoDefaults.Items.WoodenPickaxe.Amount)
+        ThisGamesStats.Items.WoodenAxe.Amount = Int(MncrftInfoDefaults.Items.WoodenAxe.Amount)
+        ThisGamesStats.Items.StoneSword.Amount = Int(MncrftInfoDefaults.Items.StoneSword.Amount)
+        ThisGamesStats.Items.StonePickaxe.Amount = Int(MncrftInfoDefaults.Items.StonePickaxe.Amount)
+        ThisGamesStats.Items.StoneAxe.Amount = Int(MncrftInfoDefaults.Items.StoneAxe.Amount)
+        ThisGamesStats.Items.GoldSword.Amount = Int(MncrftInfoDefaults.Items.GoldSword.Amount)
+        ThisGamesStats.Items.GoldPickaxe.Amount = Int(MncrftInfoDefaults.Items.GoldPickaxe.Amount)
+        ThisGamesStats.Items.GoldAxe.Amount = Int(MncrftInfoDefaults.Items.GoldAxe.Amount)
+        ThisGamesStats.Items.IronSword.Amount = Int(MncrftInfoDefaults.Items.IronSword.Amount)
+        ThisGamesStats.Items.IronPickaxe.Amount = Int(MncrftInfoDefaults.Items.IronPickaxe.Amount)
+        ThisGamesStats.Items.IronAxe.Amount = Int(MncrftInfoDefaults.Items.IronAxe.Amount)
+        ThisGamesStats.Items.DiamondSword.Amount = Int(MncrftInfoDefaults.Items.DiamondSword.Amount)
+        ThisGamesStats.Items.DiamondPickaxe.Amount = Int(MncrftInfoDefaults.Items.DiamondPickaxe.Amount)
+        ThisGamesStats.Items.DiamondAxe.Amount = Int(MncrftInfoDefaults.Items.DiamondAxe.Amount)
+        ThisGamesStats.Items.FurnaceAmount = Int(MncrftInfoDefaults.Items.FurnaceAmount)
+        ThisGamesStats.Items.TorchAmount = Int(MncrftInfoDefaults.Items.TorchAmount)
+        'With Items done, let's do villagers.
+
+        ThisGamesStats.Villagers.GreenCoatAmount = Int(MncrftInfoDefaults.Villagers.GreenCoatAmount)
+        ThisGamesStats.Villagers.IronSmelterAmount = Int(MncrftInfoDefaults.Villagers.IronSmelterAmount)
+        ThisGamesStats.Villagers.GoldSmelterAmount = Int(MncrftInfoDefaults.Villagers.GoldSmelterAmount)
+        ThisGamesStats.Villagers.ShepherdAmount = Int(MncrftInfoDefaults.Villagers.ShepherdAmount)
+        'Guards.
+        ThisGamesStats.Villagers.Guard.Wood.Amount = Int(MncrftInfoDefaults.Villagers.Guard.Wood.Amount)
+        ThisGamesStats.Villagers.Guard.Stone.Amount = Int(MncrftInfoDefaults.Villagers.Guard.Stone.Amount)
+        ThisGamesStats.Villagers.Guard.Gold.Amount = Int(MncrftInfoDefaults.Villagers.Guard.Gold.Amount)
+        ThisGamesStats.Villagers.Guard.Iron.Amount = Int(MncrftInfoDefaults.Villagers.Guard.Iron.Amount)
+        ThisGamesStats.Villagers.Guard.Diamond.Amount = Int(MncrftInfoDefaults.Villagers.Guard.Diamond.Amount)
+        'Lumberjacks.
+        ThisGamesStats.Villagers.Lumberjack.Wood.Amount = Int(MncrftInfoDefaults.Villagers.Lumberjack.Wood.Amount)
+        ThisGamesStats.Villagers.Lumberjack.Stone.Amount = Int(MncrftInfoDefaults.Villagers.Lumberjack.Stone.Amount)
+        ThisGamesStats.Villagers.Lumberjack.Gold.Amount = Int(MncrftInfoDefaults.Villagers.Lumberjack.Gold.Amount)
+        ThisGamesStats.Villagers.Lumberjack.Iron.Amount = Int(MncrftInfoDefaults.Villagers.Lumberjack.Iron.Amount)
+        ThisGamesStats.Villagers.Lumberjack.Diamond.Amount = Int(MncrftInfoDefaults.Villagers.Lumberjack.Diamond.Amount)
+        'Miners.
+        ThisGamesStats.Villagers.Miner.Wood.Amount = Int(MncrftInfoDefaults.Villagers.Miner.Wood.Amount)
+        ThisGamesStats.Villagers.Miner.Stone.Amount = Int(MncrftInfoDefaults.Villagers.Miner.Stone.Amount)
+        ThisGamesStats.Villagers.Miner.Gold.Amount = Int(MncrftInfoDefaults.Villagers.Miner.Gold.Amount)
+        ThisGamesStats.Villagers.Miner.Iron.Amount = Int(MncrftInfoDefaults.Villagers.Miner.Iron.Amount)
+        ThisGamesStats.Villagers.Miner.Diamond.Amount = Int(MncrftInfoDefaults.Villagers.Miner.Diamond.Amount)
+        'And we're done!
+        Call UpdateStatDisplay() 'almost forgot to do this!
     End Sub
 
-    Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents WikiToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents GithubToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Timer1 As Timer
 End Class
 #Enable Warning BC42025
 
@@ -2383,6 +2497,186 @@ Public Class MncrftInfo
                 Public Shared ReadOnly IronPerDay As Integer = 6
                 Public Shared ReadOnly GoldPerDay As Integer = 2
                 Public Shared ReadOnly DiamondPerDay As Integer = 1
+            End Class
+        End Class
+    End Class
+End Class
+
+Public Class MncrftInfoDefaults
+    Public Class ActionCosts
+        Public Shared AxeCost As Integer = 15
+        Public Shared PickaxeCost As Integer = 0
+    End Class
+
+    Public Class Materials
+        Public Class Energy
+            Public Shared Amount As Integer = 60 '9999999
+            Public Shared NightlyAmount As Integer = 10
+        End Class
+
+        Public Shared WoodAmount As Integer = 0
+        Public Shared SticksAmount As Integer = 0
+        Public Shared WoolAmount As Integer = 0
+        Public Shared StoneAmount As Integer = 0
+        Public Shared CoalAmount As Integer = 0
+        Public Shared IronOreAmount As Integer = 0
+        Public Shared GoldOreAmount As Integer = 0
+        Public Shared IronIngotAmount As Integer = 0
+        Public Shared GoldIngotAmount As Integer = 0
+        Public Shared DiamondsAmount As Integer = 0
+    End Class
+
+    Public Class Buildings
+        Public Class Bed
+            Public Shared Amount As Integer = 0
+        End Class
+
+        Public Class House
+            Public Shared Amount As Integer = 0
+        End Class
+
+        Public Class Tower
+            Public Shared Amount As Integer = 0
+        End Class
+
+        Public Class GuardTower
+            Public Shared Amount As Integer = 0
+        End Class
+    End Class
+
+    Public Class Items
+        Public Class WoodenSword
+            Public Shared Amount As Integer = 0
+        End Class
+
+        Public Class WoodenPickaxe
+            Public Shared Amount As Integer = 0
+        End Class
+
+        Public Class WoodenAxe
+            Public Shared Amount As Integer = 0
+        End Class
+
+        Public Class StoneSword
+            Public Shared Amount As Integer = 0
+        End Class
+
+        Public Class StonePickaxe
+            Public Shared Amount As Integer = 0
+        End Class
+
+        Public Class StoneAxe
+            Public Shared Amount As Integer = 0
+        End Class
+
+        Public Class GoldSword
+            Public Shared Amount As Integer = 0
+        End Class
+
+        Public Class GoldPickaxe
+            Public Shared Amount As Integer = 0
+        End Class
+
+        Public Class GoldAxe
+            Public Shared Amount As Integer = 0
+        End Class
+
+        Public Class IronSword
+            Public Shared Amount As Integer = 0
+        End Class
+
+        Public Class IronPickaxe
+            Public Shared Amount As Integer = 0
+        End Class
+
+        Public Class IronAxe
+            Public Shared Amount As Integer = 0
+        End Class
+
+        Public Class DiamondSword
+            Public Shared Amount As Integer = 0
+        End Class
+        Public Class DiamondPickaxe
+            Public Shared Amount As Integer = 0
+        End Class
+
+        Public Class DiamondAxe
+            Public Shared Amount As Integer = 0
+        End Class
+
+        Public Shared FurnaceAmount As Integer = 0
+        Public Shared TorchAmount As Integer = 0
+    End Class
+
+    Public Class Villagers
+        Public Shared GreenCoatAmount As Integer = 0 ' = 10
+        Public Shared IronSmelterAmount As Integer = 0
+        Public Shared GoldSmelterAmount As Integer = 0
+        Public Shared ShepherdAmount As Integer = 0
+
+        Public Class Guard
+            Public Class Wood
+                Public Shared Amount As Integer = 0
+            End Class
+
+            Public Class Stone
+                Public Shared Amount As Integer = 0
+            End Class
+
+            Public Class Gold
+                Public Shared Amount As Integer = 0
+            End Class
+
+            Public Class Iron
+                Public Shared Amount As Integer = 0
+            End Class
+
+            Public Class Diamond
+                Public Shared Amount As Integer = 0
+            End Class
+        End Class
+
+        Public Class Lumberjack
+            Public Class Wood
+                Public Shared Amount As Integer = 0
+            End Class
+
+            Public Class Stone
+                Public Shared Amount As Integer = 0
+            End Class
+
+            Public Class Gold
+                Public Shared Amount As Integer = 0
+            End Class
+
+            Public Class Iron
+                Public Shared Amount As Integer = 0
+            End Class
+
+            Public Class Diamond
+                Public Shared Amount As Integer = 0
+            End Class
+        End Class
+
+        Public Class Miner
+            Public Class Wood
+                Public Shared Amount As Integer = 0
+            End Class
+
+            Public Class Stone
+                Public Shared Amount As Integer = 0
+            End Class
+
+            Public Class Gold
+                Public Shared Amount As Integer = 0
+            End Class
+
+            Public Class Iron
+                Public Shared Amount As Integer = 0
+            End Class
+
+            Public Class Diamond
+                Public Shared Amount As Integer = 0
             End Class
         End Class
     End Class
