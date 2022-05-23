@@ -1276,7 +1276,7 @@ Partial Class MncrftGame
 
         If ThisGamesStats.Villagers.GreenCoatAmount > ThisGamesStats.Buildings.Bed.Amount Then
             ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Buildings.Bed.Amount
-            Call AppendTextBGFG(RichTextBox1, vbNewLine & vbNewLine & "   --- ! POSSIBLE BUG ! ---   Somehow, you managed to get more jobless villagers than you could fit in your beds. This was probably caused by a bug. Please open a bug report on the github with the contents of the text area here, along with what you were doing when this appeared. You can continue playing, but it is HIGHLY recommended to report this. To make sure you can continue playing correctly, your jobless villager count has been lowered to your bed count.   ---   .", Color.Black, Color.White)
+            Call AppendTextBGFGColor(RichTextBox1, vbNewLine & vbNewLine & "   --- ! POSSIBLE BUG ! ---   Somehow, you managed to get more jobless villagers than you could fit in your beds. This was probably caused by a bug. Please open a bug report on the github with the contents of the text area here, along with what you were doing when this appeared. You can continue playing, but it is HIGHLY recommended to report this. To make sure you can continue playing correctly, your jobless villager count has been lowered to your bed count.   ---   .", Color.Black, Color.White)
         End If
 
     End Sub
