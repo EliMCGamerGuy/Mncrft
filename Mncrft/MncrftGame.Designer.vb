@@ -112,8 +112,8 @@ Partial Class MncrftGame
         Me.RichTextBox2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None
         Me.RichTextBox2.Size = New System.Drawing.Size(90, 150)
         Me.RichTextBox2.TabIndex = 2
-        Me.RichTextBox2.Text = "Energy" & Global.Microsoft.VisualBasic.ChrW(10) & "Wood" & Global.Microsoft.VisualBasic.ChrW(10) & "Sticks" & Global.Microsoft.VisualBasic.ChrW(10) & "Wool" & Global.Microsoft.VisualBasic.ChrW(10) & "Stone" & Global.Microsoft.VisualBasic.ChrW(10) & "Coal" & Global.Microsoft.VisualBasic.ChrW(10) & "Iron Ore" & Global.Microsoft.VisualBasic.ChrW(10) & "Smelted Iron" & Global.Microsoft.VisualBasic.ChrW(10) & "Gold Ore" & Global.Microsoft.VisualBasic.ChrW(10) & "Smelted Gold" & Global.Microsoft.VisualBasic.ChrW(10) & "Di" &
-    "amonds"
+        Me.RichTextBox2.Text = "Energy" & Global.Microsoft.VisualBasic.ChrW(10) & "Wood" & Global.Microsoft.VisualBasic.ChrW(10) & "Sticks" & Global.Microsoft.VisualBasic.ChrW(10) & "Wool" & Global.Microsoft.VisualBasic.ChrW(10) & "Stone" & Global.Microsoft.VisualBasic.ChrW(10) & "Coal" & Global.Microsoft.VisualBasic.ChrW(10) & "Iron Ore" & Global.Microsoft.VisualBasic.ChrW(10) & "Iron Ingots" & Global.Microsoft.VisualBasic.ChrW(10) & "Gold Ore" & Global.Microsoft.VisualBasic.ChrW(10) & "Gold Ingots" & Global.Microsoft.VisualBasic.ChrW(10) & "Diam" &
+    "onds"
         Me.RichTextBox2.WordWrap = False
         '
         'MaterialNumbers
@@ -354,7 +354,7 @@ Partial Class MncrftGame
         Me.ComboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"Wood Guard (1 Villager, 1 Wooden Sword)", "Wood Miner (1 Villager, 1 Wooden Pickaxe", "Wood Lumberjack (1 Villager, 1 Wooden Axe)", "Stone Guard (1 Villager, 1 Stone Sword)", "Stone Miner (1 Villager, 1 Stone Pickaxe)", "Stone Lumberjack (1 Villager, 1 Stone Axe)", "Iron Guard (1 Villager, 1 Iron Sword)", "Iron Miner (1 Villager, 1 Iron Pickaxe)", "Iron Lumberjack (1 Villager, 1 Iron Axe)", "Gold Guard (1 Villager, 1 Golden Sword)", "Gold Miner (1 Villager, 1 Golden Pickaxe)", "Gold Lumberjack (1 Villager, 1 Golden Axe)", "Diamond Guard (1 Villager, 1 Diamond Sword)", "Diamond Miner (1 Villager, 1 Diamond Pickaxe)", "Diamond Lumberjack (1 Villager, 1 Diamond Axe)", "Iron Smelter (1 Villager, 1 Furnace)", "Gold Smelter (1 Villager, 1 Furnace)", "Shepherd (1 Villager, 2 Stick)"})
+        Me.ComboBox2.Items.AddRange(New Object() {"Wood Guard (1 Villager, 1 Wooden Sword)", "Wood Miner (1 Villager, 1 Wooden Pickaxe", "Wood Lumberjack (1 Villager, 1 Wooden Axe)", "Stone Guard (1 Villager, 1 Stone Sword)", "Stone Miner (1 Villager, 1 Stone Pickaxe)", "Stone Lumberjack (1 Villager, 1 Stone Axe)", "Iron Guard (1 Villager, 1 Iron Sword)", "Iron Miner (1 Villager, 1 Iron Pickaxe)", "Iron Lumberjack (1 Villager, 1 Iron Axe)", "Golden Guard (1 Villager, 1 Golden Sword)", "Golden Miner (1 Villager, 1 Golden Pickaxe)", "Golden Lumberjack (1 Villager, 1 Golden Axe)", "Diamond Guard (1 Villager, 1 Diamond Sword)", "Diamond Miner (1 Villager, 1 Diamond Pickaxe)", "Diamond Lumberjack (1 Villager, 1 Diamond Axe)", "Iron Smelter (1 Villager, 1 Furnace)", "Gold Smelter (1 Villager, 1 Furnace)", "Shepherd (1 Villager, 2 Stick)"})
         Me.ComboBox2.Location = New System.Drawing.Point(6, 19)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(265, 21)
@@ -427,7 +427,7 @@ Partial Class MncrftGame
         '
         Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Items.AddRange(New Object() {"4 Sticks (2 Wood)", "Furnace (8 Stone)", "Wooden Sword (2 Wood, 1 Stick)", "Wooden Pickaxe (3 Wood, 2 Sticks)", "Wooden Axe (3 Wood, 2 Sticks)", "Stone Sword (2 Stone, 1 Stick)", "Stone Pickaxe (3 Stone, 2 Sticks)", "Stone Axe (3 Stone, 2 Sticks)", "Iron Sword (2 Smelted Iron, 1 Stick)", "Iron Pickaxe (3 Smelted Iron, 2 Sticks)", "Iron Axe (3 Smelted Iron, 2 Sticks", "Gold Sword (2 Smelted Gold, 1 Stick)", "Gold Pickaxe (3 Smelted Gold, 2 Sticks)", "Gold Axe (3 Smelted Gold, 2 Sticks)", "Diamond Sword (2 Diamonds, 1 Stick) ", "Diamond Pickaxe (3 Diamonds, 2 Sticks)", "Diamond Axe (3 Diamonds, 2 Sticks)", "4 Torches (1 Coal, 1 Stick)"})
+        Me.ComboBox3.Items.AddRange(New Object() {"4 Sticks (2 Wood)", "Furnace (8 Stone)", "Wooden Sword (2 Wood, 1 Stick)", "Wooden Pickaxe (3 Wood, 2 Sticks)", "Wooden Axe (3 Wood, 2 Sticks)", "Stone Sword (2 Stone, 1 Stick)", "Stone Pickaxe (3 Stone, 2 Sticks)", "Stone Axe (3 Stone, 2 Sticks)", "Iron Sword (2 Smelted Iron, 1 Stick)", "Iron Pickaxe (3 Smelted Iron, 2 Sticks)", "Iron Axe (3 Smelted Iron, 2 Sticks", "Golden Sword (2 Smelted Gold, 1 Stick)", "Golden Pickaxe (3 Smelted Gold, 2 Sticks)", "Golden Axe (3 Smelted Gold, 2 Sticks)", "Diamond Sword (2 Diamonds, 1 Stick) ", "Diamond Pickaxe (3 Diamonds, 2 Sticks)", "Diamond Axe (3 Diamonds, 2 Sticks)", "4 Torches (1 Coal, 1 Stick)"})
         Me.ComboBox3.Location = New System.Drawing.Point(6, 19)
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(262, 21)
@@ -608,6 +608,7 @@ Partial Class MncrftGame
     Friend WithEvents WikiToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GithubToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Timer1 As Timer
 
 
 
@@ -990,7 +991,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Materials.GoldIngotAmount = ThisGamesStats.Materials.GoldIngotAmount - 2
                     ThisGamesStats.Materials.SticksAmount = ThisGamesStats.Materials.SticksAmount - 1
                     ThisGamesStats.Items.GoldSword.Amount = ThisGamesStats.Items.GoldSword.Amount + 1
-                    RichTextBox1.AppendText(vbNewLine & "Successfully crafted a gold sword!")
+                    RichTextBox1.AppendText(vbNewLine & "Successfully crafted a golden sword!")
                 End If
             Case 12 ' gold pickaxe
                 If ThisGamesStats.Materials.GoldIngotAmount < 3 Or ThisGamesStats.Materials.SticksAmount < 2 Then
@@ -999,7 +1000,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Materials.GoldIngotAmount = ThisGamesStats.Materials.GoldIngotAmount - 3
                     ThisGamesStats.Materials.SticksAmount = ThisGamesStats.Materials.SticksAmount - 2
                     ThisGamesStats.Items.GoldPickaxe.Amount = ThisGamesStats.Items.GoldPickaxe.Amount + 1
-                    RichTextBox1.AppendText(vbNewLine & "Successfully crafted a gold pickaxe!")
+                    RichTextBox1.AppendText(vbNewLine & "Successfully crafted a golden pickaxe!")
                 End If
             Case 13 ' gold axe
                 If ThisGamesStats.Materials.GoldIngotAmount < 3 Or ThisGamesStats.Materials.SticksAmount < 2 Then
@@ -1008,7 +1009,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Materials.GoldIngotAmount = ThisGamesStats.Materials.GoldIngotAmount - 3
                     ThisGamesStats.Materials.SticksAmount = ThisGamesStats.Materials.SticksAmount - 2
                     ThisGamesStats.Items.GoldAxe.Amount = ThisGamesStats.Items.GoldAxe.Amount + 1
-                    RichTextBox1.AppendText(vbNewLine & "Successfully crafted a gold axe!")
+                    RichTextBox1.AppendText(vbNewLine & "Successfully crafted a golden axe!")
                 End If
             Case 14 ' diamond sword
                 If ThisGamesStats.Materials.DiamondsAmount < 2 Or ThisGamesStats.Materials.SticksAmount < 1 Then
@@ -1092,7 +1093,7 @@ Partial Class MncrftGame
             ThisGamesStats.Materials.Energy.Amount = ThisGamesStats.Materials.Energy.Amount - ThisGamesStats.Items.IronPickaxe.EnergyCost
 
         ElseIf ThisGamesStats.Items.GoldPickaxe.Amount > 0 Then ' GOLD PICKAXE??? WHY GOLD???
-            RichTextBox1.AppendText(vbNewLine & "You used" + Str(ThisGamesStats.Items.GoldPickaxe.EnergyCost) + " energy to go mining with your gold pickaxe, you mined:")
+            RichTextBox1.AppendText(vbNewLine & "You used" + Str(ThisGamesStats.Items.GoldPickaxe.EnergyCost) + " energy to go mining with your golden pickaxe, you mined:")
             AllowIron = ThisGamesStats.Items.GoldPickaxe.IronMinable
             AllowGold = ThisGamesStats.Items.GoldPickaxe.GoldMinable
             AllowDiam = ThisGamesStats.Items.GoldPickaxe.DiamMinable
@@ -1275,7 +1276,7 @@ Partial Class MncrftGame
 
         If ThisGamesStats.Villagers.GreenCoatAmount > ThisGamesStats.Buildings.Bed.Amount Then
             ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Buildings.Bed.Amount
-            RichTextBox1.AppendText(vbNewLine & vbNewLine & "   --- ! POSSIBLE BUG ! ---   Somehow, you managed to get more jobless villagers than you could fit in your beds. This was probably caused by a bug. Please open a bug report on the github along with what you were doing when this appeared. You can continue playing, but it is HIGHLY recommended to report this. To make sure you can continue playing, your jobless villager count has been lowered to your bed count.   ---   .")
+            Call AppendTextBGFG(RichTextBox1, vbNewLine & vbNewLine & "   --- ! POSSIBLE BUG ! ---   Somehow, you managed to get more jobless villagers than you could fit in your beds. This was probably caused by a bug. Please open a bug report on the github with the contents of the text area here, along with what you were doing when this appeared. You can continue playing, but it is HIGHLY recommended to report this. To make sure you can continue playing correctly, your jobless villager count has been lowered to your bed count.   ---   .", Color.Black, Color.White)
         End If
 
     End Sub
@@ -1485,7 +1486,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Materials.GoldIngotAmount = ThisGamesStats.Materials.GoldIngotAmount + 2
                     ThisGamesStats.Materials.SticksAmount = ThisGamesStats.Materials.SticksAmount + 1
                     ThisGamesStats.Items.GoldSword.Amount = ThisGamesStats.Items.GoldSword.Amount - 1
-                    RichTextBox1.AppendText(vbNewLine & "You barely breath on the gold sword, it crumbles to dust in your hands.")
+                    RichTextBox1.AppendText(vbNewLine & "You barely breathe on the golden sword, it crumbles to dust in your hands.")
                 End If
             Case 12 ' gold pickaxe
                 If ThisGamesStats.Items.GoldPickaxe.Amount < 1 Then
@@ -1494,7 +1495,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Materials.GoldIngotAmount = ThisGamesStats.Materials.GoldIngotAmount + 3
                     ThisGamesStats.Materials.SticksAmount = ThisGamesStats.Materials.SticksAmount + 2
                     ThisGamesStats.Items.GoldPickaxe.Amount = ThisGamesStats.Items.GoldPickaxe.Amount - 1
-                    RichTextBox1.AppendText(vbNewLine & "You hadn't even thought to use the gold pickaxe, but it's already broken in half.")
+                    RichTextBox1.AppendText(vbNewLine & "You hadn't even thought to use the golden pickaxe, but it's already broken in half.")
                 End If
             Case 13 ' gold axe
                 If ThisGamesStats.Items.GoldAxe.Amount < 1 Then
@@ -1503,7 +1504,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Materials.GoldIngotAmount = ThisGamesStats.Materials.GoldIngotAmount + 3
                     ThisGamesStats.Materials.SticksAmount = ThisGamesStats.Materials.SticksAmount + 2
                     ThisGamesStats.Items.GoldAxe.Amount = ThisGamesStats.Items.GoldAxe.Amount - 1
-                    RichTextBox1.AppendText(vbNewLine & "You swing the gold axe at a tree, unfortunately the axe head bends and breaks instead.")
+                    RichTextBox1.AppendText(vbNewLine & "You swing the golden axe at a tree, unfortunately the axe head bends and breaks instead.")
                 End If
             Case 14 ' diamond sword
                 If ThisGamesStats.Items.DiamondSword.Amount < 1 Then
@@ -1530,7 +1531,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Materials.DiamondsAmount = ThisGamesStats.Materials.DiamondsAmount + 3
                     ThisGamesStats.Materials.SticksAmount = ThisGamesStats.Materials.SticksAmount + 2
                     ThisGamesStats.Items.DiamondAxe.Amount = ThisGamesStats.Items.DiamondAxe.Amount - 1
-                    RichTextBox1.AppendText(vbNewLine & "You look at the diamond axe, and it's so beautiful, you can't help but feel sorry for it.")
+                    RichTextBox1.AppendText(vbNewLine & "You look at the diamond axe, it's so beautiful, you can't help but feel sorry for it as you disassemble it.")
                 End If
             Case 17 ' torches
                 If ThisGamesStats.Items.TorchAmount < 4 Then
@@ -1539,7 +1540,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Materials.CoalAmount = ThisGamesStats.Materials.CoalAmount + 1
                     ThisGamesStats.Materials.SticksAmount = ThisGamesStats.Materials.SticksAmount + 1
                     ThisGamesStats.Items.TorchAmount = ThisGamesStats.Items.TorchAmount - 4
-                    RichTextBox1.AppendText(vbNewLine & "You put out the four torches, and disassemble them into a piece of coal and a stick.")
+                    RichTextBox1.AppendText(vbNewLine & "You put out the four torches, and reassemble them into a piece of coal and a stick.")
                 End If
             Case Else
                 RichTextBox1.AppendText(vbNewLine & "Please select a disassembly recipe!")
@@ -1664,7 +1665,7 @@ Partial Class MncrftGame
 
 
     Private Sub DeadNotify()
-        Call AppendTextBGFGColor(RichTextBox1, "You are dead.", Color.Red, Color.White)
+        Call AppendTextBGFGColor(RichTextBox1, "You are dead, hit End Day to reset.", Color.Red, Color.White)
     End Sub
 
 
@@ -2232,13 +2233,12 @@ Partial Class MncrftGame
         Call UpdateStatDisplay() 'almost forgot to do this!
     End Sub
 
-    Friend WithEvents Timer1 As Timer
 End Class
 #Enable Warning BC42025
 
 
 
-'GAME DATA YEAHHd
+'GAME DATA YEAHH
 Public Class MncrftInfo
     Public PlayerIsDead As Boolean = False
     Public NightScore As Integer = 0
@@ -2288,7 +2288,7 @@ Public Class MncrftInfo
         End Class
 
         Public Class GuardTower
-            Public Shared Amount As Integer = 1
+            Public Shared Amount As Integer = 0
             Public Shared ReadOnly Offense As Integer = 6
             Public Shared ReadOnly Defense As Integer = 10
         End Class
@@ -2340,7 +2340,7 @@ Public Class MncrftInfo
             Public Shared Amount As Integer
             Public Shared ReadOnly EnergyCost As Integer = 16
             Public Shared ReadOnly IronMinable As Boolean = True
-            Public Shared ReadOnly GoldMinable As Boolean = False
+            Public Shared ReadOnly GoldMinable As Boolean = True
             Public Shared ReadOnly DiamMinable As Boolean = False
         End Class
 
