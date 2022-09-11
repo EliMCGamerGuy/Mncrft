@@ -64,11 +64,19 @@ Partial Class MncrftGame
         Me.ComboBox4 = New System.Windows.Forms.ComboBox()
         Me.BuildBuildbutton = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SaveGameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LoadGameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.QuitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.WikiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GithubToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.NewGameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -228,9 +236,9 @@ Partial Class MncrftGame
         Me.StatNumbers.Name = "StatNumbers"
         Me.StatNumbers.ReadOnly = True
         Me.StatNumbers.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None
-        Me.StatNumbers.Size = New System.Drawing.Size(62, 69)
+        Me.StatNumbers.Size = New System.Drawing.Size(62, 86)
         Me.StatNumbers.TabIndex = 13
-        Me.StatNumbers.Text = "0" & Global.Microsoft.VisualBasic.ChrW(10) & "5" & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(10) & "10" & Global.Microsoft.VisualBasic.ChrW(10) & "0"
+        Me.StatNumbers.Text = "Normal" & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(10) & "5" & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(10) & "10" & Global.Microsoft.VisualBasic.ChrW(10) & "0"
         Me.StatNumbers.WordWrap = False
         '
         'RichTextBox9
@@ -240,9 +248,9 @@ Partial Class MncrftGame
         Me.RichTextBox9.Name = "RichTextBox9"
         Me.RichTextBox9.ReadOnly = True
         Me.RichTextBox9.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None
-        Me.RichTextBox9.Size = New System.Drawing.Size(90, 69)
+        Me.RichTextBox9.Size = New System.Drawing.Size(90, 86)
         Me.RichTextBox9.TabIndex = 12
-        Me.RichTextBox9.Text = "Defense" & Global.Microsoft.VisualBasic.ChrW(10) & "Personal Defense" & Global.Microsoft.VisualBasic.ChrW(10) & "Offense" & Global.Microsoft.VisualBasic.ChrW(10) & "Daily Energy" & Global.Microsoft.VisualBasic.ChrW(10) & "Days Survived" & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.RichTextBox9.Text = "Difficulty" & Global.Microsoft.VisualBasic.ChrW(10) & "Defense" & Global.Microsoft.VisualBasic.ChrW(10) & "Personal Defense" & Global.Microsoft.VisualBasic.ChrW(10) & "Offense" & Global.Microsoft.VisualBasic.ChrW(10) & "Daily Energy" & Global.Microsoft.VisualBasic.ChrW(10) & "Days Survived" & Global.Microsoft.VisualBasic.ChrW(10)
         Me.RichTextBox9.WordWrap = False
         '
         'smeltbutton
@@ -372,7 +380,7 @@ Partial Class MncrftGame
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(432, 189)
+        Me.Label5.Location = New System.Drawing.Point(432, 202)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(32, 13)
         Me.Label5.TabIndex = 29
@@ -381,7 +389,7 @@ Partial Class MncrftGame
         'ItemNumbers
         '
         Me.ItemNumbers.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.ItemNumbers.Location = New System.Drawing.Point(546, 205)
+        Me.ItemNumbers.Location = New System.Drawing.Point(546, 218)
         Me.ItemNumbers.Name = "ItemNumbers"
         Me.ItemNumbers.ReadOnly = True
         Me.ItemNumbers.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None
@@ -393,7 +401,7 @@ Partial Class MncrftGame
         'RichTextBox11
         '
         Me.RichTextBox11.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.RichTextBox11.Location = New System.Drawing.Point(428, 205)
+        Me.RichTextBox11.Location = New System.Drawing.Point(428, 218)
         Me.RichTextBox11.Name = "RichTextBox11"
         Me.RichTextBox11.ReadOnly = True
         Me.RichTextBox11.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None
@@ -485,12 +493,42 @@ Partial Class MncrftGame
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HelpToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(829, 24)
         Me.MenuStrip1.TabIndex = 32
         Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'FileToolStripMenuItem
+        '
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewGameToolStripMenuItem, Me.SaveGameToolStripMenuItem, Me.LoadGameToolStripMenuItem, Me.ToolStripSeparator1, Me.QuitToolStripMenuItem})
+        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
+        Me.FileToolStripMenuItem.Text = "File"
+        '
+        'SaveGameToolStripMenuItem
+        '
+        Me.SaveGameToolStripMenuItem.Name = "SaveGameToolStripMenuItem"
+        Me.SaveGameToolStripMenuItem.Size = New System.Drawing.Size(134, 22)
+        Me.SaveGameToolStripMenuItem.Text = "Save Game"
+        '
+        'LoadGameToolStripMenuItem
+        '
+        Me.LoadGameToolStripMenuItem.Name = "LoadGameToolStripMenuItem"
+        Me.LoadGameToolStripMenuItem.Size = New System.Drawing.Size(134, 22)
+        Me.LoadGameToolStripMenuItem.Text = "Load Game"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(131, 6)
+        '
+        'QuitToolStripMenuItem
+        '
+        Me.QuitToolStripMenuItem.Name = "QuitToolStripMenuItem"
+        Me.QuitToolStripMenuItem.Size = New System.Drawing.Size(134, 22)
+        Me.QuitToolStripMenuItem.Text = "Quit"
         '
         'HelpToolStripMenuItem
         '
@@ -519,6 +557,16 @@ Partial Class MncrftGame
         '
         'Timer1
         '
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'NewGameToolStripMenuItem
+        '
+        Me.NewGameToolStripMenuItem.Name = "NewGameToolStripMenuItem"
+        Me.NewGameToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.NewGameToolStripMenuItem.Text = "New Game"
         '
         'MncrftGame
         '
@@ -684,7 +732,26 @@ Partial Class MncrftGame
             ThisGamesStats.Materials.IronOreAmount & vbNewLine & ThisGamesStats.Materials.IronIngotAmount & vbNewLine & ThisGamesStats.Materials.GoldOreAmount & vbNewLine &
             ThisGamesStats.Materials.GoldIngotAmount & vbNewLine & ThisGamesStats.Materials.DiamondsAmount
         'set the statistics info
-        StatNumbers.Text = ThisGamesStats.Defense & vbNewLine & ThisGamesStats.PersonalDefense & vbNewLine & ThisGamesStats.Offense & vbNewLine & ThisGamesStats.Materials.Energy.NightlyAmount & vbNewLine & ThisGamesStats.NightScore
+        Dim difficultyname = ""
+        Select Case ThisGamesStats.Difficulty
+            Case 0
+                difficultyname = "Peaceful"
+            Case 1
+                difficultyname = "Easy"
+            Case 2
+                difficultyname = "Normal"
+            Case 3
+                difficultyname = "Hard"
+            Case 4
+                difficultyname = "Hardcore"
+            Case 5
+                difficultyname = "Nightmare"
+            Case 6
+                difficultyname = "Wasteland"
+            Case Else
+                difficultyname = "Unknown " & ThisGamesStats.Difficulty
+        End Select
+        StatNumbers.Text = difficultyname & vbNewLine & ThisGamesStats.Defense & vbNewLine & ThisGamesStats.PersonalDefense & vbNewLine & ThisGamesStats.Offense & vbNewLine & ThisGamesStats.Materials.Energy.NightlyAmount & vbNewLine & ThisGamesStats.NightScore
         'set the villagers' info
         VillagerNumbers.Text = ThisGamesStats.Villagers.GreenCoatAmount & vbNewLine & ThisGamesStats.Villagers.Guard.Wood.Amount & vbNewLine & ThisGamesStats.Villagers.Guard.Stone.Amount _
             & vbNewLine & ThisGamesStats.Villagers.Guard.Iron.Amount & vbNewLine & ThisGamesStats.Villagers.Guard.Gold.Amount & vbNewLine & ThisGamesStats.Villagers.Guard.Diamond.Amount _
@@ -740,8 +807,10 @@ Partial Class MncrftGame
         RichTextBox1.AppendText(vbNewLine)
 
         If ThisGamesStats.PlayerIsDead Then 'press F to pay respects
+            Dim tempdifficulty = ThisGamesStats.Difficulty
             ThisGamesStats = New MncrftInfo
             Call resetThisGameStatsBackToDefaults()
+            ThisGamesStats.Difficulty = tempdifficulty
             Call UpdateStatDisplay()
             RichTextBox1.Text = "Welcome to Mncrft!"
             Exit Sub
@@ -1656,7 +1725,7 @@ Partial Class MncrftGame
 
 
     Private Sub DeathReport()
-        Call AppendTextBGFGColor(RichTextBox1, vbNewLine & vbNewLine & "GAME OVER" & vbNewLine & "Total Ending Score: " & Str(ThisGamesStats.NightScore) & vbNewLine & vbNewLine & "Hit end day to reset.", Color.Black, Color.White)
+        Call AppendTextBGFGColor(RichTextBox1, vbNewLine & vbNewLine & "GAME OVER" & vbNewLine & "Total Ending Score: " & Str(ThisGamesStats.NightScore) & vbNewLine & vbNewLine & "Hit 'End Day' to reset.", Color.Black, Color.White)
         EndDayButton.Enabled = False
         Timer1.Interval = 1000
         Timer1.Start()
@@ -1665,7 +1734,7 @@ Partial Class MncrftGame
 
 
     Private Sub DeadNotify()
-        Call AppendTextBGFGColor(RichTextBox1, "You are dead, hit End Day to reset.", Color.Red, Color.White)
+        Call AppendTextBGFGColor(RichTextBox1, "You are dead, hit 'End Day' to reset.", Color.Red, Color.White)
     End Sub
 
 
@@ -1944,7 +2013,7 @@ Partial Class MncrftGame
                     RichTextBox1.AppendText(vbNewLine & "You hired a villager as a shepherd!")
                 End If
             Case Else ' hey. don't have the combobox blank. that's not a job. you cannot hire nothing.
-                RichTextBox1.AppendText(vbNewLine & "Please select a job, first!")
+                RichTextBox1.AppendText(vbNewLine & "Please select a job first!")
         End Select
         Call UpdateStatDisplay() ' update the stats display (Really bland, co-pilot! Spice it up a little from time to time!)
     End Sub
@@ -2147,7 +2216,7 @@ Partial Class MncrftGame
                     RichTextBox1.AppendText(vbNewLine & "You fired a shepherd.")
                 End If
             Case Else ' hey. don't have the combobox blank. that's not a job. you cannot fire nothing.
-                RichTextBox1.AppendText(vbNewLine & "Please select a job, first.")
+                RichTextBox1.AppendText(vbNewLine & "Please select a job first.")
         End Select
 
         If ThisGamesStats.Villagers.GreenCoatAmount > ThisGamesStats.Buildings.Bed.Amount Then ' if you have more villagers than beds, they wander off.
@@ -2155,7 +2224,7 @@ Partial Class MncrftGame
             RichTextBox1.AppendText(vbNewLine & "The villager you just fired wandered off as there were no more beds free.")
         End If
 
-        Call UpdateStatDisplay() ' Yes. You. Box. Your stuff. Out the front door. Parking lot. Car. Goodbye.
+        Call UpdateStatDisplay() ' Yes, you. Box. Your stuff. Out the front door. Parking lot. Car. Goodbye.
     End Sub
 
 
@@ -2233,6 +2302,14 @@ Partial Class MncrftGame
         Call UpdateStatDisplay() 'almost forgot to do this!
     End Sub
 
+    Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SaveGameToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents LoadGameToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents QuitToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SaveFileDialog1 As SaveFileDialog
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents NewGameToolStripMenuItem As ToolStripMenuItem
 End Class
 #Enable Warning BC42025
 
@@ -2240,6 +2317,7 @@ End Class
 
 'GAME DATA YEAHH
 Public Class MncrftInfo
+    Public Difficulty As Integer = 2 '0 = peaceful, 1 = easy, 2 = normal, 3 = hard, 4 = hardcore, 5? = nightmare?
     Public PlayerIsDead As Boolean = False
     Public NightScore As Integer = 0
     Public LastZombieCount As Integer = 0
