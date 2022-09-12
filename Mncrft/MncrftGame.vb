@@ -103,7 +103,7 @@
             End Try
             Dim compver = My.Application.Info.Version.CompareTo(ver)
             If compver < 0 Then
-                Select Case MsgBox("This game was saved with a newer version of Mncrft!\nYou can load the save here, but some data may be lost.\nDo you want to load the game anyway?", MsgBoxStyle.YesNo, "Load?")
+                Select Case MsgBox("This game was saved with a newer version of Mncrft!" & vbNewLine & "You can load the save here, but some data may be lost." & vbNewLine & "Do you want to load the game anyway?", MsgBoxStyle.YesNo, "Load?")
                     Case MsgBoxResult.Yes
                     Case MsgBoxResult.No
                         RichTextBox1.AppendText(vbNewLine & "Loading was canceled.")
