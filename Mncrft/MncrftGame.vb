@@ -19,8 +19,7 @@
 
     Private Sub SaveGameToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveGameToolStripMenuItem.Click
         SaveFileDialog1.Filter = "Saved Game Files (*.sav*)|*.sav"
-        If SaveFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK _
-         Then
+        If SaveFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
             Dim tempstring = "" & 'First, save ActionCosts.
                 Int(ThisGamesStats.Defense) & vbNewLine &
                 Int(ThisGamesStats.Difficulty) & vbNewLine &
@@ -81,10 +80,31 @@
                 Int(ThisGamesStats.Villagers.Miner.Stone.Amount) & vbNewLine &
                 Int(ThisGamesStats.Villagers.Miner.Gold.Amount) & vbNewLine &
                 Int(ThisGamesStats.Villagers.Miner.Iron.Amount) & vbNewLine &
-                Int(ThisGamesStats.Villagers.Miner.Diamond.Amount) 'And we're done!
+                Int(ThisGamesStats.Villagers.Miner.Diamond.Amount) & vbNewLine & 'And we're done!
+                My.Application.Info.Version.ToString
             My.Computer.FileSystem.WriteAllText(SaveFileDialog1.FileName, tempstring, False)
             RichTextBox1.AppendText(vbNewLine & "Saved!")
         End If
+    End Sub
+
+    Private Sub LoadGameToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoadGameToolStripMenuItem.Click
+        OpenFileDialog1.Filter = "Saved Game Files (*.sav*)|*.sav"
+        If OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
+            Dim tempstring = My.Computer.FileSystem.ReadAllText(OpenFileDialog1.FileName)
+            Dim parts As String() = tempstring.Split(New String() {Environment.NewLine},
+                                       StringSplitOptions.None)
+
+
+        End If
+    End Sub
+
+    Private Sub QuitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuitToolStripMenuItem.Click
+        Select Case MsgBox("Are you sure you want to quit?", MsgBoxStyle.YesNo, "Quit?")
+            Case MsgBoxResult.Yes
+                Me.Close()
+            Case MsgBoxResult.No
+                Return
+        End Select
     End Sub
 End Class
 #Enable Warning BC42025

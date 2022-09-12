@@ -65,6 +65,7 @@ Partial Class MncrftGame
         Me.BuildBuildbutton = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NewGameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveGameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoadGameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
@@ -76,7 +77,6 @@ Partial Class MncrftGame
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.NewGameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -507,27 +507,33 @@ Partial Class MncrftGame
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "File"
         '
+        'NewGameToolStripMenuItem
+        '
+        Me.NewGameToolStripMenuItem.Name = "NewGameToolStripMenuItem"
+        Me.NewGameToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.NewGameToolStripMenuItem.Text = "New Game"
+        '
         'SaveGameToolStripMenuItem
         '
         Me.SaveGameToolStripMenuItem.Name = "SaveGameToolStripMenuItem"
-        Me.SaveGameToolStripMenuItem.Size = New System.Drawing.Size(134, 22)
+        Me.SaveGameToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.SaveGameToolStripMenuItem.Text = "Save Game"
         '
         'LoadGameToolStripMenuItem
         '
         Me.LoadGameToolStripMenuItem.Name = "LoadGameToolStripMenuItem"
-        Me.LoadGameToolStripMenuItem.Size = New System.Drawing.Size(134, 22)
+        Me.LoadGameToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.LoadGameToolStripMenuItem.Text = "Load Game"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(131, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(177, 6)
         '
         'QuitToolStripMenuItem
         '
         Me.QuitToolStripMenuItem.Name = "QuitToolStripMenuItem"
-        Me.QuitToolStripMenuItem.Size = New System.Drawing.Size(134, 22)
+        Me.QuitToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.QuitToolStripMenuItem.Text = "Quit"
         '
         'HelpToolStripMenuItem
@@ -561,12 +567,6 @@ Partial Class MncrftGame
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
-        'NewGameToolStripMenuItem
-        '
-        Me.NewGameToolStripMenuItem.Name = "NewGameToolStripMenuItem"
-        Me.NewGameToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.NewGameToolStripMenuItem.Text = "New Game"
         '
         'MncrftGame
         '
