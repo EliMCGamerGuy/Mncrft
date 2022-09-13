@@ -31,6 +31,8 @@ Partial Class NewGame
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.RadioButton6 = New System.Windows.Forms.RadioButton()
         Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -57,18 +59,21 @@ Partial Class NewGame
         Me.GroupBox1.Controls.Add(Me.RadioButton1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(447, 188)
+        Me.GroupBox1.Size = New System.Drawing.Size(447, 191)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Difficulty"
         '
         'RichTextBox1
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(97, 18)
+        Me.RichTextBox1.BackColor = System.Drawing.SystemColors.Control
+        Me.RichTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.RichTextBox1.Location = New System.Drawing.Point(103, 19)
         Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(344, 156)
+        Me.RichTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical
+        Me.RichTextBox1.Size = New System.Drawing.Size(338, 155)
         Me.RichTextBox1.TabIndex = 2
-        Me.RichTextBox1.Text = ""
+        Me.RichTextBox1.Text = "placeholder text"
         '
         'RadioButton7
         '
@@ -134,11 +139,31 @@ Partial Class NewGame
         Me.RadioButton3.Text = "Normal"
         Me.RadioButton3.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(12, 209)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(219, 23)
+        Me.Button1.TabIndex = 2
+        Me.Button1.Text = "Start New Game"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(237, 209)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(219, 23)
+        Me.Button2.TabIndex = 3
+        Me.Button2.Text = "Cancel"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'NewGame
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(471, 392)
+        Me.ClientSize = New System.Drawing.Size(471, 245)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "NewGame"
         Me.Text = "NewGame"
@@ -157,4 +182,6 @@ Partial Class NewGame
     Friend WithEvents RadioButton5 As RadioButton
     Friend WithEvents RadioButton6 As RadioButton
     Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
 End Class

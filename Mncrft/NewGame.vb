@@ -126,6 +126,18 @@
         selecteddiff = 6
         UpdateDiffDesc()
     End Sub
+
+    Private Sub GetOffMyFRICKINGBOX(sender As Object, e As EventArgs) Handles RichTextBox1.Enter
+        ActiveControl = GroupBox1 'what can I say? He clearly doesn't want you on his box.
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Me.Close()
+    End Sub
 End Class
 
 Public Class DifficultyDescriptions

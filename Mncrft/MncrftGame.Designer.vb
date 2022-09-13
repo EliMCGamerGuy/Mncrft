@@ -657,6 +657,14 @@ Partial Class MncrftGame
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GithubToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SaveGameToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents LoadGameToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents QuitToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SaveFileDialog1 As SaveFileDialog
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents NewGameToolStripMenuItem As ToolStripMenuItem
 
 
 
@@ -749,7 +757,7 @@ Partial Class MncrftGame
             Case 6
                 difficultyname = "Wasteland"
             Case Else
-                difficultyname = "Unknown " & ThisGamesStats.Difficulty
+                difficultyname = "Unknown  Difficulty" & ThisGamesStats.Difficulty
         End Select
         StatNumbers.Text = difficultyname & vbNewLine & ThisGamesStats.Defense & vbNewLine & ThisGamesStats.PersonalDefense & vbNewLine & ThisGamesStats.Offense & vbNewLine & ThisGamesStats.Materials.Energy.NightlyAmount & vbNewLine & ThisGamesStats.NightScore
         'set the villagers' info
@@ -2230,6 +2238,7 @@ Partial Class MncrftGame
     End Sub
 
 
+
     Private Sub resetThisGameStatsBackToDefaults()
         'First, reset ActionCosts.
         ThisGamesStats.ActionCosts.AxeCost = Int(MncrftInfoDefaults.ActionCosts.AxeCost)
@@ -2304,14 +2313,22 @@ Partial Class MncrftGame
         Call UpdateStatDisplay() 'almost forgot to do this!
     End Sub
 
-    Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SaveGameToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents LoadGameToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
-    Friend WithEvents QuitToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SaveFileDialog1 As SaveFileDialog
-    Friend WithEvents OpenFileDialog1 As OpenFileDialog
-    Friend WithEvents NewGameToolStripMenuItem As ToolStripMenuItem
+
+
+    Public Sub StartNewGame(difficulty As Integer)
+        ThisGamesStats = New MncrftInfo
+        resetThisGameStatsBackToDefaults()
+
+        Select Case difficulty
+            Case 0
+            Case 1
+            Case 2
+            Case 3
+            Case 4
+            Case 5
+            Case 6
+        End Select
+    End Sub
 End Class
 #Enable Warning BC42025
 
@@ -2319,13 +2336,46 @@ End Class
 
 'GAME DATA YEAHH
 Public Class MncrftInfo
-    Public Difficulty As Integer = 2 '0 = peaceful, 1 = easy, 2 = normal, 3 = hard, 4 = hardcore, 5? = nightmare?
+    Public Difficulty As Integer = 2 '0 = peaceful, 1 = easy, 2 = normal, 3 = hard, 4 = hardcore, 5 = nightmare, 6 = wasteland
     Public PlayerIsDead As Boolean = False
     Public NightScore As Integer = 0
     Public LastZombieCount As Integer = 0
     Public Offense As Integer = 0
     Public PersonalDefense As Integer = 0
     Public Defense As Integer
+
+    Public Class ActionParams
+        Public Shared ZombieGenMin As Integer = 2
+        Public Shared ZombieGenMax As Integer = 4
+        Public Class WoodGen
+            Public Shared TreeMin As Integer = 1
+            Public Shared TreeMax As Integer = 5
+            Public Shared WoodMin As Integer = 4
+            Public Shared WoodMax As Integer = 20
+        End Class
+        Public Class OreGen
+            Public Shared StoneMin As Integer = 10
+            Public Shared StoneMax As Integer = 25
+            Public Shared CoalMin As Integer = 6
+            Public Shared CoalMax As Integer = 20
+            Public Shared IronMin As Integer = 4
+            Public Shared IronMax As Integer = 16
+            Public Shared GoldMin As Integer = 4
+            Public Shared GoldMax As Integer = 8
+            Public Shared DiamMin As Integer = 0
+            Public Shared DiamMax As Integer = 2
+        End Class
+        Public Class WoolGen
+            Public Shared SheepMin As Integer = 0
+            Public Shared SheepMax As Integer = 6
+            Public Shared WoolMin As Integer = 1
+            Public Shared WollMax As Integer = 3
+        End Class
+        Public Class VillGen
+            Public Shared VillMin As Integer = 0
+            Public Shared VillMax As Integer = 4
+        End Class
+    End Class
 
     Public Class ActionCosts
         Public Shared AxeCost As Integer = 15
