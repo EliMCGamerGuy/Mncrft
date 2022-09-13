@@ -758,7 +758,7 @@ Partial Class MncrftGame
             Case 6
                 difficultyname = "Wasteland"
             Case Else
-                difficultyname = "Unknown  Difficulty" & ThisGamesStats.Difficulty
+                difficultyname = "Unknown Difficulty " & ThisGamesStats.Difficulty
         End Select
         StatNumbers.Text = difficultyname & vbNewLine & ThisGamesStats.Defense & vbNewLine & ThisGamesStats.PersonalDefense & vbNewLine & ThisGamesStats.Offense & vbNewLine & ThisGamesStats.Materials.Energy.NightlyAmount & vbNewLine & ThisGamesStats.NightScore
         'set the villagers' info
@@ -1368,7 +1368,19 @@ Partial Class MncrftGame
             ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Buildings.Bed.Amount
             Call AppendTextBGFGColor(RichTextBox1, vbNewLine & vbNewLine & "   --- ! POSSIBLE BUG ! ---   Somehow, you managed to get more jobless villagers than you could fit in your beds. This was probably caused by a bug. Please open a bug report on the github with the contents of the text area here, along with what you were doing when this appeared. You can continue playing, but it is HIGHLY recommended to report this. To make sure you can continue playing correctly, your jobless villager count has been lowered to your bed count.   ---   .", Color.Black, Color.White)
         End If
-
+        Dim totalvillagers As Integer = ThisGamesStats.Villagers.GreenCoatAmount + ThisGamesStats.Villagers.ShepherdAmount +
+            ThisGamesStats.Villagers.GoldSmelterAmount + ThisGamesStats.Villagers.IronSmelterAmount + ThisGamesStats.Villagers.Guard.Wood.Amount +
+            ThisGamesStats.Villagers.Guard.Stone.Amount + ThisGamesStats.Villagers.Guard.Iron.Amount + ThisGamesStats.Villagers.Guard.Gold.Amount +
+            ThisGamesStats.Villagers.Guard.Diamond.Amount + ThisGamesStats.Villagers.Miner.Wood.Amount + ThisGamesStats.Villagers.Miner.Stone.Amount +
+            ThisGamesStats.Villagers.Miner.Iron.Amount + ThisGamesStats.Villagers.Miner.Gold.Amount + ThisGamesStats.Villagers.Miner.Diamond.Amount +
+            ThisGamesStats.Villagers.Lumberjack.Wood.Amount + ThisGamesStats.Villagers.Lumberjack.Stone.Amount +
+            ThisGamesStats.Villagers.Lumberjack.Iron.Amount + ThisGamesStats.Villagers.Lumberjack.Gold.Amount +
+            ThisGamesStats.Villagers.Lumberjack.Diamond.Amount
+        If totalvillagers > 0 Then ' enable or disable hiring gui
+            GroupBox3.Enabled = True
+        Else
+            GroupBox3.Enabled = False
+        End If
     End Sub
 
 
