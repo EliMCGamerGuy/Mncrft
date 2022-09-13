@@ -794,10 +794,10 @@ Partial Class MncrftGame
 
         ThisGamesStats.Materials.Energy.Amount = ThisGamesStats.Materials.Energy.Amount - ThisGamesStats.ActionCosts.AxeCost 'remove energy from ThisGamesStats
         Dim tempiterations As Integer = 0
-        Dim targetiterations As Integer = Int(4 * Rnd()) + 1 'generate a number from 1 to 5
+        Dim targetiterations As Integer = Int((ThisGamesStats.ActionParams.WoodGen.TreeMax - ThisGamesStats.ActionParams.WoodGen.TreeMin) * Rnd()) + ThisGamesStats.ActionParams.WoodGen.TreeMin 'generate a number from 1 to 5
         Dim temptargetamount As Integer = 0
         While tempiterations < targetiterations
-            Dim temprandom As Integer = Int(16 * Rnd()) + 4 'generate a number from 4 to 20
+            Dim temprandom As Integer = Int((ThisGamesStats.ActionParams.WoodGen.WoodMax - ThisGamesStats.ActionParams.WoodGen.WoodMin) * Rnd()) + ThisGamesStats.ActionParams.WoodGen.WoodMin 'generate a number from 4 to 20
             ThisGamesStats.Materials.WoodAmount = ThisGamesStats.Materials.WoodAmount + temprandom 'add gathered Wood.
             temptargetamount = temptargetamount + temprandom
             tempiterations = tempiterations + 1
@@ -816,49 +816,51 @@ Partial Class MncrftGame
 
         If ThisGamesStats.PlayerIsDead Then 'press F to pay respects
             Dim tempdifficulty = ThisGamesStats.Difficulty
-            ThisGamesStats = New MncrftInfo
-            Call resetThisGameStatsBackToDefaults()
-            ThisGamesStats.Difficulty = tempdifficulty
-            Call UpdateStatDisplay()
-            RichTextBox1.Text = "Welcome to Mncrft!"
-            Exit Sub
+            StartNewGame(tempdifficulty)
+            Return
         End If
 
         RichTextBox1.AppendText(vbNewLine & "The day turns to night...")
 
-        Dim zombieamount As Integer = ThisGamesStats.LastZombieCount + Int(1 * Rnd()) + 1 + ThisGamesStats.NightScore
-        ThisGamesStats.LastZombieCount = zombieamount
+        Dim zombieamount As Integer = ThisGamesStats.LastZombieCount + Int((ThisGamesStats.ActionParams.ZombieGenMax - ThisGamesStats.ActionParams.ZombieGenMin) * Rnd()) + ThisGamesStats.ActionParams.ZombieGenMin
 
-        RichTextBox1.AppendText(vbNewLine & Str(zombieamount) & " zombie(s) spawn...") 'report amount of zombies that spawn.
-        zombieamount = zombieamount - ThisGamesStats.Offense
-        zombieamount = zombieamount - ThisGamesStats.PersonalDefense
-        If zombieamount < 1 Then 'high offense check
-            RichTextBox1.AppendText(vbNewLine & "All" & Str(ThisGamesStats.LastZombieCount) & " zombie(s) were killed, moving on.")
-            Call UpdateStatDisplay()
-            Call CalculateDayStart()
-            Exit Sub
-        Else 'low offense check
-            RichTextBox1.AppendText(vbNewLine & Str(ThisGamesStats.Offense + ThisGamesStats.PersonalDefense) & " zombie(s) were killed," & Str(zombieamount) & " remain.")
-            zombieamount = zombieamount - ThisGamesStats.Defense
-            If zombieamount < 1 Then 'high defense check
-                RichTextBox1.AppendText(vbNewLine & "All remaining zombie(s) are stopped from entering your base thanks to your defenses, the sun starts rising and they all burn up in the daylight.")
+        If zombieamount > 0 Then
+            zombieamount += ThisGamesStats.NightScore
+            ThisGamesStats.LastZombieCount = Int(zombieamount)
+            RichTextBox1.AppendText(vbNewLine & Str(zombieamount) & " zombie(s) spawn...") 'report amount of zombies that spawn.
+            zombieamount = zombieamount - ThisGamesStats.Offense
+            zombieamount = zombieamount - ThisGamesStats.PersonalDefense
+            If zombieamount < 1 Then 'high offense check
+                RichTextBox1.AppendText(vbNewLine & "All" & Str(ThisGamesStats.LastZombieCount) & " zombie(s) were killed, moving on.")
                 Call UpdateStatDisplay()
                 Call CalculateDayStart()
-                Exit Sub
-            Else 'low defense check
-                ThisGamesStats.Materials.Energy.Amount = ThisGamesStats.Materials.Energy.Amount - zombieamount
-                If ThisGamesStats.Materials.Energy.Amount < 1 Then 'death.png
-                    RichTextBox1.AppendText(vbNewLine & "The remaining zombies overwhelm your defenses and start to attack you, unfortunately you do not have enough energy to fend them off, and also get overwhelmed.")
-                    ThisGamesStats.PlayerIsDead = True
-                    Call DeathReport()
-                    Call UpdateStatDisplay()
-                Else 'A MIRACLE HAPPENED! I'M WELL!
-                    RichTextBox1.AppendText(vbNewLine & "The remaining zombies overwhelm your defenses and start to attack you, you expend " & Str(zombieamount) & " energy fending them off. That was close!")
+                Return
+            Else 'low offense check
+                RichTextBox1.AppendText(vbNewLine & Str(ThisGamesStats.Offense + ThisGamesStats.PersonalDefense) & " zombie(s) were killed," & Str(zombieamount) & " remain.")
+                zombieamount = zombieamount - ThisGamesStats.Defense
+                If zombieamount < 1 Then 'high defense check
+                    RichTextBox1.AppendText(vbNewLine & "All remaining zombie(s) are stopped from entering your base thanks to your defenses, the sun starts rising and they all burn up in the daylight.")
                     Call UpdateStatDisplay()
                     Call CalculateDayStart()
                     Exit Sub
+                Else 'low defense check
+                    ThisGamesStats.Materials.Energy.Amount = ThisGamesStats.Materials.Energy.Amount - zombieamount
+                    If ThisGamesStats.Materials.Energy.Amount < 1 Then 'death.png
+                        RichTextBox1.AppendText(vbNewLine & "The remaining zombies overwhelm your defenses and start to attack you, unfortunately you do not have enough energy to fend them off, and also get overwhelmed.")
+                        ThisGamesStats.PlayerIsDead = True
+                        Call DeathReport()
+                        Call UpdateStatDisplay()
+                    Else 'A MIRACLE HAPPENED! I'M WELL!
+                        RichTextBox1.AppendText(vbNewLine & "The remaining zombies overwhelm your defenses and start to attack you, you expend " & Str(zombieamount) & " energy fending them off. That was close!")
+                        Call UpdateStatDisplay()
+                        Call CalculateDayStart()
+                        Exit Sub
+                    End If
                 End If
             End If
+        Else
+            UpdateStatDisplay()
+            CalculateDayStart()
         End If
     End Sub
 
@@ -1143,11 +1145,11 @@ Partial Class MncrftGame
             Exit Sub
         End If
 
-        Dim RandStoneAmount As Integer = Int(15 * Rnd()) + 10
-        Dim RandCoalAmount As Integer = Int(14 * Rnd()) + 6
-        Dim RandIronAmount As Integer = Int(12 * Rnd()) + 4
-        Dim RandGoldAmount As Integer = Int(6 * Rnd()) + 4
-        Dim RandDiamAmount As Integer = Int(2 * Rnd())
+        Dim RandStoneAmount As Integer = Int((ThisGamesStats.ActionParams.OreGen.StoneMax - ThisGamesStats.ActionParams.OreGen.StoneMin) * Rnd()) + ThisGamesStats.ActionParams.OreGen.StoneMin
+        Dim RandCoalAmount As Integer = Int((ThisGamesStats.ActionParams.OreGen.CoalMax - ThisGamesStats.ActionParams.OreGen.CoalMin) * Rnd()) + ThisGamesStats.ActionParams.OreGen.CoalMin
+        Dim RandIronAmount As Integer = Int((ThisGamesStats.ActionParams.OreGen.IronMax - ThisGamesStats.ActionParams.OreGen.IronMin) * Rnd()) + ThisGamesStats.ActionParams.OreGen.IronMin
+        Dim RandGoldAmount As Integer = Int((ThisGamesStats.ActionParams.OreGen.GoldMax - ThisGamesStats.ActionParams.OreGen.GoldMin) * Rnd()) + ThisGamesStats.ActionParams.OreGen.GoldMin
+        Dim RandDiamAmount As Integer = Int((ThisGamesStats.ActionParams.OreGen.DiamMax - ThisGamesStats.ActionParams.OreGen.DiamMin) * Rnd()) + ThisGamesStats.ActionParams.OreGen.DiamMin
         Dim AllowIron As Boolean
         Dim AllowGold As Boolean
         Dim AllowDiam As Boolean
@@ -1239,7 +1241,7 @@ Partial Class MncrftGame
 
         ThisGamesStats.Materials.Energy.Amount = ThisGamesStats.Materials.Energy.Amount - 5
         ThisGamesStats.Items.TorchAmount = ThisGamesStats.Items.TorchAmount - 4
-        ThisGamesStats.LastZombieCount = ThisGamesStats.LastZombieCount - 5
+        ThisGamesStats.LastZombieCount = ThisGamesStats.LastZombieCount - ThisGamesStats.TorchEffectivenes
         RichTextBox1.AppendText(vbNewLine & "You place down four torches in the area around your base, that should stop some of the zombies.")
 
         If ThisGamesStats.LastZombieCount < 0 Then 'don't allow negative zombies.
@@ -1332,7 +1334,7 @@ Partial Class MncrftGame
         Dim calculatedDefense As Integer ' tweedle dee
         Dim calculatedOffense As Integer ' and tweedle dum
 
-        ThisGamesStats.Materials.Energy.NightlyAmount = ThisGamesStats.Buildings.Bed.DailyEnergyAddition * ThisGamesStats.Buildings.Bed.Amount + ThisGamesStats.Buildings.House.DailyEnergyAddition * ThisGamesStats.Buildings.House.Amount + 10 '*chugs 6,209.25 "5 hour energy" bottles*
+        ThisGamesStats.Materials.Energy.NightlyAmount = ThisGamesStats.Buildings.Bed.DailyEnergyAddition * ThisGamesStats.Buildings.Bed.Amount + ThisGamesStats.Buildings.House.DailyEnergyAddition * ThisGamesStats.Buildings.House.Amount + ThisGamesStats.BaseDailyEnergy '*chugs 6,209.25 "5 hour energy" bottles*
 
         calculatedDefense = ThisGamesStats.Buildings.House.Amount * ThisGamesStats.Buildings.House.Defense + ThisGamesStats.Buildings.Tower.Defense * ThisGamesStats.Buildings.Tower.Amount + ThisGamesStats.Buildings.GuardTower.Defense * ThisGamesStats.Buildings.GuardTower.Amount
 
@@ -1378,10 +1380,10 @@ Partial Class MncrftGame
 
         ThisGamesStats.Materials.Energy.Amount = ThisGamesStats.Materials.Energy.Amount - 20 'remove energy from ThisGamesStats
         Dim tempiterations As Integer = 0
-        Dim targetiterations As Integer = Int(6 * Rnd()) 'generate a number from 0 to 6
+        Dim targetiterations As Integer = Int((ThisGamesStats.ActionParams.WoolGen.SheepMax - ThisGamesStats.ActionParams.WoolGen.SheepMin) * Rnd()) + ThisGamesStats.ActionParams.WoolGen.SheepMin 'generate a number from 0 to 6
         Dim temptargetamount As Integer = 0
         While tempiterations < targetiterations
-            Dim temprandom As Integer = Int(2 * Rnd()) + 1 'generate a number from 1 to 3
+            Dim temprandom As Integer = Int((ThisGamesStats.ActionParams.WoolGen.WoolMax - ThisGamesStats.ActionParams.WoolGen.WoolMin) * Rnd()) + ThisGamesStats.ActionParams.WoolGen.WoolMin 'generate a number from 1 to 3
             temptargetamount = temptargetamount + temprandom
             tempiterations = tempiterations + 1
         End While
@@ -1770,7 +1772,7 @@ Partial Class MncrftGame
 
         ThisGamesStats.Materials.Energy.Amount = ThisGamesStats.Materials.Energy.Amount - 40
 
-        Dim tempFoundVillagers As Integer = Int(4 * Rnd())
+        Dim tempFoundVillagers As Integer = Int((ThisGamesStats.ActionParams.VillGen.VillMax - ThisGamesStats.ActionParams.VillGen.VillMin) * Rnd()) + ThisGamesStats.ActionParams.VillGen.VillMin
 
         If tempFoundVillagers < 1 Then ' no villagers found, rip
             RichTextBox1.AppendText(vbNewLine & "You spent the 40 energy, but, unfortunately, you found no villagers.")
@@ -2243,7 +2245,35 @@ Partial Class MncrftGame
         'First, reset ActionCosts.
         ThisGamesStats.ActionCosts.AxeCost = Int(MncrftInfoDefaults.ActionCosts.AxeCost)
         ThisGamesStats.ActionCosts.PickaxeCost = Int(MncrftInfoDefaults.ActionCosts.PickaxeCost)
-        'With ActionCosts done, let's reset Materials.
+
+        'now ActionParams.
+        ThisGamesStats.ActionParams.ZombieGenMin = Int(MncrftInfoDefaults.ActionParams.ZombieGenMin)
+        ThisGamesStats.ActionParams.ZombieGenMax = Int(MncrftInfoDefaults.ActionParams.ZombieGenMax)
+
+        ThisGamesStats.ActionParams.WoodGen.TreeMin = Int(MncrftInfoDefaults.ActionParams.WoodGen.TreeMin)
+        ThisGamesStats.ActionParams.WoodGen.TreeMax = Int(MncrftInfoDefaults.ActionParams.WoodGen.TreeMax)
+        ThisGamesStats.ActionParams.WoodGen.WoodMin = Int(MncrftInfoDefaults.ActionParams.WoodGen.WoodMin)
+        ThisGamesStats.ActionParams.WoodGen.WoodMax = Int(MncrftInfoDefaults.ActionParams.WoodGen.WoodMax)
+
+        ThisGamesStats.ActionParams.OreGen.StoneMin = Int(MncrftInfoDefaults.ActionParams.OreGen.StoneMin)
+        ThisGamesStats.ActionParams.OreGen.StoneMax = Int(MncrftInfoDefaults.ActionParams.OreGen.StoneMax)
+        ThisGamesStats.ActionParams.OreGen.CoalMin = Int(MncrftInfoDefaults.ActionParams.OreGen.CoalMin)
+        ThisGamesStats.ActionParams.OreGen.CoalMax = Int(MncrftInfoDefaults.ActionParams.OreGen.CoalMax)
+        ThisGamesStats.ActionParams.OreGen.IronMin = Int(MncrftInfoDefaults.ActionParams.OreGen.IronMin)
+        ThisGamesStats.ActionParams.OreGen.IronMax = Int(MncrftInfoDefaults.ActionParams.OreGen.IronMax)
+        ThisGamesStats.ActionParams.OreGen.GoldMin = Int(MncrftInfoDefaults.ActionParams.OreGen.GoldMin)
+        ThisGamesStats.ActionParams.OreGen.GoldMax = Int(MncrftInfoDefaults.ActionParams.OreGen.GoldMax)
+        ThisGamesStats.ActionParams.OreGen.DiamMin = Int(MncrftInfoDefaults.ActionParams.OreGen.DiamMin)
+        ThisGamesStats.ActionParams.OreGen.DiamMax = Int(MncrftInfoDefaults.ActionParams.OreGen.DiamMax)
+
+        ThisGamesStats.ActionParams.WoolGen.SheepMin = Int(MncrftInfoDefaults.ActionParams.WoolGen.SheepMin)
+        ThisGamesStats.ActionParams.WoolGen.SheepMax = Int(MncrftInfoDefaults.ActionParams.WoolGen.SheepMax)
+        ThisGamesStats.ActionParams.WoolGen.WoolMin = Int(MncrftInfoDefaults.ActionParams.WoolGen.WoolMin)
+        ThisGamesStats.ActionParams.WoolGen.WoolMax = Int(MncrftInfoDefaults.ActionParams.WoolGen.WoolMax)
+
+        ThisGamesStats.ActionParams.VillGen.VillMin = Int(MncrftInfoDefaults.ActionParams.VillGen.VillMin)
+        ThisGamesStats.ActionParams.VillGen.VillMax = Int(MncrftInfoDefaults.ActionParams.VillGen.VillMax)
+        'With ActionParams done, let's reset Materials.
 
         'Energy.
         ThisGamesStats.Materials.Energy.Amount = Int(MncrftInfoDefaults.Materials.Energy.Amount)
@@ -2320,14 +2350,120 @@ Partial Class MncrftGame
         resetThisGameStatsBackToDefaults()
 
         Select Case difficulty
-            Case 0
-            Case 1
-            Case 2
-            Case 3
-            Case 4
-            Case 5
-            Case 6
+            Case 0 'Peaceful disables zombies entirely and 10 more base daily energy to allow you to build your base in peace, without any urgency or danger.
+                ThisGamesStats.Difficulty = 0
+                ThisGamesStats.BaseDailyEnergy = 20
+                ThisGamesStats.ActionParams.ZombieGenMin = 0
+                ThisGamesStats.ActionParams.ZombieGenMax = 0
+                ThisGamesStats.TorchEffectivenes = 8
+            Case 1 'Easy makes the game a little easier, with 5 more base daily energy, more effective torches, and less zombies.
+                ThisGamesStats.Difficulty = 1
+                ThisGamesStats.BaseDailyEnergy = 15
+                ThisGamesStats.ActionParams.ZombieGenMin = 1
+                ThisGamesStats.ActionParams.ZombieGenMax = 2
+                ThisGamesStats.TorchEffectivenes = 8
+            Case 2 'Normal is the base difficulty of the game.
+            Case 3 'With 10 less starting energy and more zombies per night, hard makes it a little harder to get your settlement off the ground.
+                ThisGamesStats.Difficulty = 3
+                ThisGamesStats.Materials.Energy.Amount = 50
+                ThisGamesStats.ActionParams.ZombieGenMin = 4
+                ThisGamesStats.ActionParams.ZombieGenMax = 8
+            Case 4 'Hardcore, refer to NewGame.vb for desc.
+                ThisGamesStats.Difficulty = 4
+                ThisGamesStats.Materials.Energy.Amount = 40
+                ThisGamesStats.ActionParams.ZombieGenMin = 8
+                ThisGamesStats.ActionParams.ZombieGenMax = 16
+
+
+                ThisGamesStats.ActionParams.WoodGen.TreeMin = 1
+                ThisGamesStats.ActionParams.WoodGen.TreeMax = 3
+                ThisGamesStats.ActionParams.WoodGen.WoodMin = 2
+                ThisGamesStats.ActionParams.WoodGen.WoodMax = 10
+
+                ThisGamesStats.ActionParams.OreGen.StoneMin = 5
+                ThisGamesStats.ActionParams.OreGen.StoneMax = 12
+                ThisGamesStats.ActionParams.OreGen.CoalMin = 3
+                ThisGamesStats.ActionParams.OreGen.CoalMax = 10
+                ThisGamesStats.ActionParams.OreGen.IronMin = 2
+                ThisGamesStats.ActionParams.OreGen.IronMax = 8
+                ThisGamesStats.ActionParams.OreGen.GoldMin = 2
+                ThisGamesStats.ActionParams.OreGen.GoldMax = 4
+                ThisGamesStats.ActionParams.OreGen.DiamMin = 0
+                ThisGamesStats.ActionParams.OreGen.DiamMax = 1
+
+                ThisGamesStats.ActionParams.WoolGen.SheepMin = 0
+                ThisGamesStats.ActionParams.WoolGen.SheepMax = 3
+                ThisGamesStats.ActionParams.WoolGen.WoolMin = 1
+                ThisGamesStats.ActionParams.WoolGen.WoolMax = 2
+
+                ThisGamesStats.ActionParams.VillGen.VillMin = 0
+                ThisGamesStats.ActionParams.VillGen.VillMax = 2
+            Case 5 'Nightmare, refer to NewGame.vb for desc.
+                ThisGamesStats.Difficulty = 5
+                ThisGamesStats.Materials.Energy.Amount = 30
+                ThisGamesStats.ActionParams.ZombieGenMin = 16
+                ThisGamesStats.ActionParams.ZombieGenMax = 16
+                ThisGamesStats.TorchEffectivenes = 0
+
+
+                ThisGamesStats.ActionParams.WoodGen.TreeMin = 1
+                ThisGamesStats.ActionParams.WoodGen.TreeMax = 3
+                ThisGamesStats.ActionParams.WoodGen.WoodMin = 2
+                ThisGamesStats.ActionParams.WoodGen.WoodMax = 10
+
+                ThisGamesStats.ActionParams.OreGen.StoneMin = 5
+                ThisGamesStats.ActionParams.OreGen.StoneMax = 12
+                ThisGamesStats.ActionParams.OreGen.CoalMin = 3
+                ThisGamesStats.ActionParams.OreGen.CoalMax = 10
+                ThisGamesStats.ActionParams.OreGen.IronMin = 2
+                ThisGamesStats.ActionParams.OreGen.IronMax = 8
+                ThisGamesStats.ActionParams.OreGen.GoldMin = 2
+                ThisGamesStats.ActionParams.OreGen.GoldMax = 4
+                ThisGamesStats.ActionParams.OreGen.DiamMin = 0
+                ThisGamesStats.ActionParams.OreGen.DiamMax = 1
+
+                ThisGamesStats.ActionParams.WoolGen.SheepMin = 0
+                ThisGamesStats.ActionParams.WoolGen.SheepMax = 3
+                ThisGamesStats.ActionParams.WoolGen.WoolMin = 1
+                ThisGamesStats.ActionParams.WoolGen.WoolMax = 2
+
+                ThisGamesStats.ActionParams.VillGen.VillMin = 0
+                ThisGamesStats.ActionParams.VillGen.VillMax = 2
+            Case 6 'Wasteland, refer to NewGame.vb for desc.
+                ThisGamesStats.Difficulty = 6
+                ThisGamesStats.BaseDailyEnergy = 8
+                ThisGamesStats.Materials.Energy.Amount = 20
+                ThisGamesStats.ActionParams.ZombieGenMin = 20
+                ThisGamesStats.ActionParams.ZombieGenMax = 20
+                ThisGamesStats.TorchEffectivenes = 0
+
+
+                ThisGamesStats.ActionParams.WoodGen.TreeMin = 0
+                ThisGamesStats.ActionParams.WoodGen.TreeMax = 2
+                ThisGamesStats.ActionParams.WoodGen.WoodMin = 2
+                ThisGamesStats.ActionParams.WoodGen.WoodMax = 10
+
+                ThisGamesStats.ActionParams.OreGen.StoneMin = 5
+                ThisGamesStats.ActionParams.OreGen.StoneMax = 12
+                ThisGamesStats.ActionParams.OreGen.CoalMin = 3
+                ThisGamesStats.ActionParams.OreGen.CoalMax = 10
+                ThisGamesStats.ActionParams.OreGen.IronMin = 2
+                ThisGamesStats.ActionParams.OreGen.IronMax = 8
+                ThisGamesStats.ActionParams.OreGen.GoldMin = 2
+                ThisGamesStats.ActionParams.OreGen.GoldMax = 4
+                ThisGamesStats.ActionParams.OreGen.DiamMin = 0
+                ThisGamesStats.ActionParams.OreGen.DiamMax = 1
+
+                ThisGamesStats.ActionParams.WoolGen.SheepMin = 0
+                ThisGamesStats.ActionParams.WoolGen.SheepMax = 3
+                ThisGamesStats.ActionParams.WoolGen.WoolMin = 1
+                ThisGamesStats.ActionParams.WoolGen.WoolMax = 2
+
+                ThisGamesStats.ActionParams.VillGen.VillMin = 0
+                ThisGamesStats.ActionParams.VillGen.VillMax = 1
         End Select
+        RichTextBox1.Text = "Welcome to Mncrft!"
+        UpdateStatDisplay()
     End Sub
 End Class
 #Enable Warning BC42025
@@ -2343,6 +2479,9 @@ Public Class MncrftInfo
     Public Offense As Integer = 0
     Public PersonalDefense As Integer = 0
     Public Defense As Integer
+    Public BaseDailyEnergy As Integer = 10
+    Public TorchEffectivenes As Integer = 5
+    Public ZombieStacking As Boolean = False
 
     Public Class ActionParams
         Public Shared ZombieGenMin As Integer = 2
@@ -2369,7 +2508,7 @@ Public Class MncrftInfo
             Public Shared SheepMin As Integer = 0
             Public Shared SheepMax As Integer = 6
             Public Shared WoolMin As Integer = 1
-            Public Shared WollMax As Integer = 3
+            Public Shared WoolMax As Integer = 3
         End Class
         Public Class VillGen
             Public Shared VillMin As Integer = 0
@@ -2633,6 +2772,39 @@ Public Class MncrftInfo
 End Class
 
 Public Class MncrftInfoDefaults
+
+    Public Class ActionParams
+        Public Shared ZombieGenMin As Integer = 2
+        Public Shared ZombieGenMax As Integer = 4
+        Public Class WoodGen
+            Public Shared TreeMin As Integer = 1
+            Public Shared TreeMax As Integer = 5
+            Public Shared WoodMin As Integer = 4
+            Public Shared WoodMax As Integer = 20
+        End Class
+        Public Class OreGen
+            Public Shared StoneMin As Integer = 10
+            Public Shared StoneMax As Integer = 25
+            Public Shared CoalMin As Integer = 6
+            Public Shared CoalMax As Integer = 20
+            Public Shared IronMin As Integer = 4
+            Public Shared IronMax As Integer = 16
+            Public Shared GoldMin As Integer = 4
+            Public Shared GoldMax As Integer = 8
+            Public Shared DiamMin As Integer = 0
+            Public Shared DiamMax As Integer = 2
+        End Class
+        Public Class WoolGen
+            Public Shared SheepMin As Integer = 0
+            Public Shared SheepMax As Integer = 6
+            Public Shared WoolMin As Integer = 1
+            Public Shared WoolMax As Integer = 3
+        End Class
+        Public Class VillGen
+            Public Shared VillMin As Integer = 0
+            Public Shared VillMax As Integer = 4
+        End Class
+    End Class
     Public Class ActionCosts
         Public Shared AxeCost As Integer = 15
         Public Shared PickaxeCost As Integer = 0

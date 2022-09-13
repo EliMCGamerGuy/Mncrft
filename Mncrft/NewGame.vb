@@ -132,7 +132,15 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
+        If selecteddiff > 4 Then
+            Select Case MsgBox("You seem to have selected a difficulty that is not fair," & vbNewLine & "are you sure you want to start a new game with this difficulty?", MsgBoxStyle.YesNo, "Are you sure?")
+                Case MsgBoxResult.Yes
+                Case MsgBoxResult.No
+                    Return
+            End Select
+        End If
+        MncrftGame.StartNewGame(selecteddiff)
+        Me.Close()
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -141,29 +149,30 @@
 End Class
 
 Public Class DifficultyDescriptions
-    Public peaceful As String = "Peaceful disables zombies entirely and 10 more daily energy to allow you to build " &
+    Public peaceful As String = "Peaceful disables zombies entirely and 10 more base daily energy to allow you to build " &
                                 "your base in peace, without any urgency or danger."
 
-    Public easy As String = "Easy makes the game a little easier, with 5 more daily energy and less zombies."
+    Public easy As String = "Easy makes the game a little easier, with 5 more base daily energy, more effective torches, " &
+                            "and less zombies."
 
     Public normal As String = "Normal is the base difficulty of the game."
 
-    Public hard As String = "With 10 less starting energy and more zombies per night, hard makes it a little " &
-                            "harder to get your settlement off the ground."
+    Public hard As String = "With 10 starting energy and more zombies per night, hard makes it a little harder to " &
+                            "get your settlement off the ground."
 
-    Public hardcore As String = "Zombies added every night is sharply increased, resources are more scarce, and " &
-                                "villagers are few and far between. Creating your empire will be harder than normal " &
-                                "in this mode, it will put your resourcefulness to the test. Do you have what it takes " &
-                                "to face hardcore?"
+    Public hardcore As String = "Starting energy cut to only 40, zombies added every night is sharply increased, resources " &
+                                "are more scarce, and villagers are few and far between. Creating your " &
+                                "empire will be harder than normal in this mode, it will put your resourcefulness to the test. " &
+                                "Do you have what it takes to face hardcore?"
 
-    Public nightmare As String = "Zombies start at 16 and jump by 16 every night, torches do nothing, resources are " &
-                                    "more scarce, you get tired more easily, villagers are few and far between. Creating " &
-                                    "your empire will be much harder than normal in this mode. It will really test your " &
-                                    "resourcefulness and persistence. Are you ready to build or die trying?"
+    Public nightmare As String = "Starting energy at only 30, zombies start at 16 and jump by 16 every night, torches do " &
+                                    "nothing, resources are more scarce, villagers are few and far " &
+                                    "between. Creating your empire will be much harder than normal in this mode. It will really " &
+                                    "test your resourcefulness and persistence. Are you ready to build or die trying?"
 
-    Public wasteland As String = "Beginning in a ruthless wasteland is a truly unfair challenge, with zombies " &
-                                    "starting at 20 and jumping by 20 every night, torches doing nothing, resources " &
-                                    "being more scarce, getting tired more quickly, and villagers being near impossible to " &
+    Public wasteland As String = "Beginning in a ruthless wasteland is a truly unfair challenge, with starting energy only at 20, " &
+                                    "zombies starting at 20 and jumping by 20 every night, torches doing nothing, resources " &
+                                    "being more scarce, less base daily energy, and villagers being near impossible to " &
                                     "find. If you manage to actually build a functioning base in this difficulty I will " &
                                     "honestly be amazed."
 

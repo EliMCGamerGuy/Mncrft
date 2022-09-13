@@ -121,14 +121,14 @@
             End If
             'Everything seems to be in order.
             'Alright, Gordon, your suit should keep you comfortable through all this...
-            ThisGamesStats = New MncrftInfo 'LOAD! LOAD! LOAD! LOAD! LOAD!
-
-            ThisGamesStats.Defense = parts(0)
-            ThisGamesStats.Difficulty = parts(1)
-            ThisGamesStats.NightScore = parts(2)
-            ThisGamesStats.LastZombieCount = parts(3)
-            ThisGamesStats.Offense = parts(4)
-            ThisGamesStats.PersonalDefense = parts(5)
+            ThisGamesStats = New MncrftInfo With {
+                .Defense = parts(0),
+                .Difficulty = parts(1),
+                .NightScore = parts(2),
+                .LastZombieCount = parts(3),
+                .Offense = parts(4),
+                .PersonalDefense = parts(5)
+            } 'LOAD! LOAD! LOAD! LOAD! LOAD!
             ThisGamesStats.ActionCosts.AxeCost = parts(6)
             ThisGamesStats.ActionCosts.PickaxeCost = parts(7) 'With ActionCosts done, let's load Materials.
             ThisGamesStats.Materials.Energy.Amount = parts(8) 'Energy.
@@ -183,6 +183,7 @@
             ThisGamesStats.Villagers.Miner.Gold.Amount = parts(57)
             ThisGamesStats.Villagers.Miner.Iron.Amount = parts(58)
             ThisGamesStats.Villagers.Miner.Diamond.Amount = parts(59) 'And we're done!
+            ApplyDifficulty()
             UpdateStatDisplay()
             Try
                 RichTextBox1.Text = My.Computer.FileSystem.ReadAllText(OpenFileDialog1.FileName.Replace(".sav", ".log"))
@@ -211,6 +212,122 @@
             End Select
         End If
         NewGame.ShowDialog()
+    End Sub
+
+    Private Sub ApplyDifficulty()
+        Select Case ThisGamesStats.Difficulty
+            Case 0 'Peaceful disables zombies entirely and 10 more base daily energy to allow you to build your base in peace, without any urgency or danger.
+                ThisGamesStats.Difficulty = 0
+                ThisGamesStats.BaseDailyEnergy = 20
+                ThisGamesStats.ActionParams.ZombieGenMin = 0
+                ThisGamesStats.ActionParams.ZombieGenMax = 0
+                ThisGamesStats.TorchEffectivenes = 8
+            Case 1 'Easy makes the game a little easier, with 5 more base daily energy, more effective torches, and less zombies.
+                ThisGamesStats.Difficulty = 1
+                ThisGamesStats.BaseDailyEnergy = 15
+                ThisGamesStats.ActionParams.ZombieGenMin = 1
+                ThisGamesStats.ActionParams.ZombieGenMax = 2
+                ThisGamesStats.TorchEffectivenes = 8
+            Case 2 'Normal is the base difficulty of the game.
+            Case 3 'With 10 less starting energy and more zombies per night, hard makes it a little harder to get your settlement off the ground.
+                ThisGamesStats.Difficulty = 3
+                ThisGamesStats.Materials.Energy.Amount = 50
+                ThisGamesStats.ActionParams.ZombieGenMin = 4
+                ThisGamesStats.ActionParams.ZombieGenMax = 8
+            Case 4 'Hardcore, refer to NewGame.vb for desc.
+                ThisGamesStats.Difficulty = 4
+                ThisGamesStats.Materials.Energy.Amount = 40
+                ThisGamesStats.ActionParams.ZombieGenMin = 8
+                ThisGamesStats.ActionParams.ZombieGenMax = 16
+
+
+                ThisGamesStats.ActionParams.WoodGen.TreeMin = 1
+                ThisGamesStats.ActionParams.WoodGen.TreeMax = 3
+                ThisGamesStats.ActionParams.WoodGen.WoodMin = 2
+                ThisGamesStats.ActionParams.WoodGen.WoodMax = 10
+
+                ThisGamesStats.ActionParams.OreGen.StoneMin = 5
+                ThisGamesStats.ActionParams.OreGen.StoneMax = 12
+                ThisGamesStats.ActionParams.OreGen.CoalMin = 3
+                ThisGamesStats.ActionParams.OreGen.CoalMax = 10
+                ThisGamesStats.ActionParams.OreGen.IronMin = 2
+                ThisGamesStats.ActionParams.OreGen.IronMax = 8
+                ThisGamesStats.ActionParams.OreGen.GoldMin = 2
+                ThisGamesStats.ActionParams.OreGen.GoldMax = 4
+                ThisGamesStats.ActionParams.OreGen.DiamMin = 0
+                ThisGamesStats.ActionParams.OreGen.DiamMax = 1
+
+                ThisGamesStats.ActionParams.WoolGen.SheepMin = 0
+                ThisGamesStats.ActionParams.WoolGen.SheepMax = 3
+                ThisGamesStats.ActionParams.WoolGen.WoolMin = 1
+                ThisGamesStats.ActionParams.WoolGen.WoolMax = 2
+
+                ThisGamesStats.ActionParams.VillGen.VillMin = 0
+                ThisGamesStats.ActionParams.VillGen.VillMax = 2
+            Case 5 'Nightmare, refer to NewGame.vb for desc.
+                ThisGamesStats.Difficulty = 5
+                ThisGamesStats.Materials.Energy.Amount = 30
+                ThisGamesStats.ActionParams.ZombieGenMin = 16
+                ThisGamesStats.ActionParams.ZombieGenMax = 16
+                ThisGamesStats.TorchEffectivenes = 0
+
+
+                ThisGamesStats.ActionParams.WoodGen.TreeMin = 1
+                ThisGamesStats.ActionParams.WoodGen.TreeMax = 3
+                ThisGamesStats.ActionParams.WoodGen.WoodMin = 2
+                ThisGamesStats.ActionParams.WoodGen.WoodMax = 10
+
+                ThisGamesStats.ActionParams.OreGen.StoneMin = 5
+                ThisGamesStats.ActionParams.OreGen.StoneMax = 12
+                ThisGamesStats.ActionParams.OreGen.CoalMin = 3
+                ThisGamesStats.ActionParams.OreGen.CoalMax = 10
+                ThisGamesStats.ActionParams.OreGen.IronMin = 2
+                ThisGamesStats.ActionParams.OreGen.IronMax = 8
+                ThisGamesStats.ActionParams.OreGen.GoldMin = 2
+                ThisGamesStats.ActionParams.OreGen.GoldMax = 4
+                ThisGamesStats.ActionParams.OreGen.DiamMin = 0
+                ThisGamesStats.ActionParams.OreGen.DiamMax = 1
+
+                ThisGamesStats.ActionParams.WoolGen.SheepMin = 0
+                ThisGamesStats.ActionParams.WoolGen.SheepMax = 3
+                ThisGamesStats.ActionParams.WoolGen.WoolMin = 1
+                ThisGamesStats.ActionParams.WoolGen.WoolMax = 2
+
+                ThisGamesStats.ActionParams.VillGen.VillMin = 0
+                ThisGamesStats.ActionParams.VillGen.VillMax = 2
+            Case 6 'Wasteland, refer to NewGame.vb for desc.
+                ThisGamesStats.Difficulty = 6
+                ThisGamesStats.BaseDailyEnergy = 8
+                ThisGamesStats.Materials.Energy.Amount = 20
+                ThisGamesStats.ActionParams.ZombieGenMin = 20
+                ThisGamesStats.ActionParams.ZombieGenMax = 20
+                ThisGamesStats.TorchEffectivenes = 0
+
+
+                ThisGamesStats.ActionParams.WoodGen.TreeMin = 0
+                ThisGamesStats.ActionParams.WoodGen.TreeMax = 2
+                ThisGamesStats.ActionParams.WoodGen.WoodMin = 2
+                ThisGamesStats.ActionParams.WoodGen.WoodMax = 10
+
+                ThisGamesStats.ActionParams.OreGen.StoneMin = 5
+                ThisGamesStats.ActionParams.OreGen.StoneMax = 12
+                ThisGamesStats.ActionParams.OreGen.CoalMin = 3
+                ThisGamesStats.ActionParams.OreGen.CoalMax = 10
+                ThisGamesStats.ActionParams.OreGen.IronMin = 2
+                ThisGamesStats.ActionParams.OreGen.IronMax = 8
+                ThisGamesStats.ActionParams.OreGen.GoldMin = 2
+                ThisGamesStats.ActionParams.OreGen.GoldMax = 4
+                ThisGamesStats.ActionParams.OreGen.DiamMin = 0
+                ThisGamesStats.ActionParams.OreGen.DiamMax = 1
+
+                ThisGamesStats.ActionParams.WoolGen.SheepMin = 0
+                ThisGamesStats.ActionParams.WoolGen.SheepMax = 3
+                ThisGamesStats.ActionParams.WoolGen.WoolMin = 1
+                ThisGamesStats.ActionParams.WoolGen.WoolMax = 2
+
+                ThisGamesStats.ActionParams.VillGen.VillMin = 0
+                ThisGamesStats.ActionParams.VillGen.VillMax = 1
+        End Select
     End Sub
 End Class
 #Enable Warning BC42025
