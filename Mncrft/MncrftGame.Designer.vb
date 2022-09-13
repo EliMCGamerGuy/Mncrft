@@ -97,7 +97,7 @@ Partial Class MncrftGame
         Me.RichTextBox1.ReadOnly = True
         Me.RichTextBox1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.RichTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical
-        Me.RichTextBox1.Size = New System.Drawing.Size(411, 411)
+        Me.RichTextBox1.Size = New System.Drawing.Size(411, 428)
         Me.RichTextBox1.TabIndex = 0
         Me.RichTextBox1.TabStop = False
         Me.RichTextBox1.Text = ""
@@ -114,32 +114,32 @@ Partial Class MncrftGame
         'RichTextBox2
         '
         Me.RichTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.RichTextBox2.Location = New System.Drawing.Point(641, 40)
+        Me.RichTextBox2.Location = New System.Drawing.Point(641, 30)
         Me.RichTextBox2.Name = "RichTextBox2"
         Me.RichTextBox2.ReadOnly = True
         Me.RichTextBox2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None
-        Me.RichTextBox2.Size = New System.Drawing.Size(90, 150)
+        Me.RichTextBox2.Size = New System.Drawing.Size(90, 154)
         Me.RichTextBox2.TabIndex = 2
-        Me.RichTextBox2.Text = "Energy" & Global.Microsoft.VisualBasic.ChrW(10) & "Wood" & Global.Microsoft.VisualBasic.ChrW(10) & "Sticks" & Global.Microsoft.VisualBasic.ChrW(10) & "Wool" & Global.Microsoft.VisualBasic.ChrW(10) & "Stone" & Global.Microsoft.VisualBasic.ChrW(10) & "Coal" & Global.Microsoft.VisualBasic.ChrW(10) & "Iron Ore" & Global.Microsoft.VisualBasic.ChrW(10) & "Iron Ingots" & Global.Microsoft.VisualBasic.ChrW(10) & "Gold Ore" & Global.Microsoft.VisualBasic.ChrW(10) & "Gold Ingots" & Global.Microsoft.VisualBasic.ChrW(10) & "Diam" &
-    "onds"
+        Me.RichTextBox2.Text = "Energy" & Global.Microsoft.VisualBasic.ChrW(10) & "Wood" & Global.Microsoft.VisualBasic.ChrW(10) & "Planks" & Global.Microsoft.VisualBasic.ChrW(10) & "Sticks" & Global.Microsoft.VisualBasic.ChrW(10) & "Wool" & Global.Microsoft.VisualBasic.ChrW(10) & "Stone" & Global.Microsoft.VisualBasic.ChrW(10) & "Coal" & Global.Microsoft.VisualBasic.ChrW(10) & "Iron Ore" & Global.Microsoft.VisualBasic.ChrW(10) & "Iron Ingots" & Global.Microsoft.VisualBasic.ChrW(10) & "Gold Ore" & Global.Microsoft.VisualBasic.ChrW(10) & "Gold Ingo" &
+    "ts" & Global.Microsoft.VisualBasic.ChrW(10) & "Diamonds"
         Me.RichTextBox2.WordWrap = False
         '
         'MaterialNumbers
         '
         Me.MaterialNumbers.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.MaterialNumbers.Location = New System.Drawing.Point(759, 40)
+        Me.MaterialNumbers.Location = New System.Drawing.Point(759, 30)
         Me.MaterialNumbers.Name = "MaterialNumbers"
         Me.MaterialNumbers.ReadOnly = True
         Me.MaterialNumbers.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None
-        Me.MaterialNumbers.Size = New System.Drawing.Size(63, 150)
+        Me.MaterialNumbers.Size = New System.Drawing.Size(63, 154)
         Me.MaterialNumbers.TabIndex = 3
-        Me.MaterialNumbers.Text = "60" & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(10) & "0"
+        Me.MaterialNumbers.Text = "60" & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(10) & "0"
         Me.MaterialNumbers.WordWrap = False
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(645, 24)
+        Me.Label1.Location = New System.Drawing.Point(645, 16)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(49, 13)
         Me.Label1.TabIndex = 4
@@ -148,7 +148,7 @@ Partial Class MncrftGame
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(645, 189)
+        Me.Label2.Location = New System.Drawing.Point(644, 200)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(46, 13)
         Me.Label2.TabIndex = 7
@@ -157,7 +157,7 @@ Partial Class MncrftGame
         'VillagerNumbers
         '
         Me.VillagerNumbers.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.VillagerNumbers.Location = New System.Drawing.Point(759, 205)
+        Me.VillagerNumbers.Location = New System.Drawing.Point(759, 214)
         Me.VillagerNumbers.Name = "VillagerNumbers"
         Me.VillagerNumbers.ReadOnly = True
         Me.VillagerNumbers.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None
@@ -169,7 +169,7 @@ Partial Class MncrftGame
         'RichTextBox5
         '
         Me.RichTextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.RichTextBox5.Location = New System.Drawing.Point(641, 205)
+        Me.RichTextBox5.Location = New System.Drawing.Point(641, 214)
         Me.RichTextBox5.Name = "RichTextBox5"
         Me.RichTextBox5.ReadOnly = True
         Me.RichTextBox5.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None
@@ -181,7 +181,7 @@ Partial Class MncrftGame
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(432, 24)
+        Me.Label3.Location = New System.Drawing.Point(432, 16)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(49, 13)
         Me.Label3.TabIndex = 10
@@ -190,25 +190,25 @@ Partial Class MncrftGame
         'BuildingNumbers
         '
         Me.BuildingNumbers.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.BuildingNumbers.Location = New System.Drawing.Point(546, 40)
+        Me.BuildingNumbers.Location = New System.Drawing.Point(546, 30)
         Me.BuildingNumbers.Name = "BuildingNumbers"
         Me.BuildingNumbers.ReadOnly = True
         Me.BuildingNumbers.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None
-        Me.BuildingNumbers.Size = New System.Drawing.Size(62, 59)
+        Me.BuildingNumbers.Size = New System.Drawing.Size(62, 95)
         Me.BuildingNumbers.TabIndex = 9
-        Me.BuildingNumbers.Text = "0" & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.BuildingNumbers.Text = "0" & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(10) & "0"
         Me.BuildingNumbers.WordWrap = False
         '
         'RichTextBox7
         '
         Me.RichTextBox7.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.RichTextBox7.Location = New System.Drawing.Point(428, 40)
+        Me.RichTextBox7.Location = New System.Drawing.Point(428, 30)
         Me.RichTextBox7.Name = "RichTextBox7"
         Me.RichTextBox7.ReadOnly = True
         Me.RichTextBox7.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None
-        Me.RichTextBox7.Size = New System.Drawing.Size(90, 59)
+        Me.RichTextBox7.Size = New System.Drawing.Size(90, 95)
         Me.RichTextBox7.TabIndex = 8
-        Me.RichTextBox7.Text = "Beds" & Global.Microsoft.VisualBasic.ChrW(10) & "Houses" & Global.Microsoft.VisualBasic.ChrW(10) & "Towers" & Global.Microsoft.VisualBasic.ChrW(10) & "Guard Towers" & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.RichTextBox7.Text = "Beds" & Global.Microsoft.VisualBasic.ChrW(10) & "Houses" & Global.Microsoft.VisualBasic.ChrW(10) & "Towers" & Global.Microsoft.VisualBasic.ChrW(10) & "Guard Towers" & Global.Microsoft.VisualBasic.ChrW(10) & "Wooden Walls" & Global.Microsoft.VisualBasic.ChrW(10) & "Stone Walls" & Global.Microsoft.VisualBasic.ChrW(10) & "Iron Walls"
         Me.RichTextBox7.WordWrap = False
         '
         'Gatherwoodbutton
@@ -223,7 +223,7 @@ Partial Class MncrftGame
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(432, 100)
+        Me.Label4.Location = New System.Drawing.Point(432, 126)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(49, 13)
         Me.Label4.TabIndex = 14
@@ -232,7 +232,7 @@ Partial Class MncrftGame
         'StatNumbers
         '
         Me.StatNumbers.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.StatNumbers.Location = New System.Drawing.Point(546, 116)
+        Me.StatNumbers.Location = New System.Drawing.Point(546, 140)
         Me.StatNumbers.Name = "StatNumbers"
         Me.StatNumbers.ReadOnly = True
         Me.StatNumbers.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None
@@ -244,7 +244,7 @@ Partial Class MncrftGame
         'RichTextBox9
         '
         Me.RichTextBox9.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.RichTextBox9.Location = New System.Drawing.Point(428, 116)
+        Me.RichTextBox9.Location = New System.Drawing.Point(428, 140)
         Me.RichTextBox9.Name = "RichTextBox9"
         Me.RichTextBox9.ReadOnly = True
         Me.RichTextBox9.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None
@@ -279,7 +279,7 @@ Partial Class MncrftGame
         Me.GroupBox1.Controls.Add(Me.Gatherwoodbutton)
         Me.GroupBox1.Controls.Add(Me.gominingbutton)
         Me.GroupBox1.Controls.Add(Me.EndDayButton)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 451)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 461)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(251, 142)
         Me.GroupBox1.TabIndex = 24
@@ -318,7 +318,7 @@ Partial Class MncrftGame
         Me.GroupBox2.Controls.Add(Me.ComboBox1)
         Me.GroupBox2.Controls.Add(Me.smeltbutton)
         Me.GroupBox2.Enabled = False
-        Me.GroupBox2.Location = New System.Drawing.Point(546, 525)
+        Me.GroupBox2.Location = New System.Drawing.Point(546, 535)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(275, 68)
         Me.GroupBox2.TabIndex = 25
@@ -340,7 +340,7 @@ Partial Class MncrftGame
         Me.GroupBox3.Controls.Add(Me.hirefirebutton)
         Me.GroupBox3.Controls.Add(Me.ComboBox2)
         Me.GroupBox3.Controls.Add(Me.Hirehirebutton)
-        Me.GroupBox3.Location = New System.Drawing.Point(546, 451)
+        Me.GroupBox3.Location = New System.Drawing.Point(546, 461)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(275, 68)
         Me.GroupBox3.TabIndex = 26
@@ -380,7 +380,7 @@ Partial Class MncrftGame
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(432, 202)
+        Me.Label5.Location = New System.Drawing.Point(432, 223)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(32, 13)
         Me.Label5.TabIndex = 29
@@ -389,7 +389,7 @@ Partial Class MncrftGame
         'ItemNumbers
         '
         Me.ItemNumbers.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.ItemNumbers.Location = New System.Drawing.Point(546, 218)
+        Me.ItemNumbers.Location = New System.Drawing.Point(546, 237)
         Me.ItemNumbers.Name = "ItemNumbers"
         Me.ItemNumbers.ReadOnly = True
         Me.ItemNumbers.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None
@@ -401,7 +401,7 @@ Partial Class MncrftGame
         'RichTextBox11
         '
         Me.RichTextBox11.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.RichTextBox11.Location = New System.Drawing.Point(428, 218)
+        Me.RichTextBox11.Location = New System.Drawing.Point(428, 237)
         Me.RichTextBox11.Name = "RichTextBox11"
         Me.RichTextBox11.ReadOnly = True
         Me.RichTextBox11.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None
@@ -415,7 +415,7 @@ Partial Class MncrftGame
         Me.GroupBox4.Controls.Add(Me.craftdisassemblebutton)
         Me.GroupBox4.Controls.Add(Me.ComboBox3)
         Me.GroupBox4.Controls.Add(Me.Craftcraftbutton)
-        Me.GroupBox4.Location = New System.Drawing.Point(269, 525)
+        Me.GroupBox4.Location = New System.Drawing.Point(269, 535)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(274, 68)
         Me.GroupBox4.TabIndex = 30
@@ -435,7 +435,7 @@ Partial Class MncrftGame
         '
         Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Items.AddRange(New Object() {"4 Sticks (2 Wood)", "Furnace (8 Stone)", "Wooden Sword (2 Wood, 1 Stick)", "Wooden Pickaxe (3 Wood, 2 Sticks)", "Wooden Axe (3 Wood, 2 Sticks)", "Stone Sword (2 Stone, 1 Stick)", "Stone Pickaxe (3 Stone, 2 Sticks)", "Stone Axe (3 Stone, 2 Sticks)", "Iron Sword (2 Smelted Iron, 1 Stick)", "Iron Pickaxe (3 Smelted Iron, 2 Sticks)", "Iron Axe (3 Smelted Iron, 2 Sticks", "Golden Sword (2 Smelted Gold, 1 Stick)", "Golden Pickaxe (3 Smelted Gold, 2 Sticks)", "Golden Axe (3 Smelted Gold, 2 Sticks)", "Diamond Sword (2 Diamonds, 1 Stick) ", "Diamond Pickaxe (3 Diamonds, 2 Sticks)", "Diamond Axe (3 Diamonds, 2 Sticks)", "4 Torches (1 Coal, 1 Stick)"})
+        Me.ComboBox3.Items.AddRange(New Object() {"4 Planks (1 Wood)", "4 Sticks (2 Planks)", "Furnace (8 Stone)", "Wooden Sword (2 Planks, 1 Stick)", "Wooden Pickaxe (3 Planks, 2 Sticks)", "Wooden Axe (3 Planks, 2 Sticks)", "Stone Sword (2 Stone, 1 Stick)", "Stone Pickaxe (3 Stone, 2 Sticks)", "Stone Axe (3 Stone, 2 Sticks)", "Iron Sword (2 Iron Ingots, 1 Stick)", "Iron Pickaxe (3 Iron Ingots, 2 Sticks)", "Iron Axe (3 Iron Ingots, 2 Sticks", "Golden Sword (2 Gold Ingots, 1 Stick)", "Golden Pickaxe (3 Gold Ingots, 2 Sticks)", "Golden Axe (3 Gold Ingots, 2 Sticks)", "Diamond Sword (2 Diamonds, 1 Stick) ", "Diamond Pickaxe (3 Diamonds, 2 Sticks)", "Diamond Axe (3 Diamonds, 2 Sticks)", "4 Torches (1 Coal, 1 Stick)"})
         Me.ComboBox3.Location = New System.Drawing.Point(6, 19)
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(262, 21)
@@ -455,7 +455,7 @@ Partial Class MncrftGame
         Me.GroupBox5.Controls.Add(Me.Builddismantlebutton)
         Me.GroupBox5.Controls.Add(Me.ComboBox4)
         Me.GroupBox5.Controls.Add(Me.BuildBuildbutton)
-        Me.GroupBox5.Location = New System.Drawing.Point(269, 451)
+        Me.GroupBox5.Location = New System.Drawing.Point(269, 461)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(274, 68)
         Me.GroupBox5.TabIndex = 31
@@ -475,7 +475,7 @@ Partial Class MncrftGame
         '
         Me.ComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Items.AddRange(New Object() {"Bed (3 Wool, 3 Wood)", "House (10 Wood, 10 Stone)", "Tower (30 Stone)", "Guard Tower (80 Stone, 1 Villager, 1 Iron sword)"})
+        Me.ComboBox4.Items.AddRange(New Object() {"Bed (3 Wool, 3 Planks)", "House (10 Planks, 10 Stone)", "Tower (30 Stone)", "Guard Tower (80 Stone, 1 Villager, 1 Iron sword)", "Wooden Walls (50 Planks)", "Stone Walls (50 Stone)", "Iron Walls (50 Iron Ingots)"})
         Me.ComboBox4.Location = New System.Drawing.Point(6, 19)
         Me.ComboBox4.Name = "ComboBox4"
         Me.ComboBox4.Size = New System.Drawing.Size(262, 21)
@@ -510,30 +510,30 @@ Partial Class MncrftGame
         'NewGameToolStripMenuItem
         '
         Me.NewGameToolStripMenuItem.Name = "NewGameToolStripMenuItem"
-        Me.NewGameToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.NewGameToolStripMenuItem.Size = New System.Drawing.Size(134, 22)
         Me.NewGameToolStripMenuItem.Text = "New Game"
         '
         'SaveGameToolStripMenuItem
         '
         Me.SaveGameToolStripMenuItem.Name = "SaveGameToolStripMenuItem"
-        Me.SaveGameToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SaveGameToolStripMenuItem.Size = New System.Drawing.Size(134, 22)
         Me.SaveGameToolStripMenuItem.Text = "Save Game"
         '
         'LoadGameToolStripMenuItem
         '
         Me.LoadGameToolStripMenuItem.Name = "LoadGameToolStripMenuItem"
-        Me.LoadGameToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.LoadGameToolStripMenuItem.Size = New System.Drawing.Size(134, 22)
         Me.LoadGameToolStripMenuItem.Text = "Load Game"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(131, 6)
         '
         'QuitToolStripMenuItem
         '
         Me.QuitToolStripMenuItem.Name = "QuitToolStripMenuItem"
-        Me.QuitToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.QuitToolStripMenuItem.Size = New System.Drawing.Size(134, 22)
         Me.QuitToolStripMenuItem.Text = "Quit"
         '
         'HelpToolStripMenuItem
@@ -573,7 +573,7 @@ Partial Class MncrftGame
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(829, 601)
+        Me.ClientSize = New System.Drawing.Size(829, 614)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.Label5)
@@ -726,7 +726,8 @@ Partial Class MncrftGame
         Call TWES() 'TWES, Tool and Weapon Equipment System!
 
         'set the buildings info
-        BuildingNumbers.Text = ThisGamesStats.Buildings.Bed.Amount & vbNewLine & ThisGamesStats.Buildings.House.Amount & vbNewLine & ThisGamesStats.Buildings.Tower.Amount & vbNewLine & ThisGamesStats.Buildings.GuardTower.Amount
+        BuildingNumbers.Text = ThisGamesStats.Buildings.Bed.Amount & vbNewLine & ThisGamesStats.Buildings.House.Amount & vbNewLine & ThisGamesStats.Buildings.Tower.Amount & vbNewLine & ThisGamesStats.Buildings.GuardTower.Amount & vbNewLine &
+            ThisGamesStats.Buildings.WoodenWalls.Amount & vbNewLine & ThisGamesStats.Buildings.StoneWalls.Amount & vbNewLine & ThisGamesStats.Buildings.IronWalls.Amount
         'set the items info
         ItemNumbers.Text = ThisGamesStats.Items.WoodenSword.Amount & vbNewLine & ThisGamesStats.Items.WoodenPickaxe.Amount & vbNewLine & ThisGamesStats.Items.WoodenAxe.Amount & vbNewLine &
             ThisGamesStats.Items.StoneSword.Amount & vbNewLine & ThisGamesStats.Items.StonePickaxe.Amount & vbNewLine & ThisGamesStats.Items.StoneAxe.Amount & vbNewLine &
@@ -735,7 +736,7 @@ Partial Class MncrftGame
             ThisGamesStats.Items.DiamondSword.Amount & vbNewLine & ThisGamesStats.Items.DiamondPickaxe.Amount & vbNewLine & ThisGamesStats.Items.DiamondAxe.Amount & vbNewLine &
             ThisGamesStats.Items.FurnaceAmount & vbNewLine & ThisGamesStats.Items.TorchAmount
         'set the materials info
-        MaterialNumbers.Text = ThisGamesStats.Materials.Energy.Amount & vbNewLine & ThisGamesStats.Materials.WoodAmount & vbNewLine & ThisGamesStats.Materials.SticksAmount & vbNewLine &
+        MaterialNumbers.Text = ThisGamesStats.Materials.Energy.Amount & vbNewLine & ThisGamesStats.Materials.WoodAmount & vbNewLine & ThisGamesStats.Materials.PlanksAmount & vbNewLine & ThisGamesStats.Materials.SticksAmount & vbNewLine &
             ThisGamesStats.Materials.WoolAmount & vbNewLine & ThisGamesStats.Materials.StoneAmount & vbNewLine & ThisGamesStats.Materials.CoalAmount & vbNewLine &
             ThisGamesStats.Materials.IronOreAmount & vbNewLine & ThisGamesStats.Materials.IronIngotAmount & vbNewLine & ThisGamesStats.Materials.GoldOreAmount & vbNewLine &
             ThisGamesStats.Materials.GoldIngotAmount & vbNewLine & ThisGamesStats.Materials.DiamondsAmount
@@ -968,15 +969,23 @@ Partial Class MncrftGame
         End If
 
         Select Case ComboBox3.SelectedIndex 'check case of crafting combobox
-            Case 0 ' S T I C K S
-                If ThisGamesStats.Materials.WoodAmount < 2 Then
+            Case 0 ' planks
+                If ThisGamesStats.Materials.WoodAmount < 1 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have enough materials for that.")
                 Else
-                    ThisGamesStats.Materials.WoodAmount = ThisGamesStats.Materials.WoodAmount - 2
+                    ThisGamesStats.Materials.WoodAmount = ThisGamesStats.Materials.WoodAmount - 1
+                    ThisGamesStats.Materials.PlanksAmount = ThisGamesStats.Materials.PlanksAmount + 4
+                    RichTextBox1.AppendText(vbNewLine & "Successfully crafted 4 planks!")
+                End If
+            Case 1 ' S T I C K S
+                If ThisGamesStats.Materials.PlanksAmount < 2 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have enough materials for that.")
+                Else
+                    ThisGamesStats.Materials.PlanksAmount = ThisGamesStats.Materials.PlanksAmount - 2
                     ThisGamesStats.Materials.SticksAmount = ThisGamesStats.Materials.SticksAmount + 4
                     RichTextBox1.AppendText(vbNewLine & "Successfully crafted 4 sticks!")
                 End If
-            Case 1 ' F U R N A C E
+            Case 2 ' F U R N A C E
                 If ThisGamesStats.Materials.StoneAmount < 8 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have enough materials for that.")
                 Else
@@ -984,34 +993,34 @@ Partial Class MncrftGame
                     ThisGamesStats.Items.FurnaceAmount = ThisGamesStats.Items.FurnaceAmount + 1
                     RichTextBox1.AppendText(vbNewLine & "Successfully crafted a furnace!")
                 End If
-            Case 2 ' W O O D E N   S W O R D
-                If ThisGamesStats.Materials.WoodAmount < 2 Or ThisGamesStats.Materials.SticksAmount < 1 Then
+            Case 3 ' W O O D E N   S W O R D
+                If ThisGamesStats.Materials.PlanksAmount < 2 Or ThisGamesStats.Materials.SticksAmount < 1 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have enough materials for that.")
                 Else
-                    ThisGamesStats.Materials.WoodAmount = ThisGamesStats.Materials.WoodAmount - 2
+                    ThisGamesStats.Materials.PlanksAmount = ThisGamesStats.Materials.PlanksAmount - 2
                     ThisGamesStats.Materials.SticksAmount = ThisGamesStats.Materials.SticksAmount - 1
                     ThisGamesStats.Items.WoodenSword.Amount = ThisGamesStats.Items.WoodenSword.Amount + 1
                     RichTextBox1.AppendText(vbNewLine & "Successfully crafted a wooden sword!")
                 End If
-            Case 3 ' W O O D E N   P I C K A X E
-                If ThisGamesStats.Materials.WoodAmount < 3 Or ThisGamesStats.Materials.SticksAmount < 2 Then
+            Case 4 ' W O O D E N   P I C K A X E
+                If ThisGamesStats.Materials.PlanksAmount < 3 Or ThisGamesStats.Materials.SticksAmount < 2 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have enough materials for that.")
                 Else
-                    ThisGamesStats.Materials.WoodAmount = ThisGamesStats.Materials.WoodAmount - 3
+                    ThisGamesStats.Materials.PlanksAmount = ThisGamesStats.Materials.PlanksAmount - 3
                     ThisGamesStats.Materials.SticksAmount = ThisGamesStats.Materials.SticksAmount - 2
                     ThisGamesStats.Items.WoodenPickaxe.Amount = ThisGamesStats.Items.WoodenPickaxe.Amount + 1
                     RichTextBox1.AppendText(vbNewLine & "Successfully crafted a wooden pickaxe!")
                 End If
-            Case 4 ' wooden axe (i'm sorry but the spaced out text was too time-consuming to make.)
-                If ThisGamesStats.Materials.WoodAmount < 3 Or ThisGamesStats.Materials.SticksAmount < 2 Then
+            Case 5 ' wooden axe (i'm sorry but the spaced out text was too time-consuming to make.)
+                If ThisGamesStats.Materials.PlanksAmount < 3 Or ThisGamesStats.Materials.SticksAmount < 2 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have enough materials for that.")
                 Else
-                    ThisGamesStats.Materials.WoodAmount = ThisGamesStats.Materials.WoodAmount - 3
+                    ThisGamesStats.Materials.PlanksAmount = ThisGamesStats.Materials.PlanksAmount - 3
                     ThisGamesStats.Materials.SticksAmount = ThisGamesStats.Materials.SticksAmount - 2
                     ThisGamesStats.Items.WoodenAxe.Amount = ThisGamesStats.Items.WoodenAxe.Amount + 1
                     RichTextBox1.AppendText(vbNewLine & "Successfully crafted a wooden axe!")
                 End If
-            Case 5 ' stone sword
+            Case 6 ' stone sword
                 If ThisGamesStats.Materials.StoneAmount < 2 Or ThisGamesStats.Materials.SticksAmount < 1 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have enough materials for that.")
                 Else
@@ -1020,7 +1029,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Items.StoneSword.Amount = ThisGamesStats.Items.StoneSword.Amount + 1
                     RichTextBox1.AppendText(vbNewLine & "Successfully crafted a stone sword!")
                 End If
-            Case 6 ' stone pickaxe
+            Case 7 ' stone pickaxe
                 If ThisGamesStats.Materials.StoneAmount < 3 Or ThisGamesStats.Materials.SticksAmount < 2 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have enough materials for that.")
                 Else
@@ -1029,7 +1038,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Items.StonePickaxe.Amount = ThisGamesStats.Items.StonePickaxe.Amount + 1
                     RichTextBox1.AppendText(vbNewLine & "Successfully crafted a stone pickaxe!")
                 End If
-            Case 7 ' stone axe
+            Case 8 ' stone axe
                 If ThisGamesStats.Materials.StoneAmount < 3 Or ThisGamesStats.Materials.SticksAmount < 2 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have enough materials for that.")
                 Else
@@ -1038,7 +1047,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Items.StoneAxe.Amount = ThisGamesStats.Items.StoneAxe.Amount + 1
                     RichTextBox1.AppendText(vbNewLine & "Successfully crafted a stone axe!")
                 End If
-            Case 8 ' iron sword
+            Case 9 ' iron sword
                 If ThisGamesStats.Materials.IronIngotAmount < 2 Or ThisGamesStats.Materials.SticksAmount < 1 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have enough materials for that.")
                 Else
@@ -1047,7 +1056,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Items.IronSword.Amount = ThisGamesStats.Items.IronSword.Amount + 1
                     RichTextBox1.AppendText(vbNewLine & "Successfully crafted a iron sword!")
                 End If
-            Case 9 ' iron pickaxe
+            Case 10 ' iron pickaxe
                 If ThisGamesStats.Materials.IronIngotAmount < 3 Or ThisGamesStats.Materials.SticksAmount < 2 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have enough materials for that.")
                 Else
@@ -1056,7 +1065,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Items.IronPickaxe.Amount = ThisGamesStats.Items.IronPickaxe.Amount + 1
                     RichTextBox1.AppendText(vbNewLine & "Successfully crafted a iron pickaxe!")
                 End If
-            Case 10 ' iron axe
+            Case 11 ' iron axe
                 If ThisGamesStats.Materials.IronIngotAmount < 3 Or ThisGamesStats.Materials.SticksAmount < 2 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have enough materials for that.")
                 Else
@@ -1065,7 +1074,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Items.IronAxe.Amount = ThisGamesStats.Items.IronAxe.Amount + 1
                     RichTextBox1.AppendText(vbNewLine & "Successfully crafted a iron axe!")
                 End If
-            Case 11 ' gold sword
+            Case 12 ' gold sword
                 If ThisGamesStats.Materials.GoldIngotAmount < 2 Or ThisGamesStats.Materials.SticksAmount < 1 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have enough materials for that.")
                 Else
@@ -1074,7 +1083,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Items.GoldSword.Amount = ThisGamesStats.Items.GoldSword.Amount + 1
                     RichTextBox1.AppendText(vbNewLine & "Successfully crafted a golden sword!")
                 End If
-            Case 12 ' gold pickaxe
+            Case 13 ' gold pickaxe
                 If ThisGamesStats.Materials.GoldIngotAmount < 3 Or ThisGamesStats.Materials.SticksAmount < 2 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have enough materials for that.")
                 Else
@@ -1083,7 +1092,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Items.GoldPickaxe.Amount = ThisGamesStats.Items.GoldPickaxe.Amount + 1
                     RichTextBox1.AppendText(vbNewLine & "Successfully crafted a golden pickaxe!")
                 End If
-            Case 13 ' gold axe
+            Case 14 ' gold axe
                 If ThisGamesStats.Materials.GoldIngotAmount < 3 Or ThisGamesStats.Materials.SticksAmount < 2 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have enough materials for that.")
                 Else
@@ -1092,7 +1101,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Items.GoldAxe.Amount = ThisGamesStats.Items.GoldAxe.Amount + 1
                     RichTextBox1.AppendText(vbNewLine & "Successfully crafted a golden axe!")
                 End If
-            Case 14 ' diamond sword
+            Case 15 ' diamond sword
                 If ThisGamesStats.Materials.DiamondsAmount < 2 Or ThisGamesStats.Materials.SticksAmount < 1 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have enough materials for that.")
                 Else
@@ -1101,7 +1110,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Items.DiamondSword.Amount = ThisGamesStats.Items.DiamondSword.Amount + 1
                     RichTextBox1.AppendText(vbNewLine & "Successfully crafted a diamond sword!")
                 End If
-            Case 15 ' diamond pickaxe
+            Case 16 ' diamond pickaxe
                 If ThisGamesStats.Materials.DiamondsAmount < 3 Or ThisGamesStats.Materials.SticksAmount < 2 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have enough materials for that.")
                 Else
@@ -1110,7 +1119,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Items.DiamondPickaxe.Amount = ThisGamesStats.Items.DiamondPickaxe.Amount + 1
                     RichTextBox1.AppendText(vbNewLine & "Successfully crafted a diamond pickaxe!")
                 End If
-            Case 16 ' diamond axe
+            Case 17 ' diamond axe
                 If ThisGamesStats.Materials.DiamondsAmount < 3 Or ThisGamesStats.Materials.SticksAmount < 2 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have enough materials for that.")
                 Else
@@ -1119,7 +1128,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Items.DiamondAxe.Amount = ThisGamesStats.Items.DiamondAxe.Amount + 1
                     RichTextBox1.AppendText(vbNewLine & "Successfully crafted a diamond axe!")
                 End If
-            Case 17 ' torches
+            Case 18 ' torches
                 If ThisGamesStats.Materials.CoalAmount < 1 Or ThisGamesStats.Materials.SticksAmount < 1 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have enough materials for that.")
                 Else
@@ -1275,7 +1284,7 @@ Partial Class MncrftGame
         End If
 
         ThisGamesStats.ActionCosts.PickaxeCost = calculatedMiningCost ' save calculated cost
-        gominingbutton.Text = "Go Mining (" + Str(calculatedMiningCost) + ")" ' make button reflect saved cost
+        gominingbutton.Text = "Go Mining (" & Str(calculatedMiningCost) & ")" ' make button reflect saved cost
 
 
         Dim calculatedPerDef As Integer ' calculate Personal Defense
@@ -1328,7 +1337,7 @@ Partial Class MncrftGame
         End If
 
         ThisGamesStats.ActionCosts.AxeCost = calculatedWoodcuttingCost ' save calculated woodcutting cost.
-        Gatherwoodbutton.Text = "Gather Wood (" + Str(calculatedWoodcuttingCost) + ")" ' reflect any changes on button
+        Gatherwoodbutton.Text = "Gather Wood (" & Str(calculatedWoodcuttingCost) & ")" ' reflect any changes on button
 
 
         Dim calculatedDefense As Integer ' tweedle dee
@@ -1336,7 +1345,7 @@ Partial Class MncrftGame
 
         ThisGamesStats.Materials.Energy.NightlyAmount = ThisGamesStats.Buildings.Bed.DailyEnergyAddition * ThisGamesStats.Buildings.Bed.Amount + ThisGamesStats.Buildings.House.DailyEnergyAddition * ThisGamesStats.Buildings.House.Amount + ThisGamesStats.BaseDailyEnergy '*chugs 6,209.25 "5 hour energy" bottles*
 
-        calculatedDefense = ThisGamesStats.Buildings.House.Amount * ThisGamesStats.Buildings.House.Defense + ThisGamesStats.Buildings.Tower.Defense * ThisGamesStats.Buildings.Tower.Amount + ThisGamesStats.Buildings.GuardTower.Defense * ThisGamesStats.Buildings.GuardTower.Amount
+        calculatedDefense = ThisGamesStats.Buildings.House.Amount * ThisGamesStats.Buildings.House.Defense + ThisGamesStats.Buildings.Tower.Defense * ThisGamesStats.Buildings.Tower.Amount + ThisGamesStats.Buildings.GuardTower.Defense * ThisGamesStats.Buildings.GuardTower.Amount + ThisGamesStats.Buildings.WoodenWalls.Defense * ThisGamesStats.Buildings.WoodenWalls.Amount + ThisGamesStats.Buildings.StoneWalls.Defense * ThisGamesStats.Buildings.StoneWalls.Amount + ThisGamesStats.Buildings.IronWalls.Defense * ThisGamesStats.Buildings.IronWalls.Amount
 
         calculatedOffense = ThisGamesStats.Buildings.GuardTower.Offense * ThisGamesStats.Buildings.GuardTower.Amount
 
@@ -1410,19 +1419,19 @@ Partial Class MncrftGame
 
         Select Case ComboBox4.SelectedIndex 'check case of building combobox
             Case 0 ' bed
-                If ThisGamesStats.Materials.WoodAmount < 3 Or ThisGamesStats.Materials.WoolAmount < 3 Then
+                If ThisGamesStats.Materials.PlanksAmount < 3 Or ThisGamesStats.Materials.WoolAmount < 3 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have enough materials for that.")
                 Else
-                    ThisGamesStats.Materials.WoodAmount = ThisGamesStats.Materials.WoodAmount - 3
+                    ThisGamesStats.Materials.PlanksAmount = ThisGamesStats.Materials.PlanksAmount - 3
                     ThisGamesStats.Materials.WoolAmount = ThisGamesStats.Materials.WoolAmount - 3
                     ThisGamesStats.Buildings.Bed.Amount = ThisGamesStats.Buildings.Bed.Amount + 1
                     RichTextBox1.AppendText(vbNewLine & "Successfully built a bed!")
                 End If
             Case 1 ' house
-                If ThisGamesStats.Materials.WoodAmount < 10 Or ThisGamesStats.Materials.StoneAmount < 10 Then
+                If ThisGamesStats.Materials.PlanksAmount < 10 Or ThisGamesStats.Materials.StoneAmount < 10 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have enough materials for that.")
                 Else
-                    ThisGamesStats.Materials.WoodAmount = ThisGamesStats.Materials.WoodAmount - 10
+                    ThisGamesStats.Materials.PlanksAmount = ThisGamesStats.Materials.PlanksAmount - 10
                     ThisGamesStats.Materials.StoneAmount = ThisGamesStats.Materials.StoneAmount - 10
                     ThisGamesStats.Buildings.House.Amount = ThisGamesStats.Buildings.House.Amount + 1
                     RichTextBox1.AppendText(vbNewLine & "Successfully built a house!")
@@ -1445,6 +1454,30 @@ Partial Class MncrftGame
                     ThisGamesStats.Buildings.GuardTower.Amount = ThisGamesStats.Buildings.GuardTower.Amount + 1
                     RichTextBox1.AppendText(vbNewLine & "Successfully built a guard tower!")
                 End If
+            Case 4 ' wooden walls
+                If ThisGamesStats.Materials.PlanksAmount < 50 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have enough materials for that.")
+                Else
+                    ThisGamesStats.Materials.PlanksAmount = ThisGamesStats.Materials.PlanksAmount - 50
+                    ThisGamesStats.Buildings.WoodenWalls.Amount = ThisGamesStats.Buildings.WoodenWalls.Amount + 1
+                    RichTextBox1.AppendText(vbNewLine & "Successfully built some wooden walls!")
+                End If
+            Case 5 ' stone walls
+                If ThisGamesStats.Materials.StoneAmount < 50 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have enough materials for that.")
+                Else
+                    ThisGamesStats.Materials.StoneAmount = ThisGamesStats.Materials.StoneAmount - 50
+                    ThisGamesStats.Buildings.StoneWalls.Amount = ThisGamesStats.Buildings.StoneWalls.Amount + 1
+                    RichTextBox1.AppendText(vbNewLine & "Successfully built some stone walls!")
+                End If
+            Case 6 ' iron walls
+                If ThisGamesStats.Materials.IronIngotAmount < 50 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have enough materials for that.")
+                Else
+                    ThisGamesStats.Materials.IronIngotAmount = ThisGamesStats.Materials.IronIngotAmount - 50
+                    ThisGamesStats.Buildings.IronWalls.Amount = ThisGamesStats.Buildings.IronWalls.Amount + 1
+                    RichTextBox1.AppendText(vbNewLine & "Successfully built some iron walls!")
+                End If
             Case Else
                 RichTextBox1.AppendText(vbNewLine & "Please select a building recipe!")
         End Select
@@ -1463,50 +1496,58 @@ Partial Class MncrftGame
         End If
 
         Select Case ComboBox3.SelectedIndex 'check case of crafting combobox
-            Case 0 ' S T I C K S
+            Case 0 ' planks
+                If ThisGamesStats.Materials.PlanksAmount < 4 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have enough planks to remake the log.")
+                Else
+                    ThisGamesStats.Materials.WoodAmount = ThisGamesStats.Materials.WoodAmount + 1
+                    ThisGamesStats.Materials.PlanksAmount = ThisGamesStats.Materials.PlanksAmount - 4
+                    RichTextBox1.AppendText(vbNewLine & "You stack the four planks on top of each other. I guess it kind of resembles a log?")
+                End If
+            Case 1 ' S T I C K S
                 If ThisGamesStats.Materials.SticksAmount < 4 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have enough sticks to remake the plank.")
                 Else
-                    ThisGamesStats.Materials.WoodAmount = ThisGamesStats.Materials.WoodAmount + 2
+                    ThisGamesStats.Materials.PlanksAmount = ThisGamesStats.Materials.PlanksAmount + 2
                     ThisGamesStats.Materials.SticksAmount = ThisGamesStats.Materials.SticksAmount - 4
                     RichTextBox1.AppendText(vbNewLine & "Somehow, you successfully used 4 sticks to reassemble a wooden plank.")
                 End If
-            Case 1 ' F U R N A C E
+            Case 2 ' F U R N A C E
                 If ThisGamesStats.Materials.StoneAmount < 1 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have that.")
                 Else
                     ThisGamesStats.Materials.StoneAmount = ThisGamesStats.Materials.StoneAmount + 8
                     ThisGamesStats.Items.FurnaceAmount = ThisGamesStats.Items.FurnaceAmount - 1
-                    RichTextBox1.AppendText(vbNewLine & "You looked at the furnace, picked it up, and smashed it into 8 separate pieces.")
+                    RichTextBox1.AppendText(vbNewLine & "You looked at the furnace, picked it up, and smashed it into eight separate pieces.")
                 End If
-            Case 2 ' W O O D E N   S W O R D
+            Case 3 ' W O O D E N   S W O R D
                 If ThisGamesStats.Items.WoodenSword.Amount < 1 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have that.")
                 Else
-                    ThisGamesStats.Materials.WoodAmount = ThisGamesStats.Materials.WoodAmount + 2
+                    ThisGamesStats.Materials.PlanksAmount = ThisGamesStats.Materials.PlanksAmount + 2
                     ThisGamesStats.Materials.SticksAmount = ThisGamesStats.Materials.SticksAmount + 1
                     ThisGamesStats.Items.WoodenSword.Amount = ThisGamesStats.Items.WoodenSword.Amount - 1
-                    RichTextBox1.AppendText(vbNewLine & "You snapped the wooden sword over your knee like the twig it is, somehow, you managed to get two pieces of wood and a stick out of it.")
+                    RichTextBox1.AppendText(vbNewLine & "You snapped the wooden sword over your knee like the twig it is, somehow, you managed to get two planks of wood and a stick out of it.")
                 End If
-            Case 3 ' W O O D E N   P I C K A X E
+            Case 4 ' W O O D E N   P I C K A X E
                 If ThisGamesStats.Items.WoodenPickaxe.Amount < 1 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have that.")
                 Else
-                    ThisGamesStats.Materials.WoodAmount = ThisGamesStats.Materials.WoodAmount + 3
+                    ThisGamesStats.Materials.PlanksAmount = ThisGamesStats.Materials.PlanksAmount + 3
                     ThisGamesStats.Materials.SticksAmount = ThisGamesStats.Materials.SticksAmount + 2
                     ThisGamesStats.Items.WoodenPickaxe.Amount = ThisGamesStats.Items.WoodenPickaxe.Amount - 1
                     RichTextBox1.AppendText(vbNewLine & "Successfully disassembled a wooden pickaxe!")
                 End If
-            Case 4 ' wooden axe (i'm sorry but the spaced out text was too time-consuming to make.)
+            Case 5 ' wooden axe (i'm sorry but the spaced out text was too time-consuming to make.)
                 If ThisGamesStats.Items.WoodenAxe.Amount < 1 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have that.")
                 Else
-                    ThisGamesStats.Materials.WoodAmount = ThisGamesStats.Materials.WoodAmount + 3
+                    ThisGamesStats.Materials.PlanksAmount = ThisGamesStats.Materials.PlanksAmount + 3
                     ThisGamesStats.Materials.SticksAmount = ThisGamesStats.Materials.SticksAmount + 2
                     ThisGamesStats.Items.WoodenAxe.Amount = ThisGamesStats.Items.WoodenAxe.Amount - 1
                     RichTextBox1.AppendText(vbNewLine & "Successfully disassembled a wooden axe!")
                 End If
-            Case 5 ' stone sword
+            Case 6 ' stone sword
                 If ThisGamesStats.Items.StoneSword.Amount < 1 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have that.")
                 Else
@@ -1515,7 +1556,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Items.StoneSword.Amount = ThisGamesStats.Items.StoneSword.Amount - 1
                     RichTextBox1.AppendText(vbNewLine & "Successfully disassembled a stone sword!")
                 End If
-            Case 6 ' stone pickaxe
+            Case 7 ' stone pickaxe
                 If ThisGamesStats.Items.StonePickaxe.Amount < 1 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have that.")
                 Else
@@ -1524,7 +1565,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Items.StonePickaxe.Amount = ThisGamesStats.Items.StonePickaxe.Amount - 1
                     RichTextBox1.AppendText(vbNewLine & "Successfully disassembled a stone pickaxe!")
                 End If
-            Case 7 ' stone axe
+            Case 8 ' stone axe
                 If ThisGamesStats.Items.StoneAxe.Amount < 1 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have that.")
                 Else
@@ -1533,7 +1574,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Items.StoneAxe.Amount = ThisGamesStats.Items.StoneAxe.Amount - 1
                     RichTextBox1.AppendText(vbNewLine & "Successfully disassembled a stone axe!")
                 End If
-            Case 8 ' iron sword
+            Case 9 ' iron sword
                 If ThisGamesStats.Items.IronSword.Amount < 1 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have that.")
                 Else
@@ -1542,7 +1583,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Items.IronSword.Amount = ThisGamesStats.Items.IronSword.Amount - 1
                     RichTextBox1.AppendText(vbNewLine & "Successfully disassembled a iron sword!")
                 End If
-            Case 9 ' iron pickaxe
+            Case 10 ' iron pickaxe
                 If ThisGamesStats.Items.IronPickaxe.Amount < 1 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have that.")
                 Else
@@ -1551,7 +1592,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Items.IronPickaxe.Amount = ThisGamesStats.Items.IronPickaxe.Amount - 1
                     RichTextBox1.AppendText(vbNewLine & "Successfully disassembled a iron pickaxe!")
                 End If
-            Case 10 ' iron axe
+            Case 11 ' iron axe
                 If ThisGamesStats.Items.IronAxe.Amount < 1 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have that.")
                 Else
@@ -1560,7 +1601,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Items.IronAxe.Amount = ThisGamesStats.Items.IronAxe.Amount - 1
                     RichTextBox1.AppendText(vbNewLine & "Successfully disassembled a iron axe!")
                 End If
-            Case 11 ' gold sword
+            Case 12 ' gold sword
                 If ThisGamesStats.Items.GoldSword.Amount < 1 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have that.")
                 Else
@@ -1569,7 +1610,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Items.GoldSword.Amount = ThisGamesStats.Items.GoldSword.Amount - 1
                     RichTextBox1.AppendText(vbNewLine & "You barely breathe on the golden sword, it crumbles to dust in your hands.")
                 End If
-            Case 12 ' gold pickaxe
+            Case 13 ' gold pickaxe
                 If ThisGamesStats.Items.GoldPickaxe.Amount < 1 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have that.")
                 Else
@@ -1578,7 +1619,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Items.GoldPickaxe.Amount = ThisGamesStats.Items.GoldPickaxe.Amount - 1
                     RichTextBox1.AppendText(vbNewLine & "You hadn't even thought to use the golden pickaxe, but it's already broken in half.")
                 End If
-            Case 13 ' gold axe
+            Case 14 ' gold axe
                 If ThisGamesStats.Items.GoldAxe.Amount < 1 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have that.")
                 Else
@@ -1587,7 +1628,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Items.GoldAxe.Amount = ThisGamesStats.Items.GoldAxe.Amount - 1
                     RichTextBox1.AppendText(vbNewLine & "You swing the golden axe at a tree, unfortunately the axe head bends and breaks instead.")
                 End If
-            Case 14 ' diamond sword
+            Case 15 ' diamond sword
                 If ThisGamesStats.Items.DiamondSword.Amount < 1 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have that.")
                 Else
@@ -1596,7 +1637,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Items.DiamondSword.Amount = ThisGamesStats.Items.DiamondSword.Amount - 1
                     RichTextBox1.AppendText(vbNewLine & "You successfully disassembled a diamond sword, but at what cost?")
                 End If
-            Case 15 ' diamond pickaxe
+            Case 16 ' diamond pickaxe
                 If ThisGamesStats.Items.DiamondPickaxe.Amount < 1 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have that.")
                 Else
@@ -1605,7 +1646,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Items.DiamondPickaxe.Amount = ThisGamesStats.Items.DiamondPickaxe.Amount - 1
                     RichTextBox1.AppendText(vbNewLine & "You sigh as you disassemble the diamond pickaxe, this hurts your soul.")
                 End If
-            Case 16 ' diamond axe
+            Case 17 ' diamond axe
                 If ThisGamesStats.Items.DiamondAxe.Amount < 1 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have that.")
                 Else
@@ -1614,7 +1655,7 @@ Partial Class MncrftGame
                     ThisGamesStats.Items.DiamondAxe.Amount = ThisGamesStats.Items.DiamondAxe.Amount - 1
                     RichTextBox1.AppendText(vbNewLine & "You look at the diamond axe, it's so beautiful, you can't help but feel sorry for it as you disassemble it.")
                 End If
-            Case 17 ' torches
+            Case 18 ' torches
                 If ThisGamesStats.Items.TorchAmount < 4 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have enough torches for that.")
                 Else
@@ -1686,7 +1727,7 @@ Partial Class MncrftGame
                 If ThisGamesStats.Buildings.Bed.Amount < 1 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have that.")
                 Else
-                    ThisGamesStats.Materials.WoodAmount = ThisGamesStats.Materials.WoodAmount + 3
+                    ThisGamesStats.Materials.PlanksAmount = ThisGamesStats.Materials.PlanksAmount + 3
                     ThisGamesStats.Materials.WoolAmount = ThisGamesStats.Materials.WoolAmount + 3
                     ThisGamesStats.Buildings.Bed.Amount = ThisGamesStats.Buildings.Bed.Amount - 1
                     RichTextBox1.AppendText(vbNewLine & "Successfully deconstructed a bed!")
@@ -1699,7 +1740,7 @@ Partial Class MncrftGame
                 If ThisGamesStats.Buildings.House.Amount < 1 Then
                     RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have that.")
                 Else
-                    ThisGamesStats.Materials.WoodAmount = ThisGamesStats.Materials.WoodAmount + 10
+                    ThisGamesStats.Materials.PlanksAmount = ThisGamesStats.Materials.PlanksAmount + 10
                     ThisGamesStats.Materials.StoneAmount = ThisGamesStats.Materials.StoneAmount + 10
                     ThisGamesStats.Buildings.House.Amount = ThisGamesStats.Buildings.House.Amount - 1
                     RichTextBox1.AppendText(vbNewLine & "Successfully deconstructed a house!")
@@ -1721,6 +1762,30 @@ Partial Class MncrftGame
                     ThisGamesStats.Villagers.GreenCoatAmount = ThisGamesStats.Villagers.GreenCoatAmount + 1
                     ThisGamesStats.Buildings.GuardTower.Amount = ThisGamesStats.Buildings.GuardTower.Amount - 1
                     RichTextBox1.AppendText(vbNewLine & "Successfully deconstructed a guard tower!")
+                End If
+            Case 4 ' wooden walls
+                If ThisGamesStats.Buildings.WoodenWalls.Amount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have that.")
+                Else
+                    ThisGamesStats.Materials.PlanksAmount = ThisGamesStats.Materials.PlanksAmount + 50
+                    ThisGamesStats.Buildings.WoodenWalls.Amount = ThisGamesStats.Buildings.WoodenWalls.Amount - 1
+                    RichTextBox1.AppendText(vbNewLine & "Successfully deconstructed the wooden walls!")
+                End If
+            Case 5 ' stone walls
+                If ThisGamesStats.Buildings.StoneWalls.Amount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have that.")
+                Else
+                    ThisGamesStats.Materials.StoneAmount = ThisGamesStats.Materials.StoneAmount + 50
+                    ThisGamesStats.Buildings.StoneWalls.Amount = ThisGamesStats.Buildings.StoneWalls.Amount - 1
+                    RichTextBox1.AppendText(vbNewLine & "Successfully deconstructed the stone walls!")
+                End If
+            Case 6 ' iron walls
+                If ThisGamesStats.Buildings.IronWalls.Amount < 1 Then
+                    RichTextBox1.AppendText(vbNewLine & "Sorry, You don't have that.")
+                Else
+                    ThisGamesStats.Materials.IronIngotAmount = ThisGamesStats.Materials.IronIngotAmount + 50
+                    ThisGamesStats.Buildings.IronWalls.Amount = ThisGamesStats.Buildings.IronWalls.Amount - 1
+                    RichTextBox1.AppendText(vbNewLine & "Successfully deconstructed the stone walls!")
                 End If
             Case Else
                 RichTextBox1.AppendText(vbNewLine & "Please select a deconstructing recipe!")
@@ -2281,6 +2346,7 @@ Partial Class MncrftGame
         'Energy done.
 
         ThisGamesStats.Materials.WoodAmount = Int(MncrftInfoDefaults.Materials.WoodAmount)
+        ThisGamesStats.Materials.PlanksAmount = Int(MncrftInfoDefaults.Materials.PlanksAmount)
         ThisGamesStats.Materials.SticksAmount = Int(MncrftInfoDefaults.Materials.SticksAmount)
         ThisGamesStats.Materials.WoolAmount = Int(MncrftInfoDefaults.Materials.WoolAmount)
         ThisGamesStats.Materials.StoneAmount = Int(MncrftInfoDefaults.Materials.StoneAmount)
@@ -2296,6 +2362,9 @@ Partial Class MncrftGame
         ThisGamesStats.Buildings.House.Amount = Int(MncrftInfoDefaults.Buildings.House.Amount)
         ThisGamesStats.Buildings.Tower.Amount = Int(MncrftInfoDefaults.Buildings.Tower.Amount)
         ThisGamesStats.Buildings.GuardTower.Amount = Int(MncrftInfoDefaults.Buildings.GuardTower.Amount)
+        ThisGamesStats.Buildings.WoodenWalls.Amount = Int(MncrftInfoDefaults.Buildings.WoodWalls.Amount)
+        ThisGamesStats.Buildings.StoneWalls.Amount = Int(MncrftInfoDefaults.Buildings.StoneWalls.Amount)
+        ThisGamesStats.Buildings.IronWalls.Amount = Int(MncrftInfoDefaults.Buildings.IronWalls.Amount)
         'With Buildings done, let's do items.
 
         ThisGamesStats.Items.WoodenSword.Amount = Int(MncrftInfoDefaults.Items.WoodenSword.Amount)
@@ -2348,120 +2417,8 @@ Partial Class MncrftGame
     Public Sub StartNewGame(difficulty As Integer)
         ThisGamesStats = New MncrftInfo
         resetThisGameStatsBackToDefaults()
-
-        Select Case difficulty
-            Case 0 'Peaceful disables zombies entirely and 10 more base daily energy to allow you to build your base in peace, without any urgency or danger.
-                ThisGamesStats.Difficulty = 0
-                ThisGamesStats.BaseDailyEnergy = 20
-                ThisGamesStats.ActionParams.ZombieGenMin = 0
-                ThisGamesStats.ActionParams.ZombieGenMax = 0
-                ThisGamesStats.TorchEffectivenes = 8
-            Case 1 'Easy makes the game a little easier, with 5 more base daily energy, more effective torches, and less zombies.
-                ThisGamesStats.Difficulty = 1
-                ThisGamesStats.BaseDailyEnergy = 15
-                ThisGamesStats.ActionParams.ZombieGenMin = 1
-                ThisGamesStats.ActionParams.ZombieGenMax = 2
-                ThisGamesStats.TorchEffectivenes = 8
-            Case 2 'Normal is the base difficulty of the game.
-            Case 3 'With 10 less starting energy and more zombies per night, hard makes it a little harder to get your settlement off the ground.
-                ThisGamesStats.Difficulty = 3
-                ThisGamesStats.Materials.Energy.Amount = 50
-                ThisGamesStats.ActionParams.ZombieGenMin = 4
-                ThisGamesStats.ActionParams.ZombieGenMax = 8
-            Case 4 'Hardcore, refer to NewGame.vb for desc.
-                ThisGamesStats.Difficulty = 4
-                ThisGamesStats.Materials.Energy.Amount = 40
-                ThisGamesStats.ActionParams.ZombieGenMin = 8
-                ThisGamesStats.ActionParams.ZombieGenMax = 16
-
-
-                ThisGamesStats.ActionParams.WoodGen.TreeMin = 1
-                ThisGamesStats.ActionParams.WoodGen.TreeMax = 3
-                ThisGamesStats.ActionParams.WoodGen.WoodMin = 2
-                ThisGamesStats.ActionParams.WoodGen.WoodMax = 10
-
-                ThisGamesStats.ActionParams.OreGen.StoneMin = 5
-                ThisGamesStats.ActionParams.OreGen.StoneMax = 12
-                ThisGamesStats.ActionParams.OreGen.CoalMin = 3
-                ThisGamesStats.ActionParams.OreGen.CoalMax = 10
-                ThisGamesStats.ActionParams.OreGen.IronMin = 2
-                ThisGamesStats.ActionParams.OreGen.IronMax = 8
-                ThisGamesStats.ActionParams.OreGen.GoldMin = 2
-                ThisGamesStats.ActionParams.OreGen.GoldMax = 4
-                ThisGamesStats.ActionParams.OreGen.DiamMin = 0
-                ThisGamesStats.ActionParams.OreGen.DiamMax = 1
-
-                ThisGamesStats.ActionParams.WoolGen.SheepMin = 0
-                ThisGamesStats.ActionParams.WoolGen.SheepMax = 3
-                ThisGamesStats.ActionParams.WoolGen.WoolMin = 1
-                ThisGamesStats.ActionParams.WoolGen.WoolMax = 2
-
-                ThisGamesStats.ActionParams.VillGen.VillMin = 0
-                ThisGamesStats.ActionParams.VillGen.VillMax = 2
-            Case 5 'Nightmare, refer to NewGame.vb for desc.
-                ThisGamesStats.Difficulty = 5
-                ThisGamesStats.Materials.Energy.Amount = 30
-                ThisGamesStats.ActionParams.ZombieGenMin = 16
-                ThisGamesStats.ActionParams.ZombieGenMax = 16
-                ThisGamesStats.TorchEffectivenes = 0
-
-
-                ThisGamesStats.ActionParams.WoodGen.TreeMin = 1
-                ThisGamesStats.ActionParams.WoodGen.TreeMax = 3
-                ThisGamesStats.ActionParams.WoodGen.WoodMin = 2
-                ThisGamesStats.ActionParams.WoodGen.WoodMax = 10
-
-                ThisGamesStats.ActionParams.OreGen.StoneMin = 5
-                ThisGamesStats.ActionParams.OreGen.StoneMax = 12
-                ThisGamesStats.ActionParams.OreGen.CoalMin = 3
-                ThisGamesStats.ActionParams.OreGen.CoalMax = 10
-                ThisGamesStats.ActionParams.OreGen.IronMin = 2
-                ThisGamesStats.ActionParams.OreGen.IronMax = 8
-                ThisGamesStats.ActionParams.OreGen.GoldMin = 2
-                ThisGamesStats.ActionParams.OreGen.GoldMax = 4
-                ThisGamesStats.ActionParams.OreGen.DiamMin = 0
-                ThisGamesStats.ActionParams.OreGen.DiamMax = 1
-
-                ThisGamesStats.ActionParams.WoolGen.SheepMin = 0
-                ThisGamesStats.ActionParams.WoolGen.SheepMax = 3
-                ThisGamesStats.ActionParams.WoolGen.WoolMin = 1
-                ThisGamesStats.ActionParams.WoolGen.WoolMax = 2
-
-                ThisGamesStats.ActionParams.VillGen.VillMin = 0
-                ThisGamesStats.ActionParams.VillGen.VillMax = 2
-            Case 6 'Wasteland, refer to NewGame.vb for desc.
-                ThisGamesStats.Difficulty = 6
-                ThisGamesStats.BaseDailyEnergy = 8
-                ThisGamesStats.Materials.Energy.Amount = 20
-                ThisGamesStats.ActionParams.ZombieGenMin = 20
-                ThisGamesStats.ActionParams.ZombieGenMax = 20
-                ThisGamesStats.TorchEffectivenes = 0
-
-
-                ThisGamesStats.ActionParams.WoodGen.TreeMin = 0
-                ThisGamesStats.ActionParams.WoodGen.TreeMax = 2
-                ThisGamesStats.ActionParams.WoodGen.WoodMin = 2
-                ThisGamesStats.ActionParams.WoodGen.WoodMax = 10
-
-                ThisGamesStats.ActionParams.OreGen.StoneMin = 5
-                ThisGamesStats.ActionParams.OreGen.StoneMax = 12
-                ThisGamesStats.ActionParams.OreGen.CoalMin = 3
-                ThisGamesStats.ActionParams.OreGen.CoalMax = 10
-                ThisGamesStats.ActionParams.OreGen.IronMin = 2
-                ThisGamesStats.ActionParams.OreGen.IronMax = 8
-                ThisGamesStats.ActionParams.OreGen.GoldMin = 2
-                ThisGamesStats.ActionParams.OreGen.GoldMax = 4
-                ThisGamesStats.ActionParams.OreGen.DiamMin = 0
-                ThisGamesStats.ActionParams.OreGen.DiamMax = 1
-
-                ThisGamesStats.ActionParams.WoolGen.SheepMin = 0
-                ThisGamesStats.ActionParams.WoolGen.SheepMax = 3
-                ThisGamesStats.ActionParams.WoolGen.WoolMin = 1
-                ThisGamesStats.ActionParams.WoolGen.WoolMax = 2
-
-                ThisGamesStats.ActionParams.VillGen.VillMin = 0
-                ThisGamesStats.ActionParams.VillGen.VillMax = 1
-        End Select
+        ThisGamesStats.Difficulty = difficulty
+        ApplyDifficulty()
         RichTextBox1.Text = "Welcome to Mncrft!"
         UpdateStatDisplay()
     End Sub
@@ -2537,6 +2494,7 @@ Public Class MncrftInfo
         Public Shared IronIngotAmount As Integer
         Public Shared GoldIngotAmount As Integer
         Public Shared DiamondsAmount As Integer
+        Public Shared PlanksAmount As Integer
     End Class
 
     Public Class Buildings
@@ -2560,6 +2518,24 @@ Public Class MncrftInfo
             Public Shared Amount As Integer = 0
             Public Shared ReadOnly Offense As Integer = 6
             Public Shared ReadOnly Defense As Integer = 10
+        End Class
+
+        Public Class WoodenWalls
+            Public Shared Amount As Integer = 0
+            Public Shared ReadOnly Offense As Integer = 0
+            Public Shared ReadOnly Defense As Integer = 15
+        End Class
+
+        Public Class StoneWalls
+            Public Shared Amount As Integer = 0
+            Public Shared ReadOnly Offense As Integer = 0
+            Public Shared ReadOnly Defense As Integer = 15
+        End Class
+
+        Public Class IronWalls
+            Public Shared Amount As Integer = 0
+            Public Shared ReadOnly Offense As Integer = 0
+            Public Shared ReadOnly Defense As Integer = 45
         End Class
     End Class
 
@@ -2817,6 +2793,7 @@ Public Class MncrftInfoDefaults
         End Class
 
         Public Shared WoodAmount As Integer = 0
+        Public Shared PlanksAmount As Integer = 0
         Public Shared SticksAmount As Integer = 0
         Public Shared WoolAmount As Integer = 0
         Public Shared StoneAmount As Integer = 0
@@ -2842,6 +2819,15 @@ Public Class MncrftInfoDefaults
         End Class
 
         Public Class GuardTower
+            Public Shared Amount As Integer = 0
+        End Class
+        Public Class WoodWalls
+            Public Shared Amount As Integer = 0
+        End Class
+        Public Class StoneWalls
+            Public Shared Amount As Integer = 0
+        End Class
+        Public Class IronWalls
             Public Shared Amount As Integer = 0
         End Class
     End Class

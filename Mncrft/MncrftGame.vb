@@ -81,7 +81,11 @@
                 Int(ThisGamesStats.Villagers.Miner.Gold.Amount) & vbNewLine &
                 Int(ThisGamesStats.Villagers.Miner.Iron.Amount) & vbNewLine &
                 Int(ThisGamesStats.Villagers.Miner.Diamond.Amount) & vbNewLine & 'And we're done!
-                My.Application.Info.Version.ToString
+                My.Application.Info.Version.ToString & vbNewLine &
+                Int(ThisGamesStats.Materials.PlanksAmount) & vbNewLine &
+                Int(ThisGamesStats.Buildings.WoodenWalls.Amount) & vbNewLine &
+                Int(ThisGamesStats.Buildings.StoneWalls.Amount) & vbNewLine &
+                Int(ThisGamesStats.Buildings.IronWalls.Amount)
             My.Computer.FileSystem.WriteAllText(SaveFileDialog1.FileName, tempstring, False)
             My.Computer.FileSystem.WriteAllText(SaveFileDialog1.FileName.Replace(".sav", ".log"), RichTextBox1.Text, False)
             RichTextBox1.AppendText(vbNewLine & "Saved!")
@@ -119,6 +123,14 @@
                         Return
                 End Select
             End If
+
+            Dim tempindex = parts.Length - 1 'want to load a save from a previous version? Let's make sure it doesn't crash and burn first.
+            Array.Resize(parts, parts.Length + 50)
+            For i As Integer = 1 To 50
+                parts(tempindex) = 0
+                tempindex += 1
+            Next
+
             'Everything seems to be in order.
             'Alright, Gordon, your suit should keep you comfortable through all this...
             ThisGamesStats = New MncrftInfo With {
@@ -131,7 +143,6 @@
             } 'LOAD! LOAD! LOAD! LOAD! LOAD!
             ThisGamesStats.ActionCosts.AxeCost = parts(6)
             ThisGamesStats.ActionCosts.PickaxeCost = parts(7) 'With ActionCosts done, let's load Materials.
-            ThisGamesStats.Materials.Energy.Amount = parts(8) 'Energy.
             ThisGamesStats.Materials.Energy.NightlyAmount = parts(9) 'Energy done.
             ThisGamesStats.Materials.WoodAmount = parts(10)
             ThisGamesStats.Materials.SticksAmount = parts(11)
@@ -183,7 +194,13 @@
             ThisGamesStats.Villagers.Miner.Gold.Amount = parts(57)
             ThisGamesStats.Villagers.Miner.Iron.Amount = parts(58)
             ThisGamesStats.Villagers.Miner.Diamond.Amount = parts(59) 'And we're done!
+
+            ThisGamesStats.Materials.PlanksAmount = parts(61) '...until he adds an update...hmm...How will this work?
+            ThisGamesStats.Buildings.WoodenWalls.Amount = parts(62)
+            ThisGamesStats.Buildings.StoneWalls.Amount = parts(63)
+            ThisGamesStats.Buildings.IronWalls.Amount = parts(64)
             ApplyDifficulty()
+            ThisGamesStats.Materials.Energy.Amount = parts(8) 'Energy.
             UpdateStatDisplay()
             Try
                 RichTextBox1.Text = My.Computer.FileSystem.ReadAllText(OpenFileDialog1.FileName.Replace(".sav", ".log"))
@@ -236,9 +253,9 @@
                 ThisGamesStats.ActionParams.ZombieGenMax = 8
             Case 4 'Hardcore, refer to NewGame.vb for desc.
                 ThisGamesStats.Difficulty = 4
-                ThisGamesStats.Materials.Energy.Amount = 40
+                ThisGamesStats.Materials.Energy.Amount = 50
                 ThisGamesStats.ActionParams.ZombieGenMin = 8
-                ThisGamesStats.ActionParams.ZombieGenMax = 16
+                ThisGamesStats.ActionParams.ZombieGenMax = 10
 
 
                 ThisGamesStats.ActionParams.WoodGen.TreeMin = 1
@@ -266,9 +283,9 @@
                 ThisGamesStats.ActionParams.VillGen.VillMax = 2
             Case 5 'Nightmare, refer to NewGame.vb for desc.
                 ThisGamesStats.Difficulty = 5
-                ThisGamesStats.Materials.Energy.Amount = 30
-                ThisGamesStats.ActionParams.ZombieGenMin = 16
-                ThisGamesStats.ActionParams.ZombieGenMax = 16
+                ThisGamesStats.Materials.Energy.Amount = 50
+                ThisGamesStats.ActionParams.ZombieGenMin = 10
+                ThisGamesStats.ActionParams.ZombieGenMax = 10
                 ThisGamesStats.TorchEffectivenes = 0
 
 
@@ -298,9 +315,9 @@
             Case 6 'Wasteland, refer to NewGame.vb for desc.
                 ThisGamesStats.Difficulty = 6
                 ThisGamesStats.BaseDailyEnergy = 8
-                ThisGamesStats.Materials.Energy.Amount = 20
-                ThisGamesStats.ActionParams.ZombieGenMin = 20
-                ThisGamesStats.ActionParams.ZombieGenMax = 20
+                ThisGamesStats.Materials.Energy.Amount = 50
+                ThisGamesStats.ActionParams.ZombieGenMin = 15
+                ThisGamesStats.ActionParams.ZombieGenMax = 15
                 ThisGamesStats.TorchEffectivenes = 0
 
 
