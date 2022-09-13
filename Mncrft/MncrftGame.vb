@@ -89,6 +89,15 @@
     End Sub
 
     Private Sub LoadGameToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoadGameToolStripMenuItem.Click
+        If Not ThisGamesStats.PlayerIsDead Then
+            Select Case MsgBox("You seem to have a game currently going," & vbNewLine & "are you sure you want to load a different game?", MsgBoxStyle.YesNo, "Load?")
+                Case MsgBoxResult.Yes
+                Case MsgBoxResult.No
+                    Return
+            End Select
+        End If
+
+
         OpenFileDialog1.Filter = "Saved Game Files (*.sav*)|*.sav" 'set filter
         If OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then 'show the window until the user closes it
             Dim tempstring = My.Computer.FileSystem.ReadAllText(OpenFileDialog1.FileName) 'read the file
@@ -194,7 +203,14 @@
     End Sub
 
     Private Sub NewGameToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewGameToolStripMenuItem.Click
-
+        If Not ThisGamesStats.PlayerIsDead Then
+            Select Case MsgBox("You seem to have a game currently going," & vbNewLine & "are you sure you want to start a new game?", MsgBoxStyle.YesNo, "New Game?")
+                Case MsgBoxResult.Yes
+                Case MsgBoxResult.No
+                    Return
+            End Select
+        End If
+        NewGame.ShowDialog()
     End Sub
 End Class
 #Enable Warning BC42025

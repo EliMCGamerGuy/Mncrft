@@ -711,7 +711,7 @@ Partial Class MncrftGame
 
 
 
-    Dim ThisGamesStats As New MncrftInfo()
+    Public ThisGamesStats As New MncrftInfo()
 
 
     Private Sub UpdateStatDisplay() 'IT'S THE LITTLE NUMBER PEOPLE!!!
@@ -1243,7 +1243,7 @@ Partial Class MncrftGame
 
 
 
-    Private Sub TWES()
+    Private Sub TWES() 'TOOL AND WEAPON EQUIPTMENT SYSTEM
         Dim calculatedMiningCost As Integer ' MINING ENERGY COST
 
         If ThisGamesStats.Items.DiamondPickaxe.Amount > 0 Then ' best pickaxe
