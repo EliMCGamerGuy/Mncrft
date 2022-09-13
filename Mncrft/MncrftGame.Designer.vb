@@ -817,8 +817,10 @@ Partial Class MncrftGame
         End If
 
         RichTextBox1.AppendText(vbNewLine & "The day turns to night...")
+
         Dim zombieamount As Integer = ThisGamesStats.LastZombieCount + Int(1 * Rnd()) + 1 + ThisGamesStats.NightScore
         ThisGamesStats.LastZombieCount = zombieamount
+
         RichTextBox1.AppendText(vbNewLine & Str(zombieamount) & " zombie(s) spawn...") 'report amount of zombies that spawn.
         zombieamount = zombieamount - ThisGamesStats.Offense
         zombieamount = zombieamount - ThisGamesStats.PersonalDefense
@@ -1134,8 +1136,8 @@ Partial Class MncrftGame
         End If
 
         Dim RandStoneAmount As Integer = Int(15 * Rnd()) + 10
-        Dim RandCoalAmount As Integer = Int(12 * Rnd()) + 4
-        Dim RandIronAmount As Integer = Int(14 * Rnd()) + 6
+        Dim RandCoalAmount As Integer = Int(14 * Rnd()) + 6
+        Dim RandIronAmount As Integer = Int(12 * Rnd()) + 4
         Dim RandGoldAmount As Integer = Int(6 * Rnd()) + 4
         Dim RandDiamAmount As Integer = Int(2 * Rnd())
         Dim AllowIron As Boolean

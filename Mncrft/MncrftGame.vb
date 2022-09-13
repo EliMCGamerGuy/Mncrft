@@ -192,5 +192,9 @@
                 Return
         End Select
     End Sub
+
+    Private Sub NewGameToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewGameToolStripMenuItem.Click
+
+    End Sub
 End Class
 #Enable Warning BC42025
