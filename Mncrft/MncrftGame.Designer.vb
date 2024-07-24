@@ -3129,7 +3129,7 @@ End Class
 
 'GAME DATA YEAHH
 Public Class MncrftInfo
-    Public debug As Boolean = True
+    Public debug As Boolean = False
     Public supressItemGSMGet As Boolean = True
 
     Public Difficulty As Integer = 2
