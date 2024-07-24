@@ -1,5 +1,5 @@
 # Mncrft
-A slightly Minecraft-themed strategy game about chopping trees, creating houses, recruiting villagers, defeating zombies, and hiding in prior mentioned houses from prior mentioned zombies.
+A slightly Minecraft-themed strategy game about chopping trees, creating houses, recruiting villagers, defeating zombies, and hiding in aforementioned houses from aforementioned zombies with aforementioned villagers.
 
 Trello board: https://trello.com/b/GHlVDoEE/mncrft
 
