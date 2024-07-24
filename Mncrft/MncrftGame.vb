@@ -19,7 +19,9 @@
 
     Private Sub SaveGameToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveGameToolStripMenuItem.Click
         SaveFileDialog1.Filter = "Saved Game Files (*.sav*)|*.sav" 'set filter
-        If SaveFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then 'show the window until the user closes it
+        If SaveFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
+            'show the window until the user closes it
+
             Dim tempstring = "" & 'First, save ActionCosts.
                 Int(ThisGamesStats.Defense) & vbNewLine &
                 Int(ThisGamesStats.Difficulty) & vbNewLine &
@@ -85,7 +87,9 @@
                 Int(ThisGamesStats.Materials.PlanksAmount) & vbNewLine &
                 Int(ThisGamesStats.Buildings.WoodenWalls.Amount) & vbNewLine &
                 Int(ThisGamesStats.Buildings.StoneWalls.Amount) & vbNewLine &
-                Int(ThisGamesStats.Buildings.IronWalls.Amount)
+                Int(ThisGamesStats.Buildings.IronWalls.Amount) & vbNewLine &
+                ThisGamesStats.debug
+
             My.Computer.FileSystem.WriteAllText(SaveFileDialog1.FileName, tempstring, False)
             My.Computer.FileSystem.WriteAllText(SaveFileDialog1.FileName.Replace(".sav", ".log"), RichTextBox1.Text, False)
             RichTextBox1.AppendText(vbNewLine & "Saved!")
@@ -107,13 +111,24 @@
             Dim tempstring = My.Computer.FileSystem.ReadAllText(OpenFileDialog1.FileName) 'read the file
             Dim parts As String() = tempstring.Split(New String() {Environment.NewLine}, StringSplitOptions.None) 'split the file into it's parts
             Dim ver As Version
+
             Try 'handler for this crashing and burning
                 ver = Version.Parse(parts(60))
             Catch ex As Exception
-                MsgBox("Version check threw error " & Str(ex), MsgBoxStyle.OkOnly, "Error")
+
+                Try
+                    MsgBox("Version check threw error " & Str(ex), MsgBoxStyle.OkOnly, "Error")
+
+                Catch
+                    MsgBox("Version check threw unknown error", MsgBoxStyle.OkOnly, "Error")
+                    RichTextBox1.AppendText(vbNewLine & "Version check threw unknown error")
+                    Return
+                End Try
+
                 RichTextBox1.AppendText(vbNewLine & "Version check threw error " & Str(ex))
                 Return
             End Try
+
             Dim compver = My.Application.Info.Version.CompareTo(ver)
             If compver < 0 Then
                 Select Case MsgBox("This game was saved with a newer version of Mncrft!" & vbNewLine & "You can load the save here, but some data may be lost." & vbNewLine & "Do you want to load the game anyway?", MsgBoxStyle.YesNo, "Load?")
@@ -141,6 +156,9 @@
                 .Offense = parts(4),
                 .PersonalDefense = parts(5)
             } 'LOAD! LOAD! LOAD! LOAD! LOAD!
+
+            ApplyDifficulty()
+
             ThisGamesStats.ActionCosts.AxeCost = parts(6)
             ThisGamesStats.ActionCosts.PickaxeCost = parts(7) 'With ActionCosts done, let's load Materials.
             ThisGamesStats.Materials.Energy.NightlyAmount = parts(9) 'Energy done.
@@ -199,8 +217,10 @@
             ThisGamesStats.Buildings.WoodenWalls.Amount = parts(62)
             ThisGamesStats.Buildings.StoneWalls.Amount = parts(63)
             ThisGamesStats.Buildings.IronWalls.Amount = parts(64)
-            ApplyDifficulty()
             ThisGamesStats.Materials.Energy.Amount = parts(8) 'Energy.
+
+            ThisGamesStats.debug = parts(65).Contains("True")
+
             UpdateStatDisplay()
             Try
                 RichTextBox1.Text = My.Computer.FileSystem.ReadAllText(OpenFileDialog1.FileName.Replace(".sav", ".log"))
@@ -238,13 +258,13 @@
                 ThisGamesStats.BaseDailyEnergy = 20
                 ThisGamesStats.ActionParams.ZombieGenMin = 0
                 ThisGamesStats.ActionParams.ZombieGenMax = 0
-                ThisGamesStats.TorchEffectivenes = 8
+                ThisGamesStats.TorchEffectiveness = 8
             Case 1 'Easy makes the game a little easier, with 5 more base daily energy, more effective torches, and less zombies.
                 ThisGamesStats.Difficulty = 1
                 ThisGamesStats.BaseDailyEnergy = 15
                 ThisGamesStats.ActionParams.ZombieGenMin = 1
                 ThisGamesStats.ActionParams.ZombieGenMax = 2
-                ThisGamesStats.TorchEffectivenes = 8
+                ThisGamesStats.TorchEffectiveness = 8
             Case 2 'Normal is the base difficulty of the game.
             Case 3 'With 10 less starting energy and more zombies per night, hard makes it a little harder to get your settlement off the ground.
                 ThisGamesStats.Difficulty = 3
@@ -286,7 +306,7 @@
                 ThisGamesStats.Materials.Energy.Amount = 50
                 ThisGamesStats.ActionParams.ZombieGenMin = 10
                 ThisGamesStats.ActionParams.ZombieGenMax = 10
-                ThisGamesStats.TorchEffectivenes = 0
+                ThisGamesStats.TorchEffectiveness = 0
 
 
                 ThisGamesStats.ActionParams.WoodGen.TreeMin = 1
@@ -318,7 +338,7 @@
                 ThisGamesStats.Materials.Energy.Amount = 50
                 ThisGamesStats.ActionParams.ZombieGenMin = 15
                 ThisGamesStats.ActionParams.ZombieGenMax = 15
-                ThisGamesStats.TorchEffectivenes = 0
+                ThisGamesStats.TorchEffectiveness = 0
 
 
                 ThisGamesStats.ActionParams.WoodGen.TreeMin = 0
@@ -345,6 +365,24 @@
                 ThisGamesStats.ActionParams.VillGen.VillMin = 0
                 ThisGamesStats.ActionParams.VillGen.VillMax = 1
         End Select
+    End Sub
+
+    Private Sub ToggleDebugMessagesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ToggleDebugMessagesToolStripMenuItem.Click
+
+        ' The true flip
+        ThisGamesStats.debug = Not ThisGamesStats.debug
+
+        'All the rest is to notify the player
+        Dim temp As String
+
+        If ThisGamesStats.debug Then
+            temp = "enabled"
+        Else
+            temp = "disabled"
+        End If
+
+        RichTextBox1.AppendText(vbNewLine & "!	[DEBUG] Debug messages " + temp + "!")
+
     End Sub
 End Class
 #Enable Warning BC42025
